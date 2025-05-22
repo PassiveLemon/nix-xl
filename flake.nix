@@ -13,10 +13,6 @@
       url = "github:lite-xl/lite-xl-plugins";
       flake = false;
     };
-    # lite-xl-widget = {
-    #   url = "github:lite-xl/lite-xl-widgets";
-    #   flake = false;
-    # };
     # lite-xl-lintplus = {
     #   url = "github:liquidev/lintplus";
     #   flake = false;
@@ -49,6 +45,7 @@
           programs.lite-xl = {
             enable = true;
             languages = [ "containerfile" "nim" "nix" "zig" ];
+            libraries = [ "widget" ];
           };
         })
       ];

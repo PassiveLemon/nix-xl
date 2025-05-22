@@ -16,6 +16,7 @@ in
 
   imports = [
     ./languages
+    ./libraries
   ];
 
   config = mkIf cfg.enable {
