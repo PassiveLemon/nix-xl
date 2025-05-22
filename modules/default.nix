@@ -15,16 +15,10 @@ in
   };
 
   imports = [
-    ./languages.nix
+    ./languages
   ];
 
   config = mkIf cfg.enable {
-    # xdg.configFile = {
-    #   "openvr/openvrpaths.vrpath" = mkIf cfg.openvrRuntimeOverride.enable {
-    #     text = "";
-    #   };
-    # };
-
     # home.packages = mkIf cfg.enable [
     #   pkgs.lite-xl
     # ];
