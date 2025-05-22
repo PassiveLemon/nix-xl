@@ -1,9 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 let
   inherit (lib) mkIf mkOption types getAttrs mapAttrs' nameValuePair;
   cfg = config.programs.lite-xl;
 
-  librariesImport = import ./libraries.nix { inherit lib pkgs; };
+  librariesImport = import ./libraries.nix { inherit inputs lib pkgs; };
 
   supportedLibraryStrings = librariesImport.supportedLibraryStrings;
   supportedLibraries = librariesImport.supportedLibraries;

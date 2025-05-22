@@ -37,6 +37,12 @@ Import the module and enable it:
 }
 ```
 
+## Languages
+
+## Plugins
+
+## Libraries
+
 # Todo
 Core:
 - [x] Implement languages
@@ -44,9 +50,9 @@ Core:
   - [x] External repo languages
   - [ ] Custom languages
 
-- [ ] Implement libraries (WIP)
-  - [ ] Most libraries require some package building so we need some derivations
-  - [ ] External repo libraries
+- [x] Implement libraries
+  - [x] Most libraries require some package building so we need some derivations
+  - [x] External repo libraries
   - [ ] Custom libraries
 
 - [ ] Implement plugins
@@ -55,14 +61,17 @@ Core:
 
 General:
 - [ ] nvfetcher to update plugin versions. Check every couple days or so since plugins aren't updated too frequently
-
 - [ ] Config/init declaration
+- [ ] Cleanup and refactoring
+- [ ] Fix up "lite-xl-test" path to "lite-xl". Currently present in languages.nix, libraries.nix
 
-- When finished, fix up "lite-xl-test" path to "lite-xl". Currently present in languages.nix, libraries.nix
-
-Other:
+Plugins:
 - [ ] Evergreen
   - [ ] Need to build the shared objects so we need some derivations
   - [ ] Put Evergreen highlights into their own `/plugins/evergreen_languages` directory and create a lua file to require them (Similar to languages)
   - [ ] Custom languages
+
+Later:
+- [ ] `Nonicons` (TODO: Build nonicons because it is not in Nixpkgs)
+- [ ] `www` (TODO: Finish the package. Currently can't be built)
 
