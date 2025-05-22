@@ -1,2 +1,6 @@
-# Auto detect text files and perform LF normalization
+# Auto convert unless specified
 * text=auto
+
+# LF
+*.nix text eol=lf
+

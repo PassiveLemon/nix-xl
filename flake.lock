@@ -1,0 +1,150 @@
+{
+  "nodes": {
+    "flake-parts": {
+      "inputs": {
+        "nixpkgs-lib": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1743550720,
+        "narHash": "sha256-hIshGgKZCgWh6AYJpJmRgFdR3WUbkY04o82X05xqQiY=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "c621e8422220273271f52058f618c94e405bb0f5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "lite-xl-evergreen": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1742082991,
+        "narHash": "sha256-r7YxoWl01drKJ6SBe+oFFcA2DNiZ9q7UA8PkbqTCp7g=",
+        "owner": "evergreen-lxl",
+        "repo": "evergreen.lxl",
+        "rev": "430f54e270ff48f5299b6de8400202f44a996b74",
+        "type": "github"
+      },
+      "original": {
+        "owner": "evergreen-lxl",
+        "repo": "evergreen.lxl",
+        "type": "github"
+      }
+    },
+    "lite-xl-lintplus": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1746994840,
+        "narHash": "sha256-T2wSWGqhagyEGEws7B2zIg1rv1DhcZvUjy54NZfRlqE=",
+        "owner": "liquidev",
+        "repo": "lintplus",
+        "rev": "eaff3321f569e89aca57e76dc1f684a37aecd254",
+        "type": "github"
+      },
+      "original": {
+        "owner": "liquidev",
+        "repo": "lintplus",
+        "type": "github"
+      }
+    },
+    "lite-xl-lsp": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1747493926,
+        "narHash": "sha256-7RAHTPBHDNEH/gAUfiFnjwfjo799A6ykcDOyCiQvI0w=",
+        "owner": "lite-xl",
+        "repo": "lite-xl-lsp",
+        "rev": "61b51893c4b97cdb1950b333a98a0f9020bb530f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lite-xl",
+        "repo": "lite-xl-lsp",
+        "type": "github"
+      }
+    },
+    "lite-xl-plugins": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1746114745,
+        "narHash": "sha256-hhohhW2kC8oBTk3RYW/V9rFzgSJJqseUkDApHv+oBsY=",
+        "owner": "lite-xl",
+        "repo": "lite-xl-plugins",
+        "rev": "499961ac9d08c803c814244e36b2174e9494b532",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lite-xl",
+        "repo": "lite-xl-plugins",
+        "type": "github"
+      }
+    },
+    "lite-xl-treeview-extender": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1703123728,
+        "narHash": "sha256-87tS3XRgXWYkiaAE13wazoFWezcX96DQp+8xKjBvgR4=",
+        "owner": "juliardi",
+        "repo": "lite-xl-treeview-extender",
+        "rev": "6163ffb90a8187c8ee1bd24a7da5b6145b06d2e8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "juliardi",
+        "repo": "lite-xl-treeview-extender",
+        "type": "github"
+      }
+    },
+    "lite-xl-widget": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1737935149,
+        "narHash": "sha256-6oOxJPRzDwpFh9wp20WocT3gB0wQpA3LI4IarF0hMfw=",
+        "owner": "lite-xl",
+        "repo": "lite-xl-widgets",
+        "rev": "dcf1c8c7087638b879d5c9c835686ccd79f963ec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lite-xl",
+        "repo": "lite-xl-widgets",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1747790854,
+        "narHash": "sha256-8TpwOtr0T016HNlVuDcDNq4q+GMKfLStOSwdabrz+rk=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "f0d925b947cca0bbe7f2d25115cbaf021844aba7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-parts": "flake-parts",
+        "lite-xl-evergreen": "lite-xl-evergreen",
+        "lite-xl-lintplus": "lite-xl-lintplus",
+        "lite-xl-lsp": "lite-xl-lsp",
+        "lite-xl-plugins": "lite-xl-plugins",
+        "lite-xl-treeview-extender": "lite-xl-treeview-extender",
+        "lite-xl-widget": "lite-xl-widget",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
