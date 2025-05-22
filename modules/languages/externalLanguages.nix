@@ -3,7 +3,7 @@ let
   inherit (pkgs) fetchgit;
 in
 {
-  # Source should point to a file in an external repository through a flake input
+  # Source should be fetched
   # "<name>" = "<source>";
   "containerfile" = (fetchgit {
     url = "https://github.com/FilBot3/lite-xl-language-containerfile";

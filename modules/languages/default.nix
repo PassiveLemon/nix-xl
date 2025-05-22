@@ -18,12 +18,12 @@ let
 
   # Map supportedLanguages attrset to xdg.configFile entries
   # -> {
-  #   "lite-xl/languages/language_lang1.lua" = { source = "path-to-lang1"; }
-  #   "lite-xl/languages/language_lang2.lua" = { source = "path-to-lang2"; }
-  #   "lite-xl/languages/language_lang3.lua" = { source = "path-to-lang3"; }
+  #   "lite-xl/plugins/languages/language_lang1.lua" = { source = "path-to-lang1"; }
+  #   "lite-xl/plugins/languages/language_lang2.lua" = { source = "path-to-lang2"; }
+  #   "lite-xl/plugins/languages/language_lang3.lua" = { source = "path-to-lang3"; }
   # }
   namedPaths = mapAttrs' (name: source:
-    nameValuePair "lite-xl-test/languages/languages_${name}.lua" { source = source; })
+    nameValuePair "lite-xl-test/plugins/languages/languages_${name}.lua" { source = source; })
     userLanguages;
 in
 {
@@ -37,10 +37,9 @@ in
   };
 
   config = mkIf cfg.enable {
-    _debug = namedPaths;
     xdg.configFile = namedPaths // {
       # Script to load languages since they are not placed top-level
-      "lite-xl-test/languages/init.lua" = {
+      "lite-xl-test/plugins/languages/init.lua" = {
         text = ''
           -- mod-version: 3
 
