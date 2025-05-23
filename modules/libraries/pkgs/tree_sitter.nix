@@ -15,7 +15,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   postPatch = ''
     substituteInPlace make.sh \
-      --replace "rm src/plugin.c" ""
+      --replace-fail "rm src/plugin.c" ""
   '';
 
   buildPhase = ''

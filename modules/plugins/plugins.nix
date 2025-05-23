@@ -90,18 +90,18 @@ let
   lxlPlugins = genAttrs lxlPluginStrings (plugin: "${lxlp}/${plugin}.lua");
 
   # Plugins in external repositories
-  externalPlugins = import ./external.nix { inherit inputs lib pkgs; };
+  externalPlugins = import ./external.nix { inherit lib pkgs; };
 in
 # Plugin structure
 # {
 #   "<name>" = "<source>";
 # }
 mergeAttrsList [
+  lxlPlugins
+  externalPlugins
   {
     "editorconfig" = "${lxlp}/editorconfig";
     "profile" = "${lxlp}/profile";
   }
-  lxlPlugins
-  externalPlugins
 ]
 

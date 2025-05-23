@@ -1,28 +1,22 @@
 { stdenv
 , fetchFromGitHub
-, cmake
 }:
 stdenv.mkDerivation (finalAttrs: {
-  pname = "www";
-  version = "0.4";
+  pname = "terminal";
+  version = "1.06";
 
   src = fetchFromGitHub {
     owner = "adamharrison";
-    repo = "lite-xl-www";
+    repo = "lite-xl-terminal";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-/TQj0EFWyDsfMMB4mD4t6hdjdYbwMRj/wnpiaGFqlcg=";
+    hash = "sha256-gfd+lcpZO6hJkKKTcX+jEOZTeQAvgC8f+o+HMubPNS4=";
     fetchSubmodules = true;
   };
 
-  nativeBuildInputs = [
-    cmake
-  ];
-
-  # build.sh script fails
   buildPhase = ''
     runHook preBuild
 
-    BIN="www.so" bash build.sh
+    BIN=libterminal.so bash build.sh -std=c99 -D_BSD_SOURCE -D_POSIX_SOURCE -O3
 
     runHook postBuild
   '';
@@ -31,7 +25,8 @@ stdenv.mkDerivation (finalAttrs: {
     runHook preInstall
 
     mkdir $out
-    mv www.so $out/init.so
+    cp $src/plugins/terminal/init.lua $out/init.so
+    mv libterminal.so $out/libterminal.so
 
     runHook postInstall
   '';

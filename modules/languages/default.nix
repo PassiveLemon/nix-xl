@@ -1,14 +1,19 @@
 { inputs, config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair;
+  inherit (lib) mkIf mkOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair mergeAttrsList;
   cfg = config.programs.lite-xl;
 
   supportedLanguages = import ./languages.nix { inherit inputs lib pkgs; };
   languageStrings = attrNames supportedLanguages;
 
+  customLanguages = cfg.customLanguages;
+
   # Filter loaded languages
   configLanguages = cfg.languages;
   userLanguages = getAttrs configLanguages supportedLanguages;
+  finalLanguages = mergeAttrsList [
+    userLanguages customLanguages
+  ];
 
   # Map supportedLanguages attrset to xdg.configFile entries
   # -> {
@@ -18,7 +23,7 @@ let
   # }
   namedPaths = mapAttrs' (name: source:
     nameValuePair "lite-xl-test/plugins/languages/languages_${name}.lua" { source = source; })
-    userLanguages;
+    finalLanguages;
 
   # Concat userLanguage list for lua script
   # -> ",lang1,,lang2,,lang3,"
@@ -30,6 +35,10 @@ in
       languages = mkOption {
         type = types.listOf (types.enum languageStrings);
         default = [ ];
+      };
+      customLanguages = mkOption {
+        type = types.attrsOf types.path;
+        default = { };
       };
     };
   };
