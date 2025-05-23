@@ -1,12 +1,21 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) any mergeAttrsList;
-  inherit (pkgs) fetchFromGitHub;
+  inherit (lib) any elem mergeAttrsList;
+  inherit (pkgs) fetchFromGitHub fetchgit;
   cfg = config.programs.lite-xl;
+
+  # With the way this is currently designed, all packages with dependencies
+  # have to be defined in here.
+
+  # If json did not check for "lsp_snippets", it would not be loaded if the
+  # "lsp_snippets" plugin was specified because the loading of "snippets"
+  # does not propagate back to this check.
+
+  # Custom plugins also won't be checked.
 
   json = (
     # Or user manually specifies json?
-    if (any (str: str == "snippets") cfg.plugins)
+    if (any (str: elem str [ "snippets" "lsp_snippets" ]) cfg.plugins)
     then {
       "json" = (fetchFromGitHub {
         owner = "rxi";
@@ -17,11 +26,24 @@ let
     }
     else { }
   );
+  snippets = (
+    if (any (str: elem str [ "snippets" "lsp_snippets" ]) cfg.plugins)
+    then {
+      "snippets" = (fetchgit {
+        url = "https://github.com/vqns/lite-xl-snippets";
+        rev = "87248a23c8ceb2507f46b3ca3689b32d35c9c709";
+        hash = "sha256-FSZTm5bpQKUfPsjwmat9NVrQg9HWil9kFWiBFFnEWJA=";
+      }) + "/snippets.lua";
+    }
+    else { }
+  );
 in
 {
   libraries = mergeAttrsList [
     json
   ];
-  plugins = mergeAttrsList [ ];
+  plugins = mergeAttrsList [
+    snippets
+  ];
 }
 

@@ -162,11 +162,7 @@ mergeAttrsList [
       rev = "1bb4cfce305ea17769c95672e0a441e7b6e66c6f";
       hash = "";
     });
-    "snippets" = (fetchgit {
-      url = "https://github.com/vqns/lite-xl-snippets";
-      rev = "87248a23c8ceb2507f46b3ca3689b32d35c9c709";
-      hash = "sha256-FSZTm5bpQKUfPsjwmat9NVrQg9HWil9kFWiBFFnEWJA=";
-    }) + "/snippets.lua";
+    # snippets is in deps.nix
     "lsp_snippets" = (fetchgit {
       url = "https://github.com/vqns/lite-xl-snippets";
       rev = "87248a23c8ceb2507f46b3ca3689b32d35c9c709";

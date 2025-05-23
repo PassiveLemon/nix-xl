@@ -63,7 +63,7 @@ Core:
 - [x] Implement plugins
   - [x] External repo plugins
   - [x] Custom plugins
-  - [ ] Automatic library dependencies
+  - [x] Automatic library dependencies (Implemented, but not set up for everything)
 
 Plugins:
 - [ ] Evergreen
