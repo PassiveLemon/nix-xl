@@ -107,7 +107,7 @@ mergeAttrsList [
       rev = "309fe4193a09cf739ed0a058b1a6966a463a1dbd";
       hash = "";
     }) + "/init.lua";
-    "liteplus" = (fetchgit {
+    "lintplus" = (fetchgit {
       url = "https://github.com/liquidev/lintplus";
       rev = "eaff3321f569e89aca57e76dc1f684a37aecd254";
       hash = "";

@@ -128,6 +128,8 @@ Plugins:
 General:
 - [ ] nvfetcher to update plugin versions. Check every couple days or so since plugins aren't updated too frequently
 - [ ] Config/init declaration
+- [ ] Fonts
+- [ ] Themes
 
 Later:
 - Contributing guidelines/template
