@@ -24,8 +24,8 @@ let
   namedPaths = mapAttrs' (name: source: (
     # Append a ".lua" if the plugin is a single file
     if (hasSuffix ".lua" source)
-    then (nameValuePair "lite-xl-test/plugins/${name}.lua" { source = source; })
-    else (nameValuePair "lite-xl-test/plugins/${name}" { source = source; recursive = true; })
+    then (nameValuePair "lite-xl/plugins/${name}.lua" { source = source; })
+    else (nameValuePair "lite-xl/plugins/${name}" { source = source; recursive = true; })
   )) finalPlugins;
 in
 {

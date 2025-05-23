@@ -107,6 +107,7 @@ Core:
   - [x] Automatic library dependencies (Implemented, but not set up for everything)
 
 Plugins:
+- The core part of these are included in plugins but currently you have to manually add the languages
 - [ ] Evergreen
   - [ ] Need to build the shared objects so we need some derivations
   - [ ] Put Evergreen highlights into their own `/plugins/evergreen_languages` directory and create a lua file to require them (Similar to languages)
@@ -129,7 +130,8 @@ General:
 - [ ] Config/init declaration
 
 Later:
-- Fix up "lite-xl-test" path to "lite-xl". Currently present in languages/default.nix, libraries/default.nix, plugins/default.nix
+- Contributing guidelines/template
+- Docs on customs
 - Package meta attrs
 - Descriptions on module options
 - Switch everything from fetchgit to fetchFromGitHub (if applicable)

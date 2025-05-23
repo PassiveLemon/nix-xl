@@ -22,7 +22,7 @@ let
   #   "lite-xl/plugins/languages/language_lang3.lua" = { source = "<source3>"; }
   # }
   namedPaths = mapAttrs' (name: source:
-    nameValuePair "lite-xl-test/plugins/languages/languages_${name}.lua" { source = source; })
+    nameValuePair "lite-xl/plugins/languages/languages_${name}.lua" { source = source; })
     finalLanguages;
 
   # Concat userLanguage list for lua script

@@ -24,8 +24,8 @@ let
   namedPaths = mapAttrs' (name: source: (
     # Append a ".lua" if the library is a single file
     if (hasSuffix ".lua" source)
-    then (nameValuePair "lite-xl-test/libraries/${name}.lua" { source = source; })
-    else (nameValuePair "lite-xl-test/libraries/${name}" { source = source; recursive = true; })
+    then (nameValuePair "lite-xl/libraries/${name}.lua" { source = source; })
+    else (nameValuePair "lite-xl/libraries/${name}" { source = source; recursive = true; })
   )) finalLibraries;
 in
 {
