@@ -19,17 +19,21 @@ let
   # Lite-XL plugin languages prefix
   lxlpl = "${inputs.lite-xl-plugins}/plugins/language_";
 
-  # Generate attrset of lang to paths
+  # Generate attrset of lang to source file
   # -> {
-  #   lang1 = "<source1>";
-  #   lang2 = "<source2>";
-  #   lang3 = "<source3>";
+  #   lang1 = "<source1>.lua";
+  #   lang2 = "<source2>.lua";
+  #   lang3 = "<source3>.lua";
   # }
   lxlLanguages = genAttrs lxlLanguageStrings (lang: "${lxlpl}${lang}.lua");
 
   # Languages in external repositories
   externalLanguages = import ./external.nix { inherit pkgs; };
 in
+# Language structure
+# {
+#   "<name>" = "<source>";
+# }
 mergeAttrsList [
   lxlLanguages
   externalLanguages

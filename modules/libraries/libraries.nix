@@ -5,7 +5,7 @@ let
 
   libraryPackages = import ./pkgs { inherit inputs lib pkgs; };
 in
-# Set up library structure
+# Library structure
 # {
 #   "<name>" = "<source>";
 # }

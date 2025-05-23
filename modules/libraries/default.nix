@@ -12,9 +12,9 @@ let
 
   # Map supportedLibraries attrset to xdg.configFile entries
   # -> {
-  #   "lite-xl/libraries/lib1/" = { source = "<source1>"; recursive = true; }
-  #   "lite-xl/libraries/lib2/" = { source = "<source2>"; recursive = true; }
-  #   "lite-xl/libraries/lib3/" = { source = "<source3>"; recursive = true; }
+  #   "lite-xl/libraries/lib1/" = { source = "<source1>/"; recursive = true; }
+  #   "lite-xl/libraries/lib2/" = { source = "<source2>/"; recursive = true; }
+  #   "lite-xl/libraries/lib3/" = { source = "<source3>/"; recursive = true; }
   # }
   namedPaths = mapAttrs' (name: source:
     nameValuePair "lite-xl-test/libraries/${name}/" { source = source; recursive = true; })
@@ -31,8 +31,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    _debug = namedPaths;
-    # xdg.configFile = namedPaths;
+    xdg.configFile = namedPaths;
   };
 }
 
