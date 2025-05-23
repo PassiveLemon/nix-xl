@@ -27,7 +27,8 @@ let
 
   # Concat userLanguage list for lua script
   # -> ",lang1,,lang2,,lang3,"
-  concatLanguages = concatMapStrings (lang: ",${lang},") configLanguages;
+  finalLanguageStrings = attrNames finalLanguages;
+  concatLanguages = concatMapStrings (lang: ",${lang},") finalLanguageStrings;
 in
 {
   options = {
