@@ -70,7 +70,7 @@ To enable plugins, use the plugin option:
 ```
 - Plugins with library or other plugin dependencies will have their dependencies automatically enabled.
 - All available plugins are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#plugins) with the following notes:
-  - Plugin names are as they appear in the repository but all dashes are underscores. (discord-presence -> discord_presence)
+  - Plugin names are exactly as they appear in the repository.
   - `ide_*` and `lsp_*` packages are not individually included. (These currently aren't even implemented yet. See TODO.)
 
 ## Libraries
@@ -132,6 +132,7 @@ General:
 - [ ] Themes
 
 Later:
+- DONT use lite-xl-plugins flake input since it causes weirdness. Change to a fetchFromGitHub source.
 - Contributing guidelines/template
 - Docs on customs
 - Package meta attrs

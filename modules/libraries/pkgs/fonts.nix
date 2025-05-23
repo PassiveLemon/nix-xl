@@ -16,7 +16,7 @@ in
       runHook preInstall
 
       mkdir $out
-      cp $src/plugins/font_nonicons.lua $out/init.so
+      cp $src/plugins/font_nonicons.lua $out/init.lua
 
       runHook postInstall
     '';
@@ -32,7 +32,7 @@ in
 
       mkdir $out
       cp ${pkgs.nerd-fonts.symbols-only}/share/fonts/truetype/NerdFonts/Symbols/SymbolsNerdFontMono-Regular.ttf $out/
-      cp $src/plugins/font_symbols_nerdfont_mono_regular.lua $out/init.so
+      cp $src/plugins/font_symbols_nerdfont_mono_regular.lua $out/init.lua
 
       runHook postInstall
     '';

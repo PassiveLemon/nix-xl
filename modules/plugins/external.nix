@@ -60,7 +60,7 @@ mergeAttrsList [
     "eofnewline" = (fetchgit {
       url = "https://github.com/bokunodev/lite_modules";
       rev = "67c171fc31b6203bd054c061a4ad6274a3dcf07f";
-      hash = "";
+      hash = "sha256-mpddpYYjO0ymxN78pTjIKrfIw7RNUCNtWR8KQrzMz8Q=";
     }) + "/plugins/eofnewline-xl.lua";
     "equationgrapher" = (fetchgit {
       url = "https://github.com/thacuber2a03/equationgrapher";
@@ -70,12 +70,12 @@ mergeAttrsList [
     "evergreen" = (fetchgit {
       url = "https://github.com/Evergreen-lxl/Evergreen.lxl";
       rev = "430f54e270ff48f5299b6de8400202f44a996b74";
-      hash = "";
+      hash = "sha256-r7YxoWl01drKJ6SBe+oFFcA2DNiZ9q7UA8PkbqTCp7g=";
     });
     "exterm" = (fetchgit {
       url = "https://github.com/ShadiestGoat/lite-xl-exterm";
       rev = "aca8827fc1af831890cffd3dd122debac72429c6";
-      hash = "";
+      hash = "sha256-/FTh5j39Jijd2UqqA98Dy8PQNnls8vcW6q5G60rvvOg=";
     }) + "/exterm.lua";
     "findfileimproved" = (fetchgit {
       url = "https://github.com/jgmdev/lite-xl-threads";
@@ -96,13 +96,13 @@ mergeAttrsList [
       url = "https://github.com/vincens2005/lite-xl-gitdiff-highlight";
       rev = "f0e02b6a7299acbeb4a5f137b26830a6cca96cc8";
       hash = "sha256-qeBy4+7l+YM0buAWYQZOvhco6f3kwKuQxuh1dUBXX74=";
-    }) + "/init.lua";
+    });
     "keyhud" = (fetchgit {
       url = "https://codeberg.org/Mandarancio/keyhud";
       rev = "77c95fed9756b0b20a78ca0f61f20b593787bf20";
       hash = "";
     }) + "/init.lua";
-    "kinc_projects" = (fetchgit {
+    "kinc-projects" = (fetchgit {
       url = "https://github.com/Kode-Community/kinc_plugin";
       rev = "309fe4193a09cf739ed0a058b1a6966a463a1dbd";
       hash = "";
@@ -110,9 +110,9 @@ mergeAttrsList [
     "lintplus" = (fetchgit {
       url = "https://github.com/liquidev/lintplus";
       rev = "eaff3321f569e89aca57e76dc1f684a37aecd254";
-      hash = "";
+      hash = "sha256-T2wSWGqhagyEGEws7B2zIg1rv1DhcZvUjy54NZfRlqE=";
     });
-    "lite_xl_vibe" = (fetchgit {
+    "lite-xl-vibe" = (fetchgit {
       url = "https://github.com/eugenpt/lite-xl-vibe";
       rev = "5b5579ab5efe9388c495d5b8baa6cd10b2db53ac";
       hash = "";
@@ -125,7 +125,7 @@ mergeAttrsList [
     "lsp" = (fetchgit {
       url = "https://github.com/lite-xl/lite-xl-lsp";
       rev = "61b51893c4b97cdb1950b333a98a0f9020bb530f";
-      hash = "";
+      hash = "sha256-7RAHTPBHDNEH/gAUfiFnjwfjo799A6ykcDOyCiQvI0w=";
     });
     "lspkind" = (fetchgit {
       url = "https://github.com/sammy-ette/lite-xl-lspkind";
@@ -183,7 +183,7 @@ mergeAttrsList [
       rev = "0b3937a0f0d761843df9b71cfea35884e839348b";
       hash = "";
     }) + "/todotreeview-xl.lua";
-    "treeview_extender" = (fetchgit {
+    "treeview-extender" = (fetchgit {
       url = "https://github.com/juliardi/lite-xl-treeview-extender";
       rev = "6163ffb90a8187c8ee1bd24a7da5b6145b06d2e8";
       hash = "sha256-87tS3XRgXWYkiaAE13wazoFWezcX96DQp+8xKjBvgR4=";

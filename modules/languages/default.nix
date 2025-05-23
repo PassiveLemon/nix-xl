@@ -22,7 +22,7 @@ let
   #   "lite-xl/plugins/languages/language_lang3.lua" = { source = "<source3>"; }
   # }
   namedPaths = mapAttrs' (name: source:
-    nameValuePair "lite-xl/plugins/languages/languages_${name}.lua" { source = source; })
+    nameValuePair "lite-xl/plugins/languages/language_${name}.lua" { source = source; })
     finalLanguages;
 
   # Concat userLanguage list for lua script
@@ -46,7 +46,7 @@ in
   config = mkIf cfg.enable {
     xdg.configFile = namedPaths // {
       # Script to load languages since they are not placed top-level
-      "lite-xl-test/plugins/languages/init.lua" = {
+      "lite-xl/plugins/languages/init.lua" = {
         text = ''
           -- mod-version: 3
 
