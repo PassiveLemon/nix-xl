@@ -1,36 +1,34 @@
 { inputs, config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkOption types getAttrs concatMapStrings mapAttrs' nameValuePair;
+  inherit (lib) mkIf mkOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair;
   cfg = config.programs.lite-xl;
 
-  languagesImport = import ./languages.nix { inherit inputs lib pkgs; };
+  supportedLanguages = import ./languages.nix { inherit inputs lib pkgs; };
+  languageStrings = attrNames supportedLanguages;
 
-  supportedLanguageStrings = languagesImport.supportedLanguageStrings;
-  supportedLanguages = languagesImport.supportedLanguages;
-
-  # User config specified languages
+  # Filter loaded languages
   configLanguages = cfg.languages;
   userLanguages = getAttrs configLanguages supportedLanguages;
 
-  # Concat userLanguage list for lua script
-  # -> ",lang1,,lang2,,lang3,"
-  concatLanguages = concatMapStrings (lang: ",${lang},") configLanguages;
-
   # Map supportedLanguages attrset to xdg.configFile entries
   # -> {
-  #   "lite-xl/plugins/languages/language_lang1.lua" = { source = "path-to-lang1"; }
-  #   "lite-xl/plugins/languages/language_lang2.lua" = { source = "path-to-lang2"; }
-  #   "lite-xl/plugins/languages/language_lang3.lua" = { source = "path-to-lang3"; }
+  #   "lite-xl/plugins/languages/language_lang1.lua" = { source = "<source1>"; }
+  #   "lite-xl/plugins/languages/language_lang2.lua" = { source = "<source2>"; }
+  #   "lite-xl/plugins/languages/language_lang3.lua" = { source = "<source3>"; }
   # }
   namedPaths = mapAttrs' (name: source:
     nameValuePair "lite-xl-test/plugins/languages/languages_${name}.lua" { source = source; })
     userLanguages;
+
+  # Concat userLanguage list for lua script
+  # -> ",lang1,,lang2,,lang3,"
+  concatLanguages = concatMapStrings (lang: ",${lang},") configLanguages;
 in
 {
   options = {
     programs.lite-xl = {
       languages = mkOption {
-        type = types.listOf (types.enum supportedLanguageStrings);
+        type = types.listOf (types.enum languageStrings);
         default = [ ];
       };
     };

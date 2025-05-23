@@ -1,6 +1,6 @@
 { inputs, lib, pkgs, ... }:
 let
-  inherit (lib) genAttrs attrNames mergeAttrsList;
+  inherit (lib) genAttrs mergeAttrsList;
 
   # Languages in lite-xl-plugins
   lxlLanguageStrings = [
@@ -21,25 +21,17 @@ let
 
   # Generate attrset of lang to paths
   # -> {
-  #   lang1 = "path-to-lang1";
-  #   lang2 = "path-to-lang2";
-  #   lang3 = "path-to-lang3";
+  #   lang1 = "<source1>";
+  #   lang2 = "<source2>";
+  #   lang3 = "<source3>";
   # }
   lxlLanguages = genAttrs lxlLanguageStrings (lang: "${lxlpl}${lang}.lua");
 
   # Languages in external repositories
-  externalLanguages = import ./externalLanguages.nix { inherit pkgs; };
-
-  # Take the name of each language in externalLanguages and add those with lxlLanguageStrings
-  languageStrings = lxlLanguageStrings ++ (attrNames externalLanguages);
-
-  languages = mergeAttrsList [
-    lxlLanguages
-    externalLanguages
-  ];
+  externalLanguages = import ./external.nix { inherit pkgs; };
 in
-{
-  supportedLanguageStrings = languageStrings;
-  supportedLanguages = languages;
-}
+mergeAttrsList [
+  lxlLanguages
+  externalLanguages
+]
 

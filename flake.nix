@@ -45,7 +45,7 @@
           programs.lite-xl = {
             enable = true;
             languages = [ "containerfile" "nix" "zig" ];
-            libraries = [ "encoding" "nonicons" "tree_sitter" "widget"];
+            libraries = [ "encoding" "font_nonicons" "tree_sitter" "widget"];
           };
         })
       ];
