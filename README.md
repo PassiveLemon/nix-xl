@@ -54,7 +54,8 @@ To enable syntax highlighting for languages, use the language option:
   };
 }
 ```
-- All available languages are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#languages).
+- All available languages are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#languages) with the following notes:
+  - The language name is simply just everything after `language_`
 
 ## Plugins
 To enable plugins, use the plugin option:
