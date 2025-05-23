@@ -46,6 +46,7 @@
             enable = true;
             languages = [ "containerfile" "nix" "zig" ];
             libraries = [ "encoding" "font_nonicons" "tree_sitter" "widget"];
+            plugins = [ "autoinsert" "autowrap" "bracketmatch" "editorconfig" "gitdiff_highlight" "treeview_extender" ];
           };
         })
       ];

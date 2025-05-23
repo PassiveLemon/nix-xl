@@ -58,12 +58,12 @@ Core:
 - [ ] Implement plugins
   - [ ] External repo plugins
   - [ ] Custom plugins
+  - [ ] Automatic library dependencies
 
 General:
 - [ ] nvfetcher to update plugin versions. Check every couple days or so since plugins aren't updated too frequently
 - [ ] Config/init declaration
-- [ ] Cleanup and refactoring
-- [ ] Fix up "lite-xl-test" path to "lite-xl". Currently present in languages.nix, libraries.nix
+- [ ] Fix up "lite-xl-test" path to "lite-xl". Currently present in languages/default.nix, libraries/default.nix, plugins/default.nix
 
 Plugins:
 - [ ] Evergreen
@@ -72,6 +72,12 @@ Plugins:
   - [ ] Custom languages
 
 Later:
+- Libraries (Part of a larger library set)
+  - `golang haxe jdk net nodejs`
+- Plugins
+  - (Part of a larger plugin set) `build` `debugger`
+  - (Complex) `devicons` `discord-presence` `evergreen` `fallbackfonts` `lite-formatters` `ide_*` `immersive_title` `litepresence` `lsp_*` `plugin_manager` `quetta` `snippets` `terminal` `todotreeview`
+- [ ] Switch everything from fetchgit to fetchFromGitHub (if applicable)
 - [ ] `Nonicons` (TODO: Build nonicons because it is not in Nixpkgs)
 - [ ] `www` (TODO: Finish the package. Currently can't be built)
 
