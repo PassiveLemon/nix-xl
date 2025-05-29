@@ -64,14 +64,14 @@ To enable plugins, use the plugin option:
 {
   programs.lite-xl = {
     enable = true;
-    plugins = [ "bracketmatch" "editorconfig" "gitdiff_highlight" "treeview_extender" ];
+    plugins = [ "bracketmatch" "editorconfig" "gitdiff_highlight" "treeview-extender" ];
   };
 }
 ```
 - Plugins with library or other plugin dependencies will have their dependencies automatically enabled.
 - All available plugins are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#plugins) with the following notes:
   - Plugin names are exactly as they appear in the repository.
-  - `ide_*` and `lsp_*` packages are not individually included. (These currently aren't even implemented yet. See TODO.)
+  - `ide_*` plugins are not included since they are all links to the same `ide` plugin.
 
 ## Libraries
 To enable plugins, use the plugin option:
@@ -87,7 +87,6 @@ To enable plugins, use the plugin option:
 - Libraries will automatically be enabled for plugins that depend on them.
 - All available libraries are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#libraries) with the following notes:
   - Library names are exactly as they appear in the repository.
-  - `golang haxe jdk nodejs` are not included as they are only for the lsp plugin and will be included when necessary. (These currently aren't even implemented yet. See TODO.)
 
 # Todo
 Core:
@@ -114,16 +113,15 @@ Plugins:
   - [ ] Custom languages
   - [ ] Inherit syntax languages
 
-- [ ] LSP
-  - Library deps `golang haxe jdk nodejs`
-  - [ ] Put lsp into their own `/plugins/lsp_languages` directory and create a lua file to require them (Similar to languages)
-  - [ ] Custom formats
-  - [ ] Inherit syntax languages
+- [x] LSP
+  - [x] Library deps `golang haxe jdk nodejs`
+  - [x] Put lsp into their own `/plugins/lsp_servers` directory and create a lua file to require them (Similar to languages)
+  - [x] Custom servers
+  - [ ] Inherit syntax languages where applicable
 
-- [ ] Formatter
-  - [ ] Put formats into their own `/plugins/formatter_languages` directory and create a lua file to require them (Similar to languages)
-  - [ ] Custom formats
-  - [ ] Inherit syntax languages
+- [x] Formatter
+  - [x] Put formats into their own `/plugins/formatter` directory and create a lua file to require them (Similar to languages)
+  - [x] Custom formats
 
 General:
 - [ ] nvfetcher to update plugin versions. Check every couple days or so since plugins aren't updated too frequently
@@ -132,7 +130,7 @@ General:
 - [ ] Themes
 
 Later:
-- DONT use lite-xl-plugins flake input since it causes weirdness. Change to a fetchFromGitHub source.
+- Overlay local packages to add lite-xl plugins repo
 - Contributing guidelines/template
 - Docs on customs
 - Package meta attrs

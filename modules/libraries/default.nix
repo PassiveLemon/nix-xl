@@ -1,9 +1,9 @@
-{ inputs, config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 let
   inherit (lib) mkIf mkOption types attrNames getAttrs mapAttrs' hasSuffix nameValuePair mergeAttrsList;
   cfg = config.programs.lite-xl;
 
-  supportedLibraries = import ./libraries.nix { inherit inputs config lib pkgs; };
+  supportedLibraries = import ./libraries.nix { inherit config lib pkgs; };
   libraryStrings = attrNames supportedLibraries;
 
   customLibraries = import ./custom.nix { inherit config lib pkgs; };
@@ -11,9 +11,7 @@ let
   # Filter loaded libraries
   configLibraries = cfg.libraries;
   userLibraries = getAttrs configLibraries supportedLibraries;
-  finalLibraries = mergeAttrsList [
-    userLibraries customLibraries
-  ];
+  finalLibraries = mergeAttrsList [ userLibraries customLibraries ];
 
   # Map supportedLibraries attrset to xdg.configFile entries
   # -> {

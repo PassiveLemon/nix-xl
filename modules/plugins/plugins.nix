@@ -1,6 +1,13 @@
-{ inputs, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 let
   inherit (lib) genAttrs mergeAttrsList;
+  inherit (pkgs) fetchgit;
+
+  lxl = fetchgit {
+    url = "https://github.com/lite-xl/lite-xl-plugins";
+    rev = "499961ac9d08c803c814244e36b2174e9494b532";
+    hash = "sha256-hhohhW2kC8oBTk3RYW/V9rFzgSJJqseUkDApHv+oBsY=";
+  };
 
   # Plugins in lite-xl-plugins
   lxlPluginStrings = [
@@ -80,7 +87,7 @@ let
   ];
 
   # Lite-XL plugin prefix
-  lxlp = "${inputs.lite-xl-plugins}/plugins";
+  lxlp = "${lxl}/plugins";
 
   # Generate attrset of plugin to source file
   # -> {

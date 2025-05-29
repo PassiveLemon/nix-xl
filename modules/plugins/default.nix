@@ -1,9 +1,9 @@
-{ inputs, config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 let
   inherit (lib) mkIf mkOption types attrNames getAttrs mapAttrs' hasSuffix nameValuePair mergeAttrsList;
   cfg = config.programs.lite-xl;
 
-  supportedPlugins = import ./plugins.nix { inherit inputs lib pkgs; };
+  supportedPlugins = import ./plugins.nix { inherit lib pkgs; };
   pluginStrings = attrNames supportedPlugins;
 
   customPlugins = import ./custom.nix { inherit config lib pkgs; };
@@ -11,9 +11,12 @@ let
   # Filter loaded plugins
   configPlugins = cfg.plugins;
   userPlugins = getAttrs configPlugins supportedPlugins;
-  finalPlugins = mergeAttrsList [
-    userPlugins customPlugins
-  ];
+
+  # There should be some steps to resolve dependencies before we finalize the plugins
+  # We can copy the userPlugins and then add to this the new dependencies so that we
+  # can work on it again for any further dependencies. Sounds like circular dependency hell
+  
+  finalPlugins = mergeAttrsList [ userPlugins customPlugins ];
 
   # Map supportedPlugins attrset to xdg.configFile entries
   # -> {

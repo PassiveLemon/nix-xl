@@ -1,8 +1,14 @@
 { config, lib, pkgs, ... }:
 let
   inherit (lib) any elem mergeAttrsList;
-  inherit (pkgs) fetchFromGitHub fetchgit;
+  inherit (pkgs) fetchgit fetchFromGitHub;
   cfg = config.programs.lite-xl;
+
+  lsp = fetchgit {
+    url = "https://github.com/lite-xl/lite-xl-lsp-servers";
+    rev = "6eea7cf124baad8e7abad6e388c7a16f6f6a98f2";
+    hash = "sha256-rKhltQ9uGnT5PJPmotxMxQm6xNO9y14klCdae8aNXcU=";
+  };
 
   # With the way this is currently designed, all packages with dependencies
   # have to be defined in here.
@@ -13,6 +19,7 @@ let
 
   # Custom plugins also won't be checked.
 
+  # Plugins
   json = (
     # Or user manually specifies json?
     if (any (str: elem str [ "snippets" "lsp_snippets" ]) cfg.plugins)
@@ -37,10 +44,48 @@ let
     }
     else { }
   );
+
+  # LSP Servers
+  golang = (
+    # Or user manually specifies json?
+    if (any (str: elem str [ "go" ]) cfg.lspServers)
+    then {
+      "golang" = lsp + "/libraries/golang.lua";
+    }
+    else { }
+  );
+  haxe = (
+    # Or user manually specifies json?
+    if (any (str: elem str [ "haxe" ]) cfg.lspServers)
+    then {
+      "haxe" = lsp + "/libraries/haxe.lua";
+    }
+    else { }
+  );
+  jdk = (
+    # Or user manually specifies json?
+    if (any (str: elem str [ "java" ]) cfg.lspServers)
+    then {
+      "jdk" = lsp + "/libraries/jdk.lua";
+    }
+    else { }
+  );
+  nodejs = (
+    # Or user manually specifies json?
+    if (any (str: elem str [ "emmet" " haxe" "json" "python" "typescript" "yaml" ]) cfg.lspServers)
+    then {
+      "nodejs" = lsp + "/libraries/nodejs.lua";
+    }
+    else { }
+  );
 in
 {
   libraries = mergeAttrsList [
     json
+    golang
+    haxe
+    jdk
+    nodejs
   ];
   plugins = mergeAttrsList [
     snippets

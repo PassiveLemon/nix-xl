@@ -1,6 +1,12 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 let
-  inherit (pkgs) stdenv;
+  inherit (pkgs) fetchgit stdenv;
+
+  lxl = fetchgit {
+    url = "https://github.com/lite-xl/lite-xl-plugins";
+    rev = "499961ac9d08c803c814244e36b2174e9494b532";
+    hash = "sha256-hhohhW2kC8oBTk3RYW/V9rFzgSJJqseUkDApHv+oBsY=";
+  };
 
   # TODO: Build nonicons because it is not in Nixpkgs
   # https://github.com/ya2s/nonicons/
@@ -8,7 +14,7 @@ in
 {
   "font_nonicons" = stdenv.mkDerivation {
     name = "nonicons";
-    src = inputs.lite-xl-plugins;
+    src = lxl;
     
     buildPhase = "";
     
@@ -23,7 +29,7 @@ in
   };
   "font_symbols_nerdfont_mono_regular" = stdenv.mkDerivation {
     name = "symbols_nerdfont_mono_regular";
-    src = inputs.lite-xl-plugins;
+    src = lxl;
     
     buildPhase = "";
     

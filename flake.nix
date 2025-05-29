@@ -8,11 +8,6 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
-
-    lite-xl-plugins = {
-      url = "github:lite-xl/lite-xl-plugins";
-      flake = false;
-    };
   };
 
   outputs = { self, ... } @ inputs: {
@@ -31,10 +26,11 @@
     #         languages = [ "containerfile" "nim" "nix" "zig" ];
     #         libraries = [ "encoding" "font_symbols_nerdfont_mono_regular" "tree_sitter" "widget" ];
     #         plugins = [ "snippets" "terminal" "autoinsert" "autowrap" "bracketmatch" "editorconfig" "gitdiff_highlight" "treeview_extender" ];
+    #         formatters = [ "black" "ruff" ];
+    #         lspServers = [ "lua" "yaml" ];
     #       };
     #     })
     #   ];
-    #   specialArgs = { inherit inputs; };
     # };
   };
 }

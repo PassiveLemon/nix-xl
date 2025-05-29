@@ -1,8 +1,8 @@
-{ inputs, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 let
   inherit (lib) mergeAttrsList;
   inherit (pkgs) callPackage;
-  fonts = import ./fonts.nix { inherit inputs pkgs; };
+  fonts = import ./fonts.nix { inherit pkgs; };
 in
 mergeAttrsList [
   fonts
