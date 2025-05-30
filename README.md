@@ -4,7 +4,7 @@ Declaratively configure Lite-XL languages, plugins, and libraries.
 
 This attempts to make Lite-XL configuration as easy and simple as possible and automatically includes dependencies.
 
-> ![NOTE]
+>![NOTE]
 > I have not tested every single language, plugin, and library combination so there may be incompatibilities, missing features, or other issues.
 
 The only included features are currently from [lite-xl-plugins](https://github.com/lite-xl/lite-xl-plugins). Any additions must have their own repository.
@@ -54,7 +54,7 @@ To enable syntax highlighting for languages, use the language option:
   };
 }
 ```
-- All available languages are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#languages) with the following notes:
+- All available languages are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#languages) with the following notes
   - The language name is simply just everything after `language_`
 
 ## Plugins
@@ -69,7 +69,7 @@ To enable plugins, use the plugin option:
 }
 ```
 - Plugins with library or other plugin dependencies will have their dependencies automatically enabled.
-- All available plugins are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#plugins) with the following notes:
+- All available plugins are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#plugins) with the following note:
   - Plugin names are exactly as they appear in the repository.
   - `ide_*` plugins are not included since they are all links to the same `ide` plugin.
 
@@ -85,8 +85,7 @@ To enable plugins, use the plugin option:
 }
 ```
 - Libraries will automatically be enabled for plugins that depend on them.
-- All available libraries are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#libraries) with the following notes:
-  - Library names are exactly as they appear in the repository.
+- All available libraries are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#libraries) exactly as they appear.
 
 # Todo
 Core:
@@ -107,11 +106,11 @@ Core:
 
 Plugins:
 - The core part of these are included in plugins but currently you have to manually add the languages
-- [ ] Evergreen
-  - [ ] Need to build the shared objects so we need some derivations
-  - [ ] Put Evergreen highlights into their own `/plugins/evergreen_languages` directory and create a lua file to require them (Similar to languages)
-  - [ ] Custom languages
-  - [ ] Inherit syntax languages
+- [x] Evergreen
+  - [x] Need to build the shared objects so we need some derivations
+  - [x] Put Evergreen highlights into their own `/plugins/evergreen_languages` directory and create a lua file to require them (Similar to languages)
+  - [x] Custom languages
+  - [ ] Inherit syntax languages where applicable
 
 - [x] LSP
   - [x] Library deps `golang haxe jdk nodejs`
@@ -130,6 +129,11 @@ General:
 - [ ] Themes
 
 Later:
+- Complete refactoring
+  - Move all packages to their own place (keep them out of modules)
+  - General xdg.configFile entry generator (args: place, source)
+  - Languages are technically plugins so move those
+- Docs for evergreen, formatters, and lsp servers
 - Overlay local packages to add lite-xl plugins repo
 - Contributing guidelines/template
 - Docs on customs

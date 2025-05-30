@@ -20,22 +20,6 @@
         "type": "github"
       }
     },
-    "lite-xl-plugins": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1746114745,
-        "narHash": "sha256-hhohhW2kC8oBTk3RYW/V9rFzgSJJqseUkDApHv+oBsY=",
-        "owner": "lite-xl",
-        "repo": "lite-xl-plugins",
-        "rev": "499961ac9d08c803c814244e36b2174e9494b532",
-        "type": "github"
-      },
-      "original": {
-        "owner": "lite-xl",
-        "repo": "lite-xl-plugins",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1747790854,
@@ -55,7 +39,6 @@
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
-        "lite-xl-plugins": "lite-xl-plugins",
         "nixpkgs": "nixpkgs"
       }
     }

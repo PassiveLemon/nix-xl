@@ -6,14 +6,17 @@ let
   supportedLanguages = import ./languages.nix { inherit lib pkgs; };
   supportedFormatters = import ./formatters.nix { inherit lib pkgs; };
   supportedLsps = import ./lsps.nix { inherit lib pkgs; };
+  supportedEvergreens = import ./evergreen.nix { inherit config lib pkgs; };
 
   languageStrings = attrNames supportedLanguages;
   formatterStrings = attrNames supportedFormatters;
   lspStrings = attrNames supportedLsps;
+  evergreenStrings = attrNames supportedEvergreens;
 
   customLanguages = cfg.customLanguages;
   customFormatters = cfg.customFormatters;
   customLspServers = cfg.customLspServers;
+  customEvergreenLanguages = cfg.customEvergreenLanguages;
 
   # Filter loaded languages
   configLanguages = cfg.languages;
@@ -27,6 +30,10 @@ let
   configLsps = cfg.lspServers;
   userLsps = getAttrs configLsps supportedLsps;
   finalLsps = mergeAttrsList [ userLsps customLspServers ];
+
+  configEvergreens = cfg.evergreenLanguages;
+  userEvergreens = getAttrs configEvergreens supportedEvergreens;
+  finalEvergreens = mergeAttrsList [ userEvergreens customEvergreenLanguages ];
 
   # Map supportedLanguages attrset to xdg.configFile entries
   # -> {
@@ -46,6 +53,10 @@ let
     nameValuePair "lite-xl/plugins/lsp_servers/lsp_${name}.lua" { source = source; })
     finalLsps;
 
+  namedEvergreenPaths = mapAttrs' (name: source:
+    nameValuePair "lite-xl/plugins/evergreen_languages/evergreen_${name}" { source = source; })
+    finalEvergreens;
+
   # Concat userLanguage list for lua script
   # -> ",lang1,,lang2,,lang3,"
   finalLanguageStrings = attrNames finalLanguages;
@@ -55,7 +66,10 @@ let
   concatFormatters = concatMapStrings (form: ",${form},") finalFormatterStrings;
 
   finalLspStrings = attrNames finalLsps;
-  concatLsps = concatMapStrings (form: ",${form},") finalLspStrings;
+  concatLsps = concatMapStrings (serv: ",${serv},") finalLspStrings;
+
+  finalEvergreenStrings = attrNames finalEvergreens;
+  concatEvergreens = concatMapStrings (lang: ",${lang},") finalEvergreenStrings;
 in
 {
   options = {
@@ -84,6 +98,14 @@ in
         type = types.attrsOf types.path;
         default = { };
       };
+      evergreenLanguages = mkOption {
+        type = types.listOf (types.enum evergreenStrings);
+        default = [ ];
+      };
+      customEvergreenLanguages = mkOption {
+        type = types.attrsOf types.path;
+        default = { };
+      };
     };
   };
 
@@ -92,6 +114,7 @@ in
       namedLanguagePaths
       namedFormatterPaths
       namedLspPaths
+      namedEvergreenPaths
       ({
         # Script to load languages since they are not placed top-level
         "lite-xl/plugins/languages/init.lua" = {
@@ -122,7 +145,6 @@ in
         };
       })
       ({
-        # Script to load lsp servers since they are not placed top-level
         "lite-xl/plugins/lsp_servers/init.lua" = {
           text = ''
             -- mod-version: 3
@@ -132,6 +154,20 @@ in
             -- Match server strings in ",serv1,,serv2,,serv3,"
             for serv in servers:gmatch(",([%w_]+),") do
               require("plugins.lsp_servers.lsp_" .. serv)
+            end
+          '';
+        };
+      })
+      ({
+        "lite-xl/plugins/evergreen_languages/init.lua" = {
+          text = ''
+            -- mod-version: 3
+
+            local languages = '${concatEvergreens}'
+
+            -- Match language strings in ",lang1,,lang2,,lang3,"
+            for lang in languages:gmatch(",([%w_]+),") do
+              require("plugins.evergreen_languages.evergreen_" .. lang)
             end
           '';
         };

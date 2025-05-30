@@ -28,6 +28,7 @@
     #         plugins = [ "snippets" "terminal" "autoinsert" "autowrap" "bracketmatch" "editorconfig" "gitdiff_highlight" "treeview_extender" ];
     #         formatters = [ "black" "ruff" ];
     #         lspServers = [ "lua" "yaml" ];
+    #         evergreenLanguages = [ "cpp" "javascript" "lua" ];
     #       };
     #     })
     #   ];
