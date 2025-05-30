@@ -17,7 +17,6 @@ in
   };
 
   imports = [
-    ./languages
     ./libraries
     ./plugins
   ];

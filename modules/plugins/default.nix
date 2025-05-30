@@ -9,7 +9,7 @@ let
   customPlugins = import ./custom.nix { inherit config lib pkgs; };
 
   # Filter loaded plugins
-  configPlugins = cfg.plugins;
+  configPlugins = cfg.plugins.enableList;
   userPlugins = getAttrs configPlugins supportedPlugins;
 
   # There should be some steps to resolve dependencies before we finalize the plugins
@@ -33,17 +33,24 @@ let
 in
 {
   options = {
-    programs.lite-xl = {
-      plugins = mkOption {
+    programs.lite-xl.plugins = {
+      enableList = mkOption {
         type = types.listOf (types.enum pluginStrings);
         default = [ ];
       };
-      customPlugins = mkOption {
+      customEnableList = mkOption {
         type = types.attrsOf types.path;
         default = { };
       };
     };
   };
+
+  imports = [
+    ./evergreen
+    ./formatter
+    ./languages
+    ./lsp
+  ];
 
   config = mkIf cfg.enable {
     xdg.configFile = namedPaths;

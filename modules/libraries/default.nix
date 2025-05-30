@@ -9,7 +9,7 @@ let
   customLibraries = import ./custom.nix { inherit config lib pkgs; };
 
   # Filter loaded libraries
-  configLibraries = cfg.libraries;
+  configLibraries = cfg.libraries.enableList;
   userLibraries = getAttrs configLibraries supportedLibraries;
   finalLibraries = mergeAttrsList [ userLibraries customLibraries ];
 
@@ -28,12 +28,12 @@ let
 in
 {
   options = {
-    programs.lite-xl = {
-      libraries = mkOption {
+    programs.lite-xl.libraries = {
+      enableList = mkOption {
         type = types.listOf (types.enum libraryStrings);
         default = [ ];
       };
-      customLibraries = mkOption {
+      customEnableList = mkOption {
         type = types.attrsOf types.path;
         default = { };
       };

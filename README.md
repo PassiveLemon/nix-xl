@@ -102,7 +102,7 @@ Core:
 - [x] Implement plugins
   - [x] External repo plugins
   - [x] Custom plugins
-  - [x] Automatic library dependencies (Implemented, but not set up for everything)
+  - [ ] Automatic library dependencies (Currently poorly implemented and not set up for everything, but does sort of work)
 
 Plugins:
 - The core part of these are included in plugins but currently you have to manually add the languages
@@ -111,16 +111,19 @@ Plugins:
   - [x] Put Evergreen highlights into their own `/plugins/evergreen_languages` directory and create a lua file to require them (Similar to languages)
   - [x] Custom languages
   - [ ] Inherit syntax languages where applicable
+  - [ ] Enable plugin if languages are specified
 
 - [x] LSP
   - [x] Library deps `golang haxe jdk nodejs`
   - [x] Put lsp into their own `/plugins/lsp_servers` directory and create a lua file to require them (Similar to languages)
   - [x] Custom servers
   - [ ] Inherit syntax languages where applicable
+  - [ ] Enable plugin if servers are specified
 
 - [x] Formatter
   - [x] Put formats into their own `/plugins/formatter` directory and create a lua file to require them (Similar to languages)
   - [x] Custom formats
+  - [ ] Enable plugin if formatters are specified
 
 General:
 - [ ] nvfetcher to update plugin versions. Check every couple days or so since plugins aren't updated too frequently

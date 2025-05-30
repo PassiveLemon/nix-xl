@@ -8,8 +8,8 @@ let
     "javascript" "jsx" "julia" "lua" "rust" "zig"
   ];
 
-  languages = callPackage ./evergreen { };
-  deps = import ./evergreen/deps.nix { };
+  languages = callPackage ./external.nix { };
+  deps = import ./deps.nix { };
 
   # Generate attrset of evergreen language to source derivation
   # -> {
@@ -17,7 +17,7 @@ let
   #   lang2 = "<deriv2>";
   #   lang3 = "<deriv3>";
   # }
-  evrgLanguages = genAttrs evergreenLanguageStrings (name: (callPackage ./evergreen/sources.nix { inherit name languages deps; }));
+  evrgLanguages = genAttrs evergreenLanguageStrings (name: (callPackage ./sources.nix { inherit name languages deps; }));
 in
 mergeAttrsList [
   evrgLanguages

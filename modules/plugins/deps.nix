@@ -22,7 +22,7 @@ let
   # Plugins
   json = (
     # Or user manually specifies json?
-    if (any (str: elem str [ "snippets" "lsp_snippets" ]) cfg.plugins)
+    if (any (str: elem str [ "snippets" "lsp_snippets" ]) cfg.plugins.enableList)
     then {
       "json" = (fetchFromGitHub {
         owner = "rxi";
@@ -34,7 +34,7 @@ let
     else { }
   );
   snippets = (
-    if (any (str: elem str [ "snippets" "lsp_snippets" ]) cfg.plugins)
+    if (any (str: elem str [ "snippets" "lsp_snippets" ]) cfg.plugins.enableList)
     then {
       "snippets" = (fetchgit {
         url = "https://github.com/vqns/lite-xl-snippets";
@@ -48,7 +48,7 @@ let
   # LSP Servers
   golang = (
     # Or user manually specifies json?
-    if (any (str: elem str [ "go" ]) cfg.lspServers)
+    if (any (str: elem str [ "go" ]) cfg.plugins.lsp.enableList)
     then {
       "golang" = lsp + "/libraries/golang.lua";
     }
@@ -56,7 +56,7 @@ let
   );
   haxe = (
     # Or user manually specifies json?
-    if (any (str: elem str [ "haxe" ]) cfg.lspServers)
+    if (any (str: elem str [ "haxe" ]) cfg.plugins.lsp.enableList)
     then {
       "haxe" = lsp + "/libraries/haxe.lua";
     }
@@ -64,7 +64,7 @@ let
   );
   jdk = (
     # Or user manually specifies json?
-    if (any (str: elem str [ "java" ]) cfg.lspServers)
+    if (any (str: elem str [ "java" ]) cfg.plugins.lsp.enableList)
     then {
       "jdk" = lsp + "/libraries/jdk.lua";
     }
@@ -72,7 +72,7 @@ let
   );
   nodejs = (
     # Or user manually specifies json?
-    if (any (str: elem str [ "emmet" " haxe" "json" "python" "typescript" "yaml" ]) cfg.lspServers)
+    if (any (str: elem str [ "emmet" " haxe" "json" "python" "typescript" "yaml" ]) cfg.plugins.lsp.enableList)
     then {
       "nodejs" = lsp + "/libraries/nodejs.lua";
     }
