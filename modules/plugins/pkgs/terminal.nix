@@ -25,7 +25,7 @@ stdenv.mkDerivation (finalAttrs: {
     runHook preInstall
 
     mkdir $out
-    cp $src/plugins/terminal/init.lua $out/init.so
+    cp $src/plugins/terminal/init.lua $out/init.lua
     mv libterminal.so $out/libterminal.so
 
     runHook postInstall
