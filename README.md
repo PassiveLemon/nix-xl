@@ -50,7 +50,7 @@ To enable syntax highlighting for languages, use the language option:
 {
   programs.lite-xl = {
     enable = true;
-    languages = [ "nix" "yaml" "zig" ];
+    plugins.languages.enableList = [ "nix" "yaml" "zig" ];
   };
 }
 ```
@@ -64,7 +64,7 @@ To enable plugins, use the plugin option:
 {
   programs.lite-xl = {
     enable = true;
-    plugins = [ "bracketmatch" "editorconfig" "gitdiff_highlight" "treeview-extender" ];
+    plugins.enableList = [ "bracketmatch" "editorconfig" "gitdiff_highlight" "treeview-extender" ];
   };
 }
 ```
@@ -80,7 +80,7 @@ To enable plugins, use the plugin option:
 {
   programs.lite-xl = {
     enable = true;
-    libraries = [ "font_symbols_nerdfont_mono_regular" "tree_sitter" "widget" ];
+    libraries.enableList = [ "font_symbols_nerdfont_mono_regular" "tree_sitter" "widget" ];
   };
 }
 ```
