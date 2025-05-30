@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkOption mkEnableOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair mergeAttrsList;
+  inherit (lib) mkIf mkOption mkEnableOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair mergeAttrsList length;
   cfg = config.programs.lite-xl;
 
   supportedServers = import ./servers.nix { inherit lib pkgs; };
@@ -46,7 +46,7 @@ in
   config = mkIf cfg.enable {
     xdg.configFile = mergeAttrsList [
       namedLspPaths
-      ({
+      (mkIf (length finalServerStrings > 0) {
         # Script to load servers since they are not placed top-level
         "lite-xl/plugins/lsp_servers/init.lua" = {
           text = ''

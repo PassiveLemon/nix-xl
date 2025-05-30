@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkOption mkEnableOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair mergeAttrsList;
+  inherit (lib) mkIf mkOption mkEnableOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair mergeAttrsList length;
   cfg = config.programs.lite-xl;
 
   supportedEvergreens = import ./languages.nix { inherit config lib pkgs; };
@@ -46,7 +46,7 @@ in
   config = mkIf cfg.enable {
     xdg.configFile = mergeAttrsList [
       namedEvergreenPaths
-      ({
+      (mkIf (length finalEvergreenStrings > 0) {
         # Script to load languages since they are not placed top-level
         "lite-xl/plugins/evergreen_languages/init.lua" = {
           text = ''
