@@ -2,6 +2,9 @@
 let
   inherit (lib) mapAttrs recursiveUpdate;
 
+  # Plugins/libraries and their dependencies should be put here.
+  # Specific dependency resolution needs should be implemented in its own plugin/library directory.
+
   # We need to fill in the attrset with dummy values for libraries and plugins that don't have deps
   supportedLibraries = import ./libraries/libraries.nix { inherit lib pkgs; };
   supportedPlugins = import ./plugins/plugins.nix { inherit lib pkgs; };

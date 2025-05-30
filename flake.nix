@@ -16,6 +16,7 @@
       lite-xl = import ./modules;
     };
 
+    # Dummy system for testing the module system. Please do not use.
     nixosConfigurations.test = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [

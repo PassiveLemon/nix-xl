@@ -2,9 +2,9 @@
 
 Declaratively configure Lite-XL languages, plugins, and libraries.
 
-This attempts to make Lite-XL configuration as easy and simple as possible and automatically includes dependencies.
+With automatic dependency resolution, nix-xl attempts to make Lite-XL configuration as simple as possible for Nix users.
 
->![NOTE]
+> [!NOTE]
 > I have not tested every single language, plugin, and library combination so there may be incompatibilities, missing features, or other issues.
 
 The only included features are currently from [lite-xl-plugins](https://github.com/lite-xl/lite-xl-plugins). Any additions must have their own repository.
@@ -54,7 +54,7 @@ To enable syntax highlighting for languages, use the language option:
   };
 }
 ```
-- All available languages are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#languages) with the following notes
+- All available languages are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#languages) with the following note
   - The language name is simply just everything after `language_`
 
 ## Plugins
@@ -68,8 +68,7 @@ To enable plugins, use the plugin option:
   };
 }
 ```
-- Plugins with library or other plugin dependencies will have their dependencies automatically enabled.
-- All available plugins are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#plugins) with the following note:
+- All available plugins are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#plugins) with the following notes:
   - Plugin names are exactly as they appear in the repository.
   - `ide_*` plugins are not included since they are all links to the same `ide` plugin.
 
@@ -84,7 +83,6 @@ To enable plugins, use the plugin option:
   };
 }
 ```
-- Libraries will automatically be enabled for plugins that depend on them.
 - All available libraries are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#libraries) exactly as they appear.
 
 # Todo
@@ -110,14 +108,12 @@ Plugins:
   - [x] Need to build the shared objects so we need some derivations
   - [x] Put Evergreen highlights into their own `/plugins/evergreen_languages` directory and create a lua file to require them (Similar to languages)
   - [x] Custom languages
-  - [ ] Inherit syntax languages when applicable
   - [ ] Enable plugin if languages are specified
 
 - [x] LSP
   - [x] Library deps `golang haxe jdk nodejs`
   - [x] Put lsp into their own `/plugins/lsp_servers` directory and create a lua file to require them (Similar to languages)
   - [x] Custom servers
-  - [ ] Inherit syntax languages when applicable
   - [ ] Enable plugin if servers are specified
 
 - [x] Formatter
