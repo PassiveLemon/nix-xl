@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair mergeAttrsList length;
+  inherit (lib) mkIf mkOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair mergeAttrsList optionalAttrs length;
   cfg = config.programs.lite-xl;
 
   supportedFormatters = import ./formatters.nix { inherit lib pkgs; };
@@ -45,7 +45,7 @@ in
   config = mkIf cfg.enable {
     xdg.configFile = mergeAttrsList [
       namedFormatterPaths
-      (mkIf (length finalFormatterStrings > 0) {
+      (optionalAttrs (length finalFormatterStrings > 0) {
         # Script to load formatters since they are not placed top-level
         "lite-xl/plugins/formatters/init.lua" = {
           text = ''

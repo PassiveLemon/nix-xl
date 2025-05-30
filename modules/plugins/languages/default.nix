@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair mergeAttrsList length;
+  inherit (lib) mkIf mkOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair mergeAttrsList optionalAttrs length;
   cfg = config.programs.lite-xl;
 
   supportedLanguages = import ./languages.nix { inherit lib pkgs; };
@@ -45,7 +45,7 @@ in
   config = mkIf cfg.enable {
     xdg.configFile = mergeAttrsList [
       namedLanguagePaths
-      (mkIf (length finalLanguageStrings > 0) {
+      (optionalAttrs (length finalLanguageStrings > 0) {
         # Script to load languages since they are not placed top-level
         "lite-xl/plugins/languages/init.lua" = {
           text = ''
