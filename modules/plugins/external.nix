@@ -5,6 +5,10 @@ let
 
   pluginPackages = import ./pkgs { inherit pkgs; };
 in
+
+# Plugins that are a single file should have the source set to the exact init.lua file
+# Plugins that are multiple files should have the source set to the root where init.lua is
+
 # Plugin structure
 # {
 #   "<name>" = "<source>";
@@ -162,7 +166,11 @@ mergeAttrsList [
       rev = "1bb4cfce305ea17769c95672e0a441e7b6e66c6f";
       hash = "";
     });
-    # snippets is in deps.nix
+    "snippets" = (fetchgit {
+      url = "https://github.com/vqns/lite-xl-snippets";
+      rev = "87248a23c8ceb2507f46b3ca3689b32d35c9c709";
+      hash = "sha256-FSZTm5bpQKUfPsjwmat9NVrQg9HWil9kFWiBFFnEWJA=";
+    }) + "/snippets.lua";
     "lsp_snippets" = (fetchgit {
       url = "https://github.com/vqns/lite-xl-snippets";
       rev = "87248a23c8ceb2507f46b3ca3689b32d35c9c709";

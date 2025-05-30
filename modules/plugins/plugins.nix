@@ -86,16 +86,13 @@ let
     "wordcount"
   ];
 
-  # Lite-XL plugin prefix
-  lxlp = "${lxl}/plugins";
-
   # Generate attrset of plugin to source file
   # -> {
   #   plugin1 = "<source1>.lua";
   #   plugin2 = "<source2>.lua";
   #   plugin3 = "<source3>.lua";
   # }
-  lxlPlugins = genAttrs lxlPluginStrings (plugin: "${lxlp}/${plugin}.lua");
+  lxlPlugins = genAttrs lxlPluginStrings (plugin: "${lxl}/plugins/${plugin}.lua");
 
   # Plugins in external repositories
   externalPlugins = import ./external.nix { inherit lib pkgs; };
@@ -107,9 +104,10 @@ in
 mergeAttrsList [
   lxlPlugins
   externalPlugins
+  # Plugins that are not just one file
   {
-    "editorconfig" = "${lxlp}/editorconfig";
-    "profile" = "${lxlp}/profile";
+    "editorconfig" = "${lxl}/plugins/editorconfig";
+    "profile" = "${lxl}/plugins/profile";
   }
 ]
 

@@ -1,20 +1,19 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair mergeAttrsList;
+  inherit (lib) mkIf mkOption mkEnableOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair mergeAttrsList;
   cfg = config.programs.lite-xl;
 
   supportedEvergreens = import ./languages.nix { inherit config lib pkgs; };
-
   evergreenStrings = attrNames supportedEvergreens;
 
-  customEvergreenLanguages = cfg.plugins.evergreen.customEnableList;
+  customEnableList = cfg.plugins.evergreen.customEnableList;
 
   # Filter loaded languages
-  configEvergreens = cfg.plugins.evergreen.enableList;
-  userEvergreens = getAttrs configEvergreens supportedEvergreens;
-  finalEvergreens = mergeAttrsList [ userEvergreens customEvergreenLanguages ];
+  enableList = cfg.plugins.evergreen.enableList;
+  userEvergreens = getAttrs enableList supportedEvergreens;
+  finalEvergreens = mergeAttrsList [ userEvergreens customEnableList ];
 
-  # Map supportedEvergreens attrset to xdg.configFile entries
+  # Map finalEvergreens attrset to xdg.configFile entries
   # -> {
   #   "lite-xl/plugins/evergreen_languages/evergreen_lang1.lua" = { source = "<source1>"; }
   #   "lite-xl/plugins/evergreen_languages/evergreen_lang2.lua" = { source = "<source2>"; }
@@ -40,6 +39,7 @@ in
         type = types.attrsOf types.path;
         default = { };
       };
+      inheritLanguages = mkEnableOption "inheriting languages for Evergreen";
     };
   };
 

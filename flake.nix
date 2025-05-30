@@ -24,7 +24,7 @@
           programs.lite-xl = {
             enable = true;
             plugins = {
-              enableList = [ "snippets" "terminal" "autoinsert" "autowrap" "bracketmatch" "editorconfig" "gitdiff_highlight" "treeview_extender" ];
+              enableList = [ "lsp_snippets" "terminal" "autoinsert" "autowrap" "bracketmatch" "editorconfig" "gitdiff_highlight" "treeview-extender" ];
               languages.enableList = [ "containerfile" "nim" "nix" "zig" ];
               formatter.enableList = [ "black" "ruff" ];
               lsp.enableList = [ "lua" "yaml" ];

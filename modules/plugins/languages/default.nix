@@ -4,15 +4,14 @@ let
   cfg = config.programs.lite-xl;
 
   supportedLanguages = import ./languages.nix { inherit lib pkgs; };
-
   languageStrings = attrNames supportedLanguages;
 
-  customLanguages = cfg.plugins.languages.customEnableList;
+  customEnableList = cfg.plugins.languages.customEnableList;
 
   # Filter loaded languages
-  configLanguages = cfg.plugins.languages.enableList;
-  userLanguages = getAttrs configLanguages supportedLanguages;
-  finalLanguages = mergeAttrsList [ userLanguages customLanguages ];
+  enableList = cfg.plugins.languages.enableList;
+  userLanguages = getAttrs enableList supportedLanguages;
+  finalLanguages = mergeAttrsList [ userLanguages customEnableList ];
 
   # Map supportedLanguages attrset to xdg.configFile entries
   # -> {

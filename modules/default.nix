@@ -1,12 +1,13 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkEnableOption mkOption types maintainers;
+  inherit (lib) mkIf mkEnableOption mkPackageOption mkOption types maintainers;
   cfg = config.programs.lite-xl;
 in
 {
   options = {
     programs.lite-xl = {
       enable = mkEnableOption "lite-xl";
+      package = mkPackageOption pkgs "lite-xl" { };
     };
 
     # Don't use this, this is for dev purposes
@@ -17,13 +18,15 @@ in
   };
 
   imports = [
+    ./colors
+    ./fonts
     ./libraries
     ./plugins
   ];
 
   config = mkIf cfg.enable {
-    home.packages = mkIf cfg.enable [
-      pkgs.lite-xl
+    home.packages = [
+      cfg.package
     ];
   };
   meta.maintainers = with maintainers; [ passivelemon ];

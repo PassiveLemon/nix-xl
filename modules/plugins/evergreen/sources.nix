@@ -15,16 +15,15 @@ let
   buildLang = languages.${name};
 
   getDeps = (lang: visited:
-    if elem lang visited
-    then visited
-    else
+    # If lang is in visited then return the list to avoid infinite recursion.
+    # This indicates that the deps for said lang were already resolved
+    if elem lang visited then visited else
       let
+        # Pass the next lang and visited list to gitDeps recursively
         direct = getAttr lang deps;
         nextVisited = visited ++ [ lang ];
       in
-        foldl' (acc: dep: getDeps dep acc)
-          nextVisited
-          direct);
+        foldl' (acc: dep: getDeps dep acc) nextVisited direct);
 
   allDeps = getDeps name [ ];
 

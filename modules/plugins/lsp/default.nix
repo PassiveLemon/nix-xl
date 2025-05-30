@@ -1,20 +1,19 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair mergeAttrsList;
+  inherit (lib) mkIf mkOption mkEnableOption types attrNames getAttrs concatMapStrings mapAttrs' nameValuePair mergeAttrsList;
   cfg = config.programs.lite-xl;
 
-  supportedLsps = import ./servers.nix { inherit lib pkgs; };
+  supportedServers = import ./servers.nix { inherit lib pkgs; };
+  serverStrings = attrNames supportedServers;
 
-  lspStrings = attrNames supportedLsps;
-
-  customLspServers = cfg.plugins.lsp.customEnableList;
+  customEnableList = cfg.plugins.lsp.customEnableList;
 
   # Filter loaded servers
-  configLsps = cfg.plugins.lsp.enableList;
-  userLsps = getAttrs configLsps supportedLsps;
-  finalLsps = mergeAttrsList [ userLsps customLspServers ];
+  enableList = cfg.plugins.lsp.enableList;
+  userServers = getAttrs enableList supportedServers;
+  finalServers = mergeAttrsList [ userServers customEnableList ];
 
-  # Map supportedLsps attrset to xdg.configFile entries
+  # Map finalServers attrset to xdg.configFile entries
   # -> {
   #   "lite-xl/plugins/lsp_servers/lsp_lang1.lua" = { source = "<source1>"; }
   #   "lite-xl/plugins/lsp_servers/lsp_lang2.lua" = { source = "<source2>"; }
@@ -22,24 +21,25 @@ let
   # }
   namedLspPaths = mapAttrs' (name: source:
     nameValuePair "lite-xl/plugins/lsp_servers/lsp_${name}.lua" { source = source; })
-    finalLsps;
+    finalServers;
 
   # Concat userLsps list for lua script
   # -> ",serv1,,serv2,,serv3,"
-  finalLspStrings = attrNames finalLsps;
-  concatLsps = concatMapStrings (serv: ",${serv},") finalLspStrings;
+  finalServerStrings = attrNames finalServers;
+  concatServers = concatMapStrings (serv: ",${serv},") finalServerStrings;
 in
 {
   options = {
     programs.lite-xl.plugins.lsp = {
       enableList = mkOption {
-        type = types.listOf (types.enum lspStrings);
+        type = types.listOf (types.enum serverStrings);
         default = [ ];
       };
       customEnableList = mkOption {
         type = types.attrsOf types.path;
         default = { };
       };
+      inheritLanguages = mkEnableOption "inheriting languages for LSP";
     };
   };
 
@@ -52,7 +52,7 @@ in
           text = ''
             -- mod-version: 3
 
-            local servers = '${concatLsps}'
+            local servers = '${concatServers}'
 
             -- Match server strings in ",serv1,,serv2,,serv3,"
             for serv in servers:gmatch(",([%w_]+),") do

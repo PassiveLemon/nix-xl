@@ -1,17 +1,11 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkOption types attrNames getAttrs mapAttrs' hasSuffix nameValuePair mergeAttrsList;
+  inherit (lib) mkIf mkOption types attrNames mapAttrs' hasSuffix nameValuePair;
   cfg = config.programs.lite-xl;
 
-  supportedLibraries = import ./libraries.nix { inherit config lib pkgs; };
+  enableLibraries = import ./pack.nix { inherit config lib pkgs; };
+  supportedLibraries = import ./libraries.nix { inherit lib pkgs; };
   libraryStrings = attrNames supportedLibraries;
-
-  customLibraries = import ./custom.nix { inherit config lib pkgs; };
-
-  # Filter loaded libraries
-  configLibraries = cfg.libraries.enableList;
-  userLibraries = getAttrs configLibraries supportedLibraries;
-  finalLibraries = mergeAttrsList [ userLibraries customLibraries ];
 
   # Map supportedLibraries attrset to xdg.configFile entries
   # -> {
@@ -24,7 +18,7 @@ let
     if (hasSuffix ".lua" source)
     then (nameValuePair "lite-xl/libraries/${name}.lua" { source = source; })
     else (nameValuePair "lite-xl/libraries/${name}" { source = source; recursive = true; })
-  )) finalLibraries;
+  )) enableLibraries;
 in
 {
   options = {

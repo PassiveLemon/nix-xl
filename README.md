@@ -102,7 +102,7 @@ Core:
 - [x] Implement plugins
   - [x] External repo plugins
   - [x] Custom plugins
-  - [ ] Automatic library dependencies (Currently poorly implemented and not set up for everything, but does sort of work)
+  - [x] Automatic library dependencies (Implemented, but not set up for everything)
 
 Plugins:
 - The core part of these are included in plugins but currently you have to manually add the languages
@@ -110,14 +110,14 @@ Plugins:
   - [x] Need to build the shared objects so we need some derivations
   - [x] Put Evergreen highlights into their own `/plugins/evergreen_languages` directory and create a lua file to require them (Similar to languages)
   - [x] Custom languages
-  - [ ] Inherit syntax languages where applicable
+  - [ ] Inherit syntax languages when applicable
   - [ ] Enable plugin if languages are specified
 
 - [x] LSP
   - [x] Library deps `golang haxe jdk nodejs`
   - [x] Put lsp into their own `/plugins/lsp_servers` directory and create a lua file to require them (Similar to languages)
   - [x] Custom servers
-  - [ ] Inherit syntax languages where applicable
+  - [ ] Inherit syntax languages when applicable
   - [ ] Enable plugin if servers are specified
 
 - [x] Formatter
@@ -132,17 +132,14 @@ General:
 - [ ] Themes
 
 Later:
+- Turn Evergreen patches into patchfiles
 - Complete refactoring
   - Move all packages to their own place (keep them out of modules)
-  - General xdg.configFile entry generator (args: place, source)
-  - Languages are technically plugins so move those
-- Docs for evergreen, formatters, and lsp servers
+- Docs for customs, evergreen, formatters, lsp servers, inheritLanguages
 - Overlay local packages to add lite-xl plugins repo
 - Contributing guidelines/template
-- Docs on customs
-- Package meta attrs
 - Descriptions on module options
-- Switch everything from fetchgit to fetchFromGitHub (if applicable)
+- Switch everything from fetchgit to fetchFromGitHub where applicable
 - `nonicons` (TODO: Build nonicons because it is not in Nixpkgs)
 - `www` (TODO: Finish the package. Currently can't be built)
 

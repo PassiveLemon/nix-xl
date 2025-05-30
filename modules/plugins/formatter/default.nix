@@ -4,17 +4,16 @@ let
   cfg = config.programs.lite-xl;
 
   supportedFormatters = import ./formatters.nix { inherit lib pkgs; };
-
   formatterStrings = attrNames supportedFormatters;
 
-  customFormatters = cfg.plugins.formatter.customEnableList;
+  customEnableList = cfg.plugins.formatter.customEnableList;
 
   # Filter loaded formatters
-  configFormatters = cfg.plugins.formatter.enableList;
-  userFormatters = getAttrs configFormatters supportedFormatters;
-  finalFormatters = mergeAttrsList [ userFormatters customFormatters ];
+  enableList = cfg.plugins.formatter.enableList;
+  userFormatters = getAttrs enableList supportedFormatters;
+  finalFormatters = mergeAttrsList [ userFormatters customEnableList ];
 
-  # Map supportedFormatters attrset to xdg.configFile entries
+  # Map finalFormatters attrset to xdg.configFile entries
   # -> {
   #   "lite-xl/plugins/formatters/formatter_1.lua" = { source = "<source1>"; }
   #   "lite-xl/plugins/formatters/formatter_2.lua" = { source = "<source2>"; }
