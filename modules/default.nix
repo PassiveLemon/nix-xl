@@ -11,10 +11,10 @@ in
     };
 
     # Don't use this, this is for dev purposes
-    programs.lite-xl._debug = mkOption {
-      type = types.anything;
-      default = "";
-    };
+    # programs.lite-xl._debug = mkOption {
+    #   type = types.anything;
+    #   default = "";
+    # };
   };
 
   imports = [

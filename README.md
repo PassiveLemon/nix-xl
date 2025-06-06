@@ -34,7 +34,7 @@ Import the module and enable it:
 # home.nix
 {
   imports = [
-    inputs.nix-xl.homeManagerModules.nix-xl
+    inputs.nix-xl.homeModules.nix-xl
   ];
   
   programs.lite-xl = {
