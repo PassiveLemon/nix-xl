@@ -121,18 +121,28 @@ Plugins:
   - [x] Custom formats
   - [ ] Enable plugin if formatters are specified
 
+Fonts:
+- [x] Defined fonts
+- [ ] Custom fonts
+- [ ] Lua file to load fonts
+- [ ] Font size option
+
+Themes:
+- [ ] Custom themes
+
+Config:
+- [ ] Create an init.lua file that should load the fonts, themes and other config files.
+
 General:
 - [ ] nvfetcher to update plugin versions. Check every couple days or so since plugins aren't updated too frequently
-- [ ] Config/init declaration
-- [ ] Fonts
-- [ ] Themes
+- [ ] Handle undefined features (eg: no fonts specified)
 
 Later:
 - Turn Evergreen patches into patchfiles
 - Complete refactoring
-  - Move all packages to their own place (keep them out of modules)
-- Docs for customs, evergreen, formatters, lsp servers, inheritLanguages
-- Overlay local packages to add lite-xl plugins repo
+  - Move all packages to their own place (keep them out of modules) and rework their output structure
+- Docs for main features, customs, evergreen, formatters, lsp servers
+- Overlay local packages to add lite-xl plugins repo so we dont have to keep defining it
 - Contributing guidelines/template
 - Descriptions on module options
 - Switch everything from fetchgit to fetchFromGitHub where applicable
