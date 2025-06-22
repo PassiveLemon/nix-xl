@@ -3,13 +3,13 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "tree_sitter";
-  version = "0.1.1";
+  version = "0.1.2";
 
   src = fetchFromGitHub {
     owner = "Evergreen-lxl";
     repo = "lite-xl-tree-sitter";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-PdYBI8xATjGXbo9Xw/idJNSoW3dv6DhVRZHgsUFHdW0=";
+    hash = "sha256-xaaj4wAIVR6ODLsnGMcotzH5svUBRrGLo2T/SEBp1vk=";
     fetchSubmodules = true;
   };
 

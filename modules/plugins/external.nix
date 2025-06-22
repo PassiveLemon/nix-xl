@@ -73,8 +73,8 @@ mergeAttrsList [
     }) + "/equationgrapher.lua";
     "evergreen" = (fetchgit {
       url = "https://github.com/Evergreen-lxl/Evergreen.lxl";
-      rev = "430f54e270ff48f5299b6de8400202f44a996b74";
-      hash = "sha256-r7YxoWl01drKJ6SBe+oFFcA2DNiZ9q7UA8PkbqTCp7g=";
+      rev = "7856f897c044e86ab93e27a60e9da8f490a47e4e";
+      hash = "sha256-CwLMTSXVnYIYeRF6iOWSewTT7Ydk4t8zhaEQWT94Ih8=";
     });
     "exterm" = (fetchgit {
       url = "https://github.com/ShadiestGoat/lite-xl-exterm";
