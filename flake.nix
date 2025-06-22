@@ -10,8 +10,8 @@
 
   outputs = { self, ... } @ inputs: {
     homeModules = {
-      default = self.homeModules.lite-xl;
-      lite-xl = import ./modules;
+      default = self.homeModules.nix-xl;
+      nix-xl = import ./modules;
     };
 
     # Dummy system for testing the module system. Please do not use.
