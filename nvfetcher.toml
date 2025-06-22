@@ -1,0 +1,4 @@
+[lite-xl-plugins]
+src.git = "https://github.com/lite-xl/lite-xl-plugins"
+fetch.git = "https://github.com/lite-xl/lite-xl-plugins"
+
