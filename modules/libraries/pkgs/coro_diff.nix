@@ -1,19 +1,12 @@
-{ stdenv
-, fetchFromGitHub
+{ version
+, src
+, stdenv
 , meson
 , ninja
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "coro_diff";
-  version = "0.1.1";
-
-  src = fetchFromGitHub {
-    owner = "Guldoman";
-    repo = "lite-xl-coro_diff";
-    rev = finalAttrs.version;
-    hash = "sha256-uNFpboTkvXC5BePFuVgFEzcR1+6rihWaIj0FAm+FWAE=";
-    fetchSubmodules = true;
-  };
+  inherit version src;
 
   nativeBuildInputs = [
     meson

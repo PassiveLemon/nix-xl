@@ -1,5 +1,6 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 let
+  inherit (lib) getPackage;
   inherit (pkgs) callPackage;
 in
 {

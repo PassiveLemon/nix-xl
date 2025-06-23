@@ -1,12 +1,9 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 let
-  inherit (pkgs) fetchgit stdenv;
+  inherit (lib) getPackage;
+  inherit (pkgs) stdenv;
 
-  lxl = fetchgit {
-    url = "https://github.com/lite-xl/lite-xl-plugins";
-    rev = "499961ac9d08c803c814244e36b2174e9494b532";
-    hash = "sha256-hhohhW2kC8oBTk3RYW/V9rFzgSJJqseUkDApHv+oBsY=";
-  };
+  lxl = (getPackage "lite-xl-plugins" pkgs).src;
 
   # TODO: Build nonicons because it is not in Nixpkgs
   # https://github.com/ya2s/nonicons/

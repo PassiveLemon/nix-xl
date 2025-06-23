@@ -8,32 +8,31 @@
     };
   };
 
-  outputs = { self, ... } @ inputs: {
-    homeModules = {
-      default = self.homeModules.nix-xl;
+  outputs = { self, ... } @ inputs:
+  inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+    systems = [ "x86_64-linux" ];
+
+    flake.homeModules = {
+      default = self.flake.homeModules.nix-xl;
       nix-xl = import ./modules;
     };
 
-    # Dummy system for testing the module system. Please do not use.
-    # nixosConfigurations.test = inputs.nixpkgs.lib.nixosSystem {
-    #   system = "x86_64-linux";
-    #   modules = [
-    #     ./modules
-    #     ({
-    #       programs.lite-xl = {
-    #         enable = true;
-    #         plugins = {
-    #           enableList = [ "lsp_snippets" "terminal" "autoinsert" "autowrap" "bracketmatch" "editorconfig" "gitdiff_highlight" "treeview-extender" ];
-    #           languages.enableList = [ "containerfile" "nim" "nix" "zig" ];
-    #           formatter.enableList = [ "black" "ruff" ];
-    #           lsp.enableList = [ "lua" "yaml" ];
-    #           evergreen.enableList = [ "cpp" "javascript" "lua" ];
-    #         };
-    #         libraries.enableList = [ "encoding" "font_symbols_nerdfont_mono_regular" "tree_sitter" "widget" ];
-    #       };
-    #     })
-    #   ];
-    # };
+    perSystem = { system, ... }:
+    let
+      pkgs = import inputs.nixpkgs { inherit system; };
+    in
+    {
+      devShells = {
+        default = pkgs.mkShell {
+          packages = with pkgs; [
+            nvfetcher act
+          ];
+        };
+      };
+      packages = {
+        default = pkgs.nvfetcher;
+      };
+    };
   };
 }
 

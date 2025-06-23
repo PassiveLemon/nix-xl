@@ -1,13 +1,8 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) genAttrs mergeAttrsList;
-  inherit (pkgs) fetchgit;
+  inherit (lib) getPackage genAttrs mergeAttrsList;
 
-  lxl = fetchgit {
-    url = "https://github.com/lite-xl/lite-xl-plugins";
-    rev = "499961ac9d08c803c814244e36b2174e9494b532";
-    hash = "sha256-hhohhW2kC8oBTk3RYW/V9rFzgSJJqseUkDApHv+oBsY=";
-  };
+  lxl = (getPackage "lite-xl-plugins" pkgs).src;
 
   # Languages in lite-xl-plugins
   lxlLanguageStrings = [
@@ -35,7 +30,7 @@ let
   lxlLanguages = genAttrs lxlLanguageStrings (lang: "${lxlpl}${lang}.lua");
 
   # Languages in external repositories
-  externalLanguages = import ./external.nix { inherit pkgs; };
+  externalLanguages = import ./external.nix { inherit lib pkgs; };
 in
 # Language structure
 # {

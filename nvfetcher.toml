@@ -1,4 +1,90 @@
+### Plugins
+# [plg-placeholder]
+# src.git = "https://github.com/placeholder/placeholder"
+# fetch.git = ""
+
 [lite-xl-plugins]
 src.git = "https://github.com/lite-xl/lite-xl-plugins"
 fetch.git = "https://github.com/lite-xl/lite-xl-plugins"
+
+# [plg-placeholder]
+# src.git = "https://github.com/placeholder/placeholder"
+# fetch.git = ""
+
+# [plg-placeholder]
+# src.git = "https://github.com/placeholder/placeholder"
+# fetch.git = ""
+
+# [plg-placeholder]
+# src.git = "https://github.com/placeholder/placeholder"
+# fetch.git = ""
+
+# External languages
+[plg-container]
+src.manual = "ae4eddc3f3fa1a0db56344b3b6db0ec0f2283880"
+fetch.git = "https://github.com/FilBot3/lite-xl-language-containerfile"
+
+[plg-crystal]
+src.manual = "9514ec08d0bd3aa5d3bcbf8307c4bf5a46ef1a94"
+fetch.git = "https://github.com/Tamnac/lite-plugin-crystal"
+
+[plg-ksy]
+src.manual = "8ad4bf27354ad02b9179b4a5f26f768e2208ace2"
+fetch.git = "https://github.com/whiteh0le/lite-plugins"
+
+[plg-pony]
+src.manual = "34d9ec673eaa6c409bcef0febaa0a36cc3acdf4e"
+fetch.git = "https://github.com/MrAnyx/lite-plugin-pony"
+
+[plg-vale]
+src.manual = "faa75f67b093978ceebc31bb7db8aa297f3c3e52"
+fetch.git = "https://github.com/pgmtx/lite-plugin-vale"
+
+[plg-yuescript]
+src.manual = "0b0a68c8a2066b8270b2e85d94711c2eb033410e"
+fetch.git = "https://codeberg.org/pgmtx/lite-plugin-yuescript"
+
+### Libraries
+# [lib-placeholder]
+# src.git = "https://github.com/placeholder/placeholder"
+# fetch.git = ""
+
+[lib-lsp-servers]
+src.git = "https://github.com/lite-xl/lite-xl-lsp-servers"
+fetch.git = "https://github.com/lite-xl/lite-xl-lsp-servers"
+
+[lib-widgets]
+src.git = "https://github.com/lite-xl/lite-xl-widgets"
+fetch.git = "https://github.com/lite-xl/lite-xl-widgets"
+
+[lib-json]
+src.github = "rxi/json.lua"
+fetch.github = "rxi/json.lua"
+
+[lib-coro_diff]
+src.git = "https://github.com/guldoman/lite-xl-coro_diff"
+fetch.git = "https://github.com/guldoman/lite-xl-coro_diff"
+git.fetchSubmodules = true
+
+[lib-encoding]
+src.github = "jgmdev/lite-xl-encoding"
+fetch.github = "jgmdev/lite-xl-encoding"
+
+[lib-net]
+src.github = "jgmdev/lite-xl-net"
+fetch.github = "jgmdev/lite-xl-net"
+
+[lib-threads]
+src.github = "jgmdev/lite-xl-threads"
+fetch.github = "jgmdev/lite-xl-threads"
+
+[lib-tree_sitter]
+src.git = "https://github.com/Evergreen-lxl/lite-xl-tree-sitter"
+fetch.git = "https://github.com/Evergreen-lxl/lite-xl-tree-sitter"
+git.fetchSubmodules = true
+
+# [lib-www]
+# src.git = "https://github.com/adamharrison/lite-xl-www"
+# fetch.git = "https://github.com/adamharrison/lite-xl-www"
+# git.fetchSubmodules = true
 

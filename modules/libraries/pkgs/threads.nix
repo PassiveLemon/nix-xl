@@ -1,5 +1,6 @@
-{ stdenv
-, fetchFromGitHub
+{ version
+, src
+, stdenv
 , meson
 , ninja
 , pkg-config
@@ -7,14 +8,7 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "threads";
-  version = "1.3";
-
-  src = fetchFromGitHub {
-    owner = "jgmdev";
-    repo = "lite-xl-threads";
-    rev = "v${finalAttrs.version}";
-    hash = "sha256-iAIJhNe/oli+DBZSGJLOCcRpOtmuWeV+unq4U2PK8a4=";
-  };
+  inherit version src;
 
   nativeBuildInputs = [
     meson

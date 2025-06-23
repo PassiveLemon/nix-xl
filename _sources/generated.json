@@ -1,4 +1,168 @@
 {
+    "lib-coro_diff": {
+        "cargoLocks": null,
+        "date": "2025-05-29",
+        "extract": null,
+        "name": "lib-coro_diff",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "ba097ce3831ae9830eb4027ea1b99b1962b8e3dc",
+            "sha256": "sha256-Xp8MCAV9NkfEHK9g9/9WOkGPmJfxl7H5YmJt2ojvfR4=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/guldoman/lite-xl-coro_diff"
+        },
+        "version": "ba097ce3831ae9830eb4027ea1b99b1962b8e3dc"
+    },
+    "lib-encoding": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "lib-encoding",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jgmdev",
+            "repo": "lite-xl-encoding",
+            "rev": "v1.1",
+            "sha256": "sha256-fN1f0IXmJoZwXXlRixc1wpZsXgRsQXBNypDJUW+UEjY=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v1.1"
+    },
+    "lib-json": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "lib-json",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "rxi",
+            "repo": "json.lua",
+            "rev": "v0.1.2",
+            "sha256": "sha256-JSKMxF5NSHW3QaELFPWm1sx7kHmOXEPsUkM3i/px7Gk=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.1.2"
+    },
+    "lib-lsp-servers": {
+        "cargoLocks": null,
+        "date": "2025-05-01",
+        "extract": null,
+        "name": "lib-lsp-servers",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "6eea7cf124baad8e7abad6e388c7a16f6f6a98f2",
+            "sha256": "sha256-rKhltQ9uGnT5PJPmotxMxQm6xNO9y14klCdae8aNXcU=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/lite-xl/lite-xl-lsp-servers"
+        },
+        "version": "6eea7cf124baad8e7abad6e388c7a16f6f6a98f2"
+    },
+    "lib-net": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "lib-net",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jgmdev",
+            "repo": "lite-xl-net",
+            "rev": "v1.1",
+            "sha256": "sha256-hWdYSmDAS8R3/pOziTryYna6RWGS53vN5rOcYvjleAI=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v1.1"
+    },
+    "lib-threads": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "lib-threads",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "jgmdev",
+            "repo": "lite-xl-threads",
+            "rev": "v1.3",
+            "sha256": "sha256-iAIJhNe/oli+DBZSGJLOCcRpOtmuWeV+unq4U2PK8a4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v1.3"
+    },
+    "lib-tree_sitter": {
+        "cargoLocks": null,
+        "date": "2025-05-26",
+        "extract": null,
+        "name": "lib-tree_sitter",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "06ea92e162807e3b2f9f8bec42492e349028ab13",
+            "sha256": "sha256-xaaj4wAIVR6ODLsnGMcotzH5svUBRrGLo2T/SEBp1vk=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/Evergreen-lxl/lite-xl-tree-sitter"
+        },
+        "version": "06ea92e162807e3b2f9f8bec42492e349028ab13"
+    },
+    "lib-widgets": {
+        "cargoLocks": null,
+        "date": "2025-01-27",
+        "extract": null,
+        "name": "lib-widgets",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "dcf1c8c7087638b879d5c9c835686ccd79f963ec",
+            "sha256": "sha256-6oOxJPRzDwpFh9wp20WocT3gB0wQpA3LI4IarF0hMfw=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/lite-xl/lite-xl-widgets"
+        },
+        "version": "dcf1c8c7087638b879d5c9c835686ccd79f963ec"
+    },
     "lite-xl-plugins": {
         "cargoLocks": null,
         "date": "2025-06-19",
@@ -18,5 +182,125 @@
             "url": "https://github.com/lite-xl/lite-xl-plugins"
         },
         "version": "43fe593063903000c02e5e72d8d1d2df9331a207"
+    },
+    "plg-container": {
+        "cargoLocks": null,
+        "date": "2023-10-17",
+        "extract": null,
+        "name": "plg-container",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "ae4eddc3f3fa1a0db56344b3b6db0ec0f2283880",
+            "sha256": "sha256-YbwF5O2QrSrBeYzrkMCgIVIY83ULpKM8CygoiigUJj8=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/FilBot3/lite-xl-language-containerfile"
+        },
+        "version": "ae4eddc3f3fa1a0db56344b3b6db0ec0f2283880"
+    },
+    "plg-crystal": {
+        "cargoLocks": null,
+        "date": "2023-02-12",
+        "extract": null,
+        "name": "plg-crystal",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "9514ec08d0bd3aa5d3bcbf8307c4bf5a46ef1a94",
+            "sha256": "sha256-JLkk4z2FaDDyZhiCz9AkQ0Ac7dltDgfB0yEqIu6/h5U=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/Tamnac/lite-plugin-crystal"
+        },
+        "version": "9514ec08d0bd3aa5d3bcbf8307c4bf5a46ef1a94"
+    },
+    "plg-ksy": {
+        "cargoLocks": null,
+        "date": "2020-08-18",
+        "extract": null,
+        "name": "plg-ksy",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "8ad4bf27354ad02b9179b4a5f26f768e2208ace2",
+            "sha256": "sha256-d2oLmniqMVjme77OSyXbbtywmo+bIyHFn4SK1252KeY=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/whiteh0le/lite-plugins"
+        },
+        "version": "8ad4bf27354ad02b9179b4a5f26f768e2208ace2"
+    },
+    "plg-pony": {
+        "cargoLocks": null,
+        "date": "2021-08-30",
+        "extract": null,
+        "name": "plg-pony",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "34d9ec673eaa6c409bcef0febaa0a36cc3acdf4e",
+            "sha256": "sha256-v33M1pYIh3VNzzcCYBpQ3BAu+pFJAytDd1VssEqOU1Q=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/MrAnyx/lite-plugin-pony"
+        },
+        "version": "34d9ec673eaa6c409bcef0febaa0a36cc3acdf4e"
+    },
+    "plg-vale": {
+        "cargoLocks": null,
+        "date": "2024-03-04",
+        "extract": null,
+        "name": "plg-vale",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "faa75f67b093978ceebc31bb7db8aa297f3c3e52",
+            "sha256": "sha256-L3lyvBEHu5BsA+7cBeEjpXWhYhQ6xb+yVBMkoPd45IQ=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/pgmtx/lite-plugin-vale"
+        },
+        "version": "faa75f67b093978ceebc31bb7db8aa297f3c3e52"
+    },
+    "plg-yuescript": {
+        "cargoLocks": null,
+        "date": "2025-02-19",
+        "extract": null,
+        "name": "plg-yuescript",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "0b0a68c8a2066b8270b2e85d94711c2eb033410e",
+            "sha256": "sha256-FvjIQD4a8rk8wt2R4CEXDjevrXV5SopoqVDp3tMSDw0=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://codeberg.org/pgmtx/lite-plugin-yuescript"
+        },
+        "version": "0b0a68c8a2066b8270b2e85d94711c2eb033410e"
     }
 }

@@ -1,5 +1,6 @@
-{ stdenv
-, fetchFromGitHub
+{ version
+, src
+, stdenv
 , meson
 , ninja
 , pkg-config
@@ -7,14 +8,7 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "net";
-  version = "1.1";
-
-  src = fetchFromGitHub {
-    owner = "jgmdev";
-    repo = "lite-xl-net";
-    rev = "v${finalAttrs.version}";
-    hash = "sha256-hWdYSmDAS8R3/pOziTryYna6RWGS53vN5rOcYvjleAI=";
-  };
+  inherit version src;
 
   nativeBuildInputs = [
     meson

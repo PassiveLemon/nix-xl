@@ -1,9 +1,9 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) mergeAttrsList;
+  inherit (lib) getPackage mergeAttrsList;
   inherit (pkgs) fetchgit;
 
-  pluginPackages = import ./pkgs { inherit pkgs; };
+  pluginPackages = import ./pkgs { inherit lib pkgs; };
 in
 
 # Plugins that are a single file should have the source set to the exact init.lua file

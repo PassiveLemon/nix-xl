@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkOption types attrNames mapAttrs' hasSuffix nameValuePair;
+  inherit (lib) subImport mkIf mkOption types attrNames mapAttrs' hasSuffix nameValuePair;
   cfg = config.programs.lite-xl;
 
   enablePlugins = import ./pack.nix { inherit config lib pkgs; };
@@ -35,10 +35,10 @@ in
   };
 
   imports = [
-    ./evergreen
-    ./formatter
-    ./languages
-    ./lsp
+    (subImport ./evergreen)
+    (subImport ./formatter)
+    (subImport ./languages)
+    (subImport ./lsp)
   ];
 
   config = mkIf cfg.enable {

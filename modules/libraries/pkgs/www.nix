@@ -1,18 +1,11 @@
-{ stdenv
-, fetchFromGitHub
+{ version
+, src
+, stdenv
 , cmake
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "www";
-  version = "0.4";
-
-  src = fetchFromGitHub {
-    owner = "adamharrison";
-    repo = "lite-xl-www";
-    rev = "v${finalAttrs.version}";
-    hash = "sha256-/TQj0EFWyDsfMMB4mD4t6hdjdYbwMRj/wnpiaGFqlcg=";
-    fetchSubmodules = true;
-  };
+  inherit version src;
 
   nativeBuildInputs = [
     cmake

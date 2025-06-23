@@ -1,5 +1,6 @@
-{ stdenv
-, fetchFromGitHub
+{ version
+, src
+, stdenv
 , libuchardet
 , meson
 , ninja
@@ -8,14 +9,7 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "encoding";
-  version = "1.1";
-
-  src = fetchFromGitHub {
-    owner = "jgmdev";
-    repo = "lite-xl-encoding";
-    rev = "v${finalAttrs.version}";
-    hash = "sha256-fN1f0IXmJoZwXXlRixc1wpZsXgRsQXBNypDJUW+UEjY=";
-  };
+  inherit version src;
 
   nativeBuildInputs = [
     libuchardet

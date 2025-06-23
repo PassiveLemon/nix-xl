@@ -2,6 +2,8 @@
 let
   inherit (lib) mkIf mkEnableOption mkPackageOption mkOption types maintainers;
   cfg = config.programs.lite-xl;
+
+  libNXL = import ./lib.nix { inherit config lib pkgs; };
 in
 {
   options = {
@@ -18,10 +20,10 @@ in
   };
 
   imports = [
-    ./colors
-    ./fonts
-    ./libraries
-    ./plugins
+    (libNXL.subImport ./colors)
+    (libNXL.subImport ./fonts)
+    (libNXL.subImport ./libraries)
+    (libNXL.subImport ./plugins)
   ];
 
   config = mkIf cfg.enable {
