@@ -6,11 +6,11 @@ in
 mergeAttrsList [
   fonts
   {
-    coro_diff = packagerGit (getPackage "lib-coro_diff" pkgs) ./coro_diff.nix;
+    coro_diff = packager (getPackage "lib-coro_diff" pkgs) ./coro_diff.nix;
     encoding = packager (getPackage "lib-encoding" pkgs) ./encoding.nix;
     net = packager (getPackage "lib-net" pkgs) ./net.nix;
     threads = packager (getPackage "lib-threads" pkgs) ./threads.nix;
-    tree_sitter = packagerGit (getPackage "lib-tree_sitter" pkgs) ./tree_sitter.nix;
+    tree_sitter = packager (getPackage "lib-tree_sitter" pkgs) ./tree_sitter.nix;
     # www = packagerGit (getPackage "lib-www" pkgs) ./www.nix;
   }
 ]

@@ -1,13 +1,8 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) genAttrs mergeAttrsList;
-  inherit (pkgs) fetchgit;
+  inherit (lib) getPackage genAttrs mergeAttrsList;
 
-  frm = fetchgit {
-    url = "https://github.com/vincens2005/lite-formatters";
-    rev = "9ec4ee7f650e7daf84ba5f733f4e9ec5899100ec";
-    hash = "sha256-/VBs3UWh298g15tku/hfsLGCXzfNMDKpATJ8I/frlw4=";
-  };
+  frm = (getPackage "plg-formatters" pkgs).src;
 
   formatterLanguageStrings = [
     "autoflake" "black" "clangformat" "cljfmt" "cmakeformat" "crystal" "csharpier"

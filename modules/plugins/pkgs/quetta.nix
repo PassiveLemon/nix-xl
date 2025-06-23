@@ -1,17 +1,10 @@
-{ stdenv
-, fetchFromGitHub
+{ version
+, src
+, stdenv
 }:
-stdenv.mkDerivation (finalAttrs: {
+stdenv.mkDerivation {
   pname = "quetta";
-  version = "0.52";
-
-  src = fetchFromGitHub {
-    owner = "adamharrison";
-    repo = "quetta";
-    rev = "v${finalAttrs.version}";
-    hash = "sha256-2Z3Kl/bKcBaIpnrQpsmKZy3WOmXKEs9e0fRy48jji0c=";
-    fetchSubmodules = true;
-  };
+  inherit version src;
 
   buildPhase = ''
     runHook preBuild
@@ -30,5 +23,5 @@ stdenv.mkDerivation (finalAttrs: {
 
     runHook postInstall
   '';
-})
+}
 

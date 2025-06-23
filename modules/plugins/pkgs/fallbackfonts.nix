@@ -1,17 +1,10 @@
-{ stdenv
-, fetchFromGitHub
+{ version
+, src
+, stdenv
 }:
-stdenv.mkDerivation (finalAttrs: {
+stdenv.mkDerivation {
   pname = "fallbackfonts";
-  version = "281cafc014f7931f041046f76496797695678bb4";
-
-  src = fetchFromGitHub {
-    owner = "takase1121";
-    repo = "lite-fallback-fonts";
-    rev = finalAttrs.version;
-    hash = "sha256-zkgysv+pat+FjMmubb573gsQ3PLb+Y9oM81bH45cxwA=";
-    fetchSubmodules = true;
-  };
+  inherit version src;
 
   postPatch = ''
     substituteInPlace init.lua \
@@ -36,5 +29,5 @@ stdenv.mkDerivation (finalAttrs: {
 
     runHook postInstall
   '';
-})
+}
 

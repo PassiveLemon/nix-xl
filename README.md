@@ -2,7 +2,7 @@
 
 Declaratively configure Lite-XL languages, plugins, and libraries.
 
-With automatic dependency resolution, nix-xl attempts to make Lite-XL configuration as simple as possible for Nix users.
+With automatic dependency resolution, nix-xl attempts to make Lite-XL configuration as simple as possible for Nix users without the need for [lpm](https://github.com/lite-xl/lite-xl-plugin-manager).
 
 > [!NOTE]
 > I have not tested every single language, plugin, and library combination so there may be incompatibilities, missing features, or other issues.

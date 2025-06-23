@@ -1,7 +1,7 @@
 {
     "lib-coro_diff": {
         "cargoLocks": null,
-        "date": "2025-05-29",
+        "date": null,
         "extract": null,
         "name": "lib-coro_diff",
         "passthru": null,
@@ -11,13 +11,13 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "ba097ce3831ae9830eb4027ea1b99b1962b8e3dc",
+            "rev": "0.1.2",
             "sha256": "sha256-Xp8MCAV9NkfEHK9g9/9WOkGPmJfxl7H5YmJt2ojvfR4=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/guldoman/lite-xl-coro_diff"
         },
-        "version": "ba097ce3831ae9830eb4027ea1b99b1962b8e3dc"
+        "version": "0.1.2"
     },
     "lib-encoding": {
         "cargoLocks": null,
@@ -125,7 +125,7 @@
     },
     "lib-tree_sitter": {
         "cargoLocks": null,
-        "date": "2025-05-26",
+        "date": null,
         "extract": null,
         "name": "lib-tree_sitter",
         "passthru": null,
@@ -135,13 +135,13 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "06ea92e162807e3b2f9f8bec42492e349028ab13",
+            "rev": "v0.1.2",
             "sha256": "sha256-xaaj4wAIVR6ODLsnGMcotzH5svUBRrGLo2T/SEBp1vk=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Evergreen-lxl/lite-xl-tree-sitter"
         },
-        "version": "06ea92e162807e3b2f9f8bec42492e349028ab13"
+        "version": "v0.1.2"
     },
     "lib-widgets": {
         "cargoLocks": null,
@@ -185,7 +185,7 @@
     },
     "plg-container": {
         "cargoLocks": null,
-        "date": "2023-10-17",
+        "date": null,
         "extract": null,
         "name": "plg-container",
         "passthru": null,
@@ -205,7 +205,7 @@
     },
     "plg-crystal": {
         "cargoLocks": null,
-        "date": "2023-02-12",
+        "date": null,
         "extract": null,
         "name": "plg-crystal",
         "passthru": null,
@@ -223,9 +223,350 @@
         },
         "version": "9514ec08d0bd3aa5d3bcbf8307c4bf5a46ef1a94"
     },
+    "plg-devicons": {
+        "cargoLocks": null,
+        "date": "2025-05-24",
+        "extract": null,
+        "name": "plg-devicons",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "85355aa80546e78a841c3d9ce32bcdf77b0fa01a",
+            "sha256": "sha256-AS+vfcLxk+nfQ+yIbr39+rCpA9bmNYNQFddHXJvp+lE=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/PerilousBooklet/lite-xl-devicons"
+        },
+        "version": "85355aa80546e78a841c3d9ce32bcdf77b0fa01a"
+    },
+    "plg-discord-presence": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-discord-presence",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "vincens2005",
+            "repo": "lite-xl-discord2",
+            "rev": "v0.2",
+            "sha256": "sha256-ZUu+8LVo+jtOrjuz1MUZ8kt3JpnWkz7fwX8dJLmHHVs=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.2"
+    },
+    "plg-evg-c": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg-c",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "7fa1be1b694b6e763686793d97da01f36a0e5c12",
+            "sha256": "sha256-gmzbdwvrKSo6C1fqTJFGxy8x0+T+vUTswm7F5sojzKc=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/tree-sitter/tree-sitter-c"
+        },
+        "version": "7fa1be1b694b6e763686793d97da01f36a0e5c12"
+    },
+    "plg-evg-cpp": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg-cpp",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "56455f4245baf4ea4e0881c5169de69d7edd5ae7",
+            "sha256": "sha256-yU1bwDhwcqeKrho0bo4qclqDDm1EuZWHENI2PNYnxVs=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/tree-sitter/tree-sitter-cpp"
+        },
+        "version": "56455f4245baf4ea4e0881c5169de69d7edd5ae7"
+    },
+    "plg-evg-css": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg-css",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "6e327db434fec0ee90f006697782e43ec855adf5",
+            "sha256": "sha256-en379DlqzzvQNvKgE8CtiA00j7phUyipttqbnETGHKc=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/tree-sitter/tree-sitter-css"
+        },
+        "version": "6e327db434fec0ee90f006697782e43ec855adf5"
+    },
+    "plg-evg-d": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg-d",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "45e5f1e9d6de2c68591bc8e5ec662cf18e950b4a",
+            "sha256": "sha256-q96RgJWrMop2HBBsQloVTspe3EaMtUL3wmVuT9xnE/g=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/gdamore/tree-sitter-d"
+        },
+        "version": "45e5f1e9d6de2c68591bc8e5ec662cf18e950b4a"
+    },
+    "plg-evg-go": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg-go",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "5e73f476efafe5c768eda19bbe877f188ded6144",
+            "sha256": "sha256-PgFdtkPMgkNK7Gv6dBf89lNjJrZyt9Wp5h5OIwd83aw=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/tree-sitter/tree-sitter-go"
+        },
+        "version": "5e73f476efafe5c768eda19bbe877f188ded6144"
+    },
+    "plg-evg-gomod": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg-gomod",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "6efb59652d30e0e9cd5f3b3a669afd6f1a926d3c",
+            "sha256": "sha256-KD6Fio9qie3wbGAvQaYsMdYOK1QjnRrGExt1oL/6mis=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/camdencheek/tree-sitter-go-mod"
+        },
+        "version": "6efb59652d30e0e9cd5f3b3a669afd6f1a926d3c"
+    },
+    "plg-evg-gosum": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg-gosum",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "e2ac513b2240c7ff1069ae33b2df29ce90777c11",
+            "sha256": "sha256-2foA2sd5PQpmeX8OhXrW/dxoJaEyxDXzPWh+UD0dgzQ=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/amaanq/tree-sitter-go-sum"
+        },
+        "version": "e2ac513b2240c7ff1069ae33b2df29ce90777c11"
+    },
+    "plg-evg-html": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg-html",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "cbb91a0ff3621245e890d1c50cc811bffb77a26b",
+            "sha256": "sha256-lNMiSDAQ49QpeyD1RzkIIUeRWdp2Wrv6+XQZdZ40c1g=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/tree-sitter/tree-sitter-html"
+        },
+        "version": "cbb91a0ff3621245e890d1c50cc811bffb77a26b"
+    },
+    "plg-evg-javascript": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg-javascript",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "6fbef40512dcd9f0a61ce03a4c9ae7597b36ab5c",
+            "sha256": "sha256-X9DDCBF+gQYL0syfqgKVFvzoy2tnBl+veaYi7bUuRms=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/tree-sitter/tree-sitter-javascript"
+        },
+        "version": "6fbef40512dcd9f0a61ce03a4c9ae7597b36ab5c"
+    },
+    "plg-evg-julia": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg-julia",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "18b739c1563c83fc816170a4241adfa4b69e5c47",
+            "sha256": "sha256-DLzbu/r+CNQinHDoy4IihHHbr/j+WDMfimn03gWNO5s=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/tree-sitter/tree-sitter-julia"
+        },
+        "version": "18b739c1563c83fc816170a4241adfa4b69e5c47"
+    },
+    "plg-evg-lua": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg-lua",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "4fbec840c34149b7d5fe10097c93a320ee4af053",
+            "sha256": "sha256-fO8XqlauYiPR0KaFzlAzvkrYXgEsiSzlB3xYzUpcbrs=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/MunifTanjim/tree-sitter-lua"
+        },
+        "version": "4fbec840c34149b7d5fe10097c93a320ee4af053"
+    },
+    "plg-evg-rust": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg-rust",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "3691201b01cacb2f96ffca4c632c4e938bfacd88",
+            "sha256": "sha256-a9Te7SXVd7hkinrpvwrWgb6J53PoSL/Irk0DpQ6vS7k=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/tree-sitter/tree-sitter-rust"
+        },
+        "version": "3691201b01cacb2f96ffca4c632c4e938bfacd88"
+    },
+    "plg-evg-zig": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg-zig",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "a80a6e9be81b33b182ce6305ae4ea28e29211bd5",
+            "sha256": "sha256-o3RAbW8kLSfKxuQ/z7WDb5BaDVxZUG5oFutovRkErjk=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/maxxnino/tree-sitter-zig"
+        },
+        "version": "a80a6e9be81b33b182ce6305ae4ea28e29211bd5"
+    },
+    "plg-fallbackfonts": {
+        "cargoLocks": null,
+        "date": "2021-02-17",
+        "extract": null,
+        "name": "plg-fallbackfonts",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "281cafc014f7931f041046f76496797695678bb4",
+            "sha256": "sha256-zkgysv+pat+FjMmubb573gsQ3PLb+Y9oM81bH45cxwA=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/takase1121/lite-fallback-fonts"
+        },
+        "version": "281cafc014f7931f041046f76496797695678bb4"
+    },
+    "plg-formatters": {
+        "cargoLocks": null,
+        "date": "2025-01-02",
+        "extract": null,
+        "name": "plg-formatters",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "9ec4ee7f650e7daf84ba5f733f4e9ec5899100ec",
+            "sha256": "sha256-/VBs3UWh298g15tku/hfsLGCXzfNMDKpATJ8I/frlw4=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/vincens2005/lite-formatters"
+        },
+        "version": "9ec4ee7f650e7daf84ba5f733f4e9ec5899100ec"
+    },
     "plg-ksy": {
         "cargoLocks": null,
-        "date": "2020-08-18",
+        "date": null,
         "extract": null,
         "name": "plg-ksy",
         "passthru": null,
@@ -243,9 +584,30 @@
         },
         "version": "8ad4bf27354ad02b9179b4a5f26f768e2208ace2"
     },
+    "plg-litepresence": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-litepresence",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "sammy-ette",
+            "repo": "litepresence",
+            "rev": "v0.3.0",
+            "sha256": "sha256-x3kGkPGXEjjo+PKMevqJyeuIRIzgw8XRfQr4spTeFkE=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.3.0"
+    },
     "plg-pony": {
         "cargoLocks": null,
-        "date": "2021-08-30",
+        "date": null,
         "extract": null,
         "name": "plg-pony",
         "passthru": null,
@@ -263,9 +625,49 @@
         },
         "version": "34d9ec673eaa6c409bcef0febaa0a36cc3acdf4e"
     },
+    "plg-quetta": {
+        "cargoLocks": null,
+        "date": "2024-09-29",
+        "extract": null,
+        "name": "plg-quetta",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "adee96d383776bd97acea76d612bd959cfd10b86",
+            "sha256": "sha256-+WDwnUlg+jHSdRByTOB+cULnzNgZIqFs5whgZGu3ze8=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/adamharrison/quetta"
+        },
+        "version": "adee96d383776bd97acea76d612bd959cfd10b86"
+    },
+    "plg-terminal": {
+        "cargoLocks": null,
+        "date": "2025-03-16",
+        "extract": null,
+        "name": "plg-terminal",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "e3a07071dec6d1097e596ad03e16d7f41319d40e",
+            "sha256": "sha256-qT8GBg1g/cSj6jptRU98sbVxDL0El+1OnmW3VVZeaEI=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/adamharrison/lite-xl-terminal"
+        },
+        "version": "e3a07071dec6d1097e596ad03e16d7f41319d40e"
+    },
     "plg-vale": {
         "cargoLocks": null,
-        "date": "2024-03-04",
+        "date": null,
         "extract": null,
         "name": "plg-vale",
         "passthru": null,
@@ -285,7 +687,7 @@
     },
     "plg-yuescript": {
         "cargoLocks": null,
-        "date": "2025-02-19",
+        "date": null,
         "extract": null,
         "name": "plg-yuescript",
         "passthru": null,

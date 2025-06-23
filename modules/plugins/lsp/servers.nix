@@ -1,13 +1,8 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) genAttrs mergeAttrsList;
-  inherit (pkgs) fetchgit;
+  inherit (lib) getPackage genAttrs mergeAttrsList;
 
-  lsp = fetchgit {
-    url = "https://github.com/lite-xl/lite-xl-lsp-servers";
-    rev = "6eea7cf124baad8e7abad6e388c7a16f6f6a98f2";
-    hash = "sha256-rKhltQ9uGnT5PJPmotxMxQm6xNO9y14klCdae8aNXcU=";
-  };
+  lsp = (getPackage "lib-lsp-servers" pkgs).src;
 
   lspLanguageStrings = [
     "clojure" "c" "d" "emmet" "go" "haxe" "java" "json" "lua" "python"

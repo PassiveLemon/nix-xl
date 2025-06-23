@@ -1,17 +1,10 @@
-{ stdenv
-, fetchFromGitHub
+{ version
+, src
+, stdenv
 }:
-stdenv.mkDerivation (finalAttrs: {
+stdenv.mkDerivation {
   pname = "terminal";
-  version = "1.06";
-
-  src = fetchFromGitHub {
-    owner = "adamharrison";
-    repo = "lite-xl-terminal";
-    rev = "v${finalAttrs.version}";
-    hash = "sha256-gfd+lcpZO6hJkKKTcX+jEOZTeQAvgC8f+o+HMubPNS4=";
-    fetchSubmodules = true;
-  };
+  inherit version src;
 
   buildPhase = ''
     runHook preBuild
@@ -30,5 +23,5 @@ stdenv.mkDerivation (finalAttrs: {
 
     runHook postInstall
   '';
-})
+}
 

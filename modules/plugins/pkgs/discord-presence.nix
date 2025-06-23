@@ -1,16 +1,10 @@
-{ stdenv
-, fetchFromGitHub
+{ version
+, src
+, stdenv
 }:
-stdenv.mkDerivation (finalAttrs: {
+stdenv.mkDerivation {
   pname = "discord-presence";
-  version = "0.2";
-
-  src = fetchFromGitHub {
-    owner = "vincens2005";
-    repo = "lite-xl-discord2";
-    rev = "v${finalAttrs.version}";
-    hash = "sha256-ZUu+8LVo+jtOrjuz1MUZ8kt3JpnWkz7fwX8dJLmHHVs=";
-  };
+  inherit version src;
 
   installPhase = ''
     runHook preInstall
@@ -21,5 +15,5 @@ stdenv.mkDerivation (finalAttrs: {
 
     runHook postInstall
   '';
-})
+}
 

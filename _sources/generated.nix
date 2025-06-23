@@ -3,17 +3,16 @@
 {
   lib-coro_diff = {
     pname = "lib-coro_diff";
-    version = "ba097ce3831ae9830eb4027ea1b99b1962b8e3dc";
+    version = "0.1.2";
     src = fetchgit {
       url = "https://github.com/guldoman/lite-xl-coro_diff";
-      rev = "ba097ce3831ae9830eb4027ea1b99b1962b8e3dc";
+      rev = "0.1.2";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
       sha256 = "sha256-Xp8MCAV9NkfEHK9g9/9WOkGPmJfxl7H5YmJt2ojvfR4=";
     };
-    date = "2025-05-29";
   };
   lib-encoding = {
     pname = "lib-encoding";
@@ -75,17 +74,16 @@
   };
   lib-tree_sitter = {
     pname = "lib-tree_sitter";
-    version = "06ea92e162807e3b2f9f8bec42492e349028ab13";
+    version = "v0.1.2";
     src = fetchgit {
       url = "https://github.com/Evergreen-lxl/lite-xl-tree-sitter";
-      rev = "06ea92e162807e3b2f9f8bec42492e349028ab13";
+      rev = "v0.1.2";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
       sha256 = "sha256-xaaj4wAIVR6ODLsnGMcotzH5svUBRrGLo2T/SEBp1vk=";
     };
-    date = "2025-05-26";
   };
   lib-widgets = {
     pname = "lib-widgets";
@@ -127,7 +125,6 @@
       sparseCheckout = [ ];
       sha256 = "sha256-YbwF5O2QrSrBeYzrkMCgIVIY83ULpKM8CygoiigUJj8=";
     };
-    date = "2023-10-17";
   };
   plg-crystal = {
     pname = "plg-crystal";
@@ -141,7 +138,228 @@
       sparseCheckout = [ ];
       sha256 = "sha256-JLkk4z2FaDDyZhiCz9AkQ0Ac7dltDgfB0yEqIu6/h5U=";
     };
-    date = "2023-02-12";
+  };
+  plg-devicons = {
+    pname = "plg-devicons";
+    version = "85355aa80546e78a841c3d9ce32bcdf77b0fa01a";
+    src = fetchgit {
+      url = "https://github.com/PerilousBooklet/lite-xl-devicons";
+      rev = "85355aa80546e78a841c3d9ce32bcdf77b0fa01a";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-AS+vfcLxk+nfQ+yIbr39+rCpA9bmNYNQFddHXJvp+lE=";
+    };
+    date = "2025-05-24";
+  };
+  plg-discord-presence = {
+    pname = "plg-discord-presence";
+    version = "v0.2";
+    src = fetchFromGitHub {
+      owner = "vincens2005";
+      repo = "lite-xl-discord2";
+      rev = "v0.2";
+      fetchSubmodules = false;
+      sha256 = "sha256-ZUu+8LVo+jtOrjuz1MUZ8kt3JpnWkz7fwX8dJLmHHVs=";
+    };
+  };
+  plg-evg-c = {
+    pname = "plg-evg-c";
+    version = "7fa1be1b694b6e763686793d97da01f36a0e5c12";
+    src = fetchgit {
+      url = "https://github.com/tree-sitter/tree-sitter-c";
+      rev = "7fa1be1b694b6e763686793d97da01f36a0e5c12";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-gmzbdwvrKSo6C1fqTJFGxy8x0+T+vUTswm7F5sojzKc=";
+    };
+  };
+  plg-evg-cpp = {
+    pname = "plg-evg-cpp";
+    version = "56455f4245baf4ea4e0881c5169de69d7edd5ae7";
+    src = fetchgit {
+      url = "https://github.com/tree-sitter/tree-sitter-cpp";
+      rev = "56455f4245baf4ea4e0881c5169de69d7edd5ae7";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-yU1bwDhwcqeKrho0bo4qclqDDm1EuZWHENI2PNYnxVs=";
+    };
+  };
+  plg-evg-css = {
+    pname = "plg-evg-css";
+    version = "6e327db434fec0ee90f006697782e43ec855adf5";
+    src = fetchgit {
+      url = "https://github.com/tree-sitter/tree-sitter-css";
+      rev = "6e327db434fec0ee90f006697782e43ec855adf5";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-en379DlqzzvQNvKgE8CtiA00j7phUyipttqbnETGHKc=";
+    };
+  };
+  plg-evg-d = {
+    pname = "plg-evg-d";
+    version = "45e5f1e9d6de2c68591bc8e5ec662cf18e950b4a";
+    src = fetchgit {
+      url = "https://github.com/gdamore/tree-sitter-d";
+      rev = "45e5f1e9d6de2c68591bc8e5ec662cf18e950b4a";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-q96RgJWrMop2HBBsQloVTspe3EaMtUL3wmVuT9xnE/g=";
+    };
+  };
+  plg-evg-go = {
+    pname = "plg-evg-go";
+    version = "5e73f476efafe5c768eda19bbe877f188ded6144";
+    src = fetchgit {
+      url = "https://github.com/tree-sitter/tree-sitter-go";
+      rev = "5e73f476efafe5c768eda19bbe877f188ded6144";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-PgFdtkPMgkNK7Gv6dBf89lNjJrZyt9Wp5h5OIwd83aw=";
+    };
+  };
+  plg-evg-gomod = {
+    pname = "plg-evg-gomod";
+    version = "6efb59652d30e0e9cd5f3b3a669afd6f1a926d3c";
+    src = fetchgit {
+      url = "https://github.com/camdencheek/tree-sitter-go-mod";
+      rev = "6efb59652d30e0e9cd5f3b3a669afd6f1a926d3c";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-KD6Fio9qie3wbGAvQaYsMdYOK1QjnRrGExt1oL/6mis=";
+    };
+  };
+  plg-evg-gosum = {
+    pname = "plg-evg-gosum";
+    version = "e2ac513b2240c7ff1069ae33b2df29ce90777c11";
+    src = fetchgit {
+      url = "https://github.com/amaanq/tree-sitter-go-sum";
+      rev = "e2ac513b2240c7ff1069ae33b2df29ce90777c11";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-2foA2sd5PQpmeX8OhXrW/dxoJaEyxDXzPWh+UD0dgzQ=";
+    };
+  };
+  plg-evg-html = {
+    pname = "plg-evg-html";
+    version = "cbb91a0ff3621245e890d1c50cc811bffb77a26b";
+    src = fetchgit {
+      url = "https://github.com/tree-sitter/tree-sitter-html";
+      rev = "cbb91a0ff3621245e890d1c50cc811bffb77a26b";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-lNMiSDAQ49QpeyD1RzkIIUeRWdp2Wrv6+XQZdZ40c1g=";
+    };
+  };
+  plg-evg-javascript = {
+    pname = "plg-evg-javascript";
+    version = "6fbef40512dcd9f0a61ce03a4c9ae7597b36ab5c";
+    src = fetchgit {
+      url = "https://github.com/tree-sitter/tree-sitter-javascript";
+      rev = "6fbef40512dcd9f0a61ce03a4c9ae7597b36ab5c";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-X9DDCBF+gQYL0syfqgKVFvzoy2tnBl+veaYi7bUuRms=";
+    };
+  };
+  plg-evg-julia = {
+    pname = "plg-evg-julia";
+    version = "18b739c1563c83fc816170a4241adfa4b69e5c47";
+    src = fetchgit {
+      url = "https://github.com/tree-sitter/tree-sitter-julia";
+      rev = "18b739c1563c83fc816170a4241adfa4b69e5c47";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-DLzbu/r+CNQinHDoy4IihHHbr/j+WDMfimn03gWNO5s=";
+    };
+  };
+  plg-evg-lua = {
+    pname = "plg-evg-lua";
+    version = "4fbec840c34149b7d5fe10097c93a320ee4af053";
+    src = fetchgit {
+      url = "https://github.com/MunifTanjim/tree-sitter-lua";
+      rev = "4fbec840c34149b7d5fe10097c93a320ee4af053";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-fO8XqlauYiPR0KaFzlAzvkrYXgEsiSzlB3xYzUpcbrs=";
+    };
+  };
+  plg-evg-rust = {
+    pname = "plg-evg-rust";
+    version = "3691201b01cacb2f96ffca4c632c4e938bfacd88";
+    src = fetchgit {
+      url = "https://github.com/tree-sitter/tree-sitter-rust";
+      rev = "3691201b01cacb2f96ffca4c632c4e938bfacd88";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-a9Te7SXVd7hkinrpvwrWgb6J53PoSL/Irk0DpQ6vS7k=";
+    };
+  };
+  plg-evg-zig = {
+    pname = "plg-evg-zig";
+    version = "a80a6e9be81b33b182ce6305ae4ea28e29211bd5";
+    src = fetchgit {
+      url = "https://github.com/maxxnino/tree-sitter-zig";
+      rev = "a80a6e9be81b33b182ce6305ae4ea28e29211bd5";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-o3RAbW8kLSfKxuQ/z7WDb5BaDVxZUG5oFutovRkErjk=";
+    };
+  };
+  plg-fallbackfonts = {
+    pname = "plg-fallbackfonts";
+    version = "281cafc014f7931f041046f76496797695678bb4";
+    src = fetchgit {
+      url = "https://github.com/takase1121/lite-fallback-fonts";
+      rev = "281cafc014f7931f041046f76496797695678bb4";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-zkgysv+pat+FjMmubb573gsQ3PLb+Y9oM81bH45cxwA=";
+    };
+    date = "2021-02-17";
+  };
+  plg-formatters = {
+    pname = "plg-formatters";
+    version = "9ec4ee7f650e7daf84ba5f733f4e9ec5899100ec";
+    src = fetchgit {
+      url = "https://github.com/vincens2005/lite-formatters";
+      rev = "9ec4ee7f650e7daf84ba5f733f4e9ec5899100ec";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-/VBs3UWh298g15tku/hfsLGCXzfNMDKpATJ8I/frlw4=";
+    };
+    date = "2025-01-02";
   };
   plg-ksy = {
     pname = "plg-ksy";
@@ -155,7 +373,17 @@
       sparseCheckout = [ ];
       sha256 = "sha256-d2oLmniqMVjme77OSyXbbtywmo+bIyHFn4SK1252KeY=";
     };
-    date = "2020-08-18";
+  };
+  plg-litepresence = {
+    pname = "plg-litepresence";
+    version = "v0.3.0";
+    src = fetchFromGitHub {
+      owner = "sammy-ette";
+      repo = "litepresence";
+      rev = "v0.3.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-x3kGkPGXEjjo+PKMevqJyeuIRIzgw8XRfQr4spTeFkE=";
+    };
   };
   plg-pony = {
     pname = "plg-pony";
@@ -169,7 +397,34 @@
       sparseCheckout = [ ];
       sha256 = "sha256-v33M1pYIh3VNzzcCYBpQ3BAu+pFJAytDd1VssEqOU1Q=";
     };
-    date = "2021-08-30";
+  };
+  plg-quetta = {
+    pname = "plg-quetta";
+    version = "adee96d383776bd97acea76d612bd959cfd10b86";
+    src = fetchgit {
+      url = "https://github.com/adamharrison/quetta";
+      rev = "adee96d383776bd97acea76d612bd959cfd10b86";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-+WDwnUlg+jHSdRByTOB+cULnzNgZIqFs5whgZGu3ze8=";
+    };
+    date = "2024-09-29";
+  };
+  plg-terminal = {
+    pname = "plg-terminal";
+    version = "e3a07071dec6d1097e596ad03e16d7f41319d40e";
+    src = fetchgit {
+      url = "https://github.com/adamharrison/lite-xl-terminal";
+      rev = "e3a07071dec6d1097e596ad03e16d7f41319d40e";
+      fetchSubmodules = true;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-qT8GBg1g/cSj6jptRU98sbVxDL0El+1OnmW3VVZeaEI=";
+    };
+    date = "2025-03-16";
   };
   plg-vale = {
     pname = "plg-vale";
@@ -183,7 +438,6 @@
       sparseCheckout = [ ];
       sha256 = "sha256-L3lyvBEHu5BsA+7cBeEjpXWhYhQ6xb+yVBMkoPd45IQ=";
     };
-    date = "2024-03-04";
   };
   plg-yuescript = {
     pname = "plg-yuescript";
@@ -197,6 +451,5 @@
       sparseCheckout = [ ];
       sha256 = "sha256-FvjIQD4a8rk8wt2R4CEXDjevrXV5SopoqVDp3tMSDw0=";
     };
-    date = "2025-02-19";
   };
 }

@@ -7,19 +7,91 @@
 src.git = "https://github.com/lite-xl/lite-xl-plugins"
 fetch.git = "https://github.com/lite-xl/lite-xl-plugins"
 
-# [plg-placeholder]
-# src.git = "https://github.com/placeholder/placeholder"
-# fetch.git = ""
+[plg-formatters]
+src.git = "https://github.com/vincens2005/lite-formatters"
+fetch.git = "https://github.com/vincens2005/lite-formatters"
 
-# [plg-placeholder]
-# src.git = "https://github.com/placeholder/placeholder"
-# fetch.git = ""
+[plg-devicons]
+src.git = "https://github.com/PerilousBooklet/lite-xl-devicons"
+fetch.git = "https://github.com/PerilousBooklet/lite-xl-devicons"
 
-# [plg-placeholder]
-# src.git = "https://github.com/placeholder/placeholder"
-# fetch.git = ""
+[plg-discord-presence]
+src.github = "vincens2005/lite-xl-discord2"
+fetch.github = "vincens2005/lite-xl-discord2"
 
-# External languages
+[plg-fallbackfonts]
+src.git = "https://github.com/takase1121/lite-fallback-fonts"
+fetch.git = "https://github.com/takase1121/lite-fallback-fonts"
+git.fetchSubmodules = true
+
+[plg-litepresence]
+src.github = "sammy-ette/litepresence"
+fetch.github = "sammy-ette/litepresence"
+
+[plg-quetta]
+src.git = "https://github.com/adamharrison/quetta"
+fetch.git = "https://github.com/adamharrison/quetta"
+git.fetchSubmodules = true
+
+[plg-terminal]
+src.git = "https://github.com/adamharrison/lite-xl-terminal"
+fetch.git = "https://github.com/adamharrison/lite-xl-terminal"
+git.fetchSubmodules = true
+
+# External Evergreen languages
+[plg-evg-c]
+src.manual = "7fa1be1b694b6e763686793d97da01f36a0e5c12"
+fetch.git = "https://github.com/tree-sitter/tree-sitter-c"
+
+[plg-evg-cpp]
+src.manual = "56455f4245baf4ea4e0881c5169de69d7edd5ae7"
+fetch.git = "https://github.com/tree-sitter/tree-sitter-cpp"
+
+[plg-evg-css]
+src.manual = "6e327db434fec0ee90f006697782e43ec855adf5"
+fetch.git = "https://github.com/tree-sitter/tree-sitter-css"
+
+[plg-evg-d]
+src.manual = "45e5f1e9d6de2c68591bc8e5ec662cf18e950b4a"
+fetch.git = "https://github.com/gdamore/tree-sitter-d"
+
+[plg-evg-go]
+src.manual = "5e73f476efafe5c768eda19bbe877f188ded6144"
+fetch.git = "https://github.com/tree-sitter/tree-sitter-go"
+
+[plg-evg-gomod]
+src.manual = "6efb59652d30e0e9cd5f3b3a669afd6f1a926d3c"
+fetch.git = "https://github.com/camdencheek/tree-sitter-go-mod"
+
+[plg-evg-gosum]
+src.manual = "e2ac513b2240c7ff1069ae33b2df29ce90777c11"
+fetch.git = "https://github.com/amaanq/tree-sitter-go-sum"
+
+[plg-evg-html]
+src.manual = "cbb91a0ff3621245e890d1c50cc811bffb77a26b"
+fetch.git = "https://github.com/tree-sitter/tree-sitter-html"
+
+[plg-evg-javascript]
+src.manual = "6fbef40512dcd9f0a61ce03a4c9ae7597b36ab5c"
+fetch.git = "https://github.com/tree-sitter/tree-sitter-javascript"
+
+[plg-evg-julia]
+src.manual = "18b739c1563c83fc816170a4241adfa4b69e5c47"
+fetch.git = "https://github.com/tree-sitter/tree-sitter-julia"
+
+[plg-evg-lua]
+src.manual = "4fbec840c34149b7d5fe10097c93a320ee4af053"
+fetch.git = "https://github.com/MunifTanjim/tree-sitter-lua"
+
+[plg-evg-rust]
+src.manual = "3691201b01cacb2f96ffca4c632c4e938bfacd88"
+fetch.git = "https://github.com/tree-sitter/tree-sitter-rust"
+
+[plg-evg-zig]
+src.manual = "a80a6e9be81b33b182ce6305ae4ea28e29211bd5"
+fetch.git = "https://github.com/maxxnino/tree-sitter-zig"
+
+# External syntax languages
 [plg-container]
 src.manual = "ae4eddc3f3fa1a0db56344b3b6db0ec0f2283880"
 fetch.git = "https://github.com/FilBot3/lite-xl-language-containerfile"
@@ -62,7 +134,7 @@ src.github = "rxi/json.lua"
 fetch.github = "rxi/json.lua"
 
 [lib-coro_diff]
-src.git = "https://github.com/guldoman/lite-xl-coro_diff"
+src.github = "guldoman/lite-xl-coro_diff"
 fetch.git = "https://github.com/guldoman/lite-xl-coro_diff"
 git.fetchSubmodules = true
 
@@ -79,7 +151,7 @@ src.github = "jgmdev/lite-xl-threads"
 fetch.github = "jgmdev/lite-xl-threads"
 
 [lib-tree_sitter]
-src.git = "https://github.com/Evergreen-lxl/lite-xl-tree-sitter"
+src.github = "Evergreen-lxl/lite-xl-tree-sitter"
 fetch.git = "https://github.com/Evergreen-lxl/lite-xl-tree-sitter"
 git.fetchSubmodules = true
 

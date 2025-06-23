@@ -8,7 +8,7 @@ let
     "javascript" "jsx" "julia" "lua" "rust" "zig"
   ];
 
-  languages = callPackage ./external.nix { };
+  languages = callPackage ./external.nix { inherit lib pkgs; };
   deps = import ./deps.nix { };
 
   # Generate attrset of evergreen language to source derivation
