@@ -63,7 +63,7 @@
     },
     "lib-lsp-servers": {
         "cargoLocks": null,
-        "date": "2025-05-01",
+        "date": "2025-07-01",
         "extract": null,
         "name": "lib-lsp-servers",
         "passthru": null,
@@ -73,13 +73,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "6eea7cf124baad8e7abad6e388c7a16f6f6a98f2",
-            "sha256": "sha256-rKhltQ9uGnT5PJPmotxMxQm6xNO9y14klCdae8aNXcU=",
+            "rev": "99103fb68c8b9065000e7903935a03762118f205",
+            "sha256": "sha256-7OgZUUsVINwEfNM3M4jaq8sTOoSvpvzvEuT+xj4ybyE=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/lite-xl/lite-xl-lsp-servers"
         },
-        "version": "6eea7cf124baad8e7abad6e388c7a16f6f6a98f2"
+        "version": "99103fb68c8b9065000e7903935a03762118f205"
     },
     "lib-net": {
         "cargoLocks": null,

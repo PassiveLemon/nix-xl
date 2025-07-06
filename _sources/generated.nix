@@ -38,17 +38,17 @@
   };
   lib-lsp-servers = {
     pname = "lib-lsp-servers";
-    version = "6eea7cf124baad8e7abad6e388c7a16f6f6a98f2";
+    version = "99103fb68c8b9065000e7903935a03762118f205";
     src = fetchgit {
       url = "https://github.com/lite-xl/lite-xl-lsp-servers";
-      rev = "6eea7cf124baad8e7abad6e388c7a16f6f6a98f2";
+      rev = "99103fb68c8b9065000e7903935a03762118f205";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-rKhltQ9uGnT5PJPmotxMxQm6xNO9y14klCdae8aNXcU=";
+      sha256 = "sha256-7OgZUUsVINwEfNM3M4jaq8sTOoSvpvzvEuT+xj4ybyE=";
     };
-    date = "2025-05-01";
+    date = "2025-07-01";
   };
   lib-net = {
     pname = "lib-net";
