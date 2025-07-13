@@ -101,17 +101,17 @@
   };
   lite-xl-plugins = {
     pname = "lite-xl-plugins";
-    version = "68e01ca6cd4062bace58e2ea93fb935c78c06680";
+    version = "a6ddb5689486ff7af022587e1e2d1617d125e973";
     src = fetchgit {
       url = "https://github.com/lite-xl/lite-xl-plugins";
-      rev = "68e01ca6cd4062bace58e2ea93fb935c78c06680";
+      rev = "a6ddb5689486ff7af022587e1e2d1617d125e973";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-1CPljWqZSlMthP2408CdSEn3+Y0OfyGr48A8nz+hA94=";
+      sha256 = "sha256-5Cd1FSrQwJwCK3kCGJQRB0Yy+2Ox6qdWcuppWX6Xqng=";
     };
-    date = "2025-06-30";
+    date = "2025-07-08";
   };
   plg-container = {
     pname = "plg-container";
@@ -349,17 +349,17 @@
   };
   plg-formatters = {
     pname = "plg-formatters";
-    version = "9ec4ee7f650e7daf84ba5f733f4e9ec5899100ec";
+    version = "3607237661cde34a983372f173dcc46c4f122fb6";
     src = fetchgit {
       url = "https://github.com/vincens2005/lite-formatters";
-      rev = "9ec4ee7f650e7daf84ba5f733f4e9ec5899100ec";
+      rev = "3607237661cde34a983372f173dcc46c4f122fb6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-/VBs3UWh298g15tku/hfsLGCXzfNMDKpATJ8I/frlw4=";
+      sha256 = "sha256-u7yrgkl3UgCN90iiKgQ811B9Ox6SU3mK51bxxEniUMw=";
     };
-    date = "2025-01-02";
+    date = "2025-07-06";
   };
   plg-ksy = {
     pname = "plg-ksy";
