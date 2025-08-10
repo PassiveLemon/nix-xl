@@ -38,17 +38,17 @@
   };
   lib-lsp-servers = {
     pname = "lib-lsp-servers";
-    version = "99103fb68c8b9065000e7903935a03762118f205";
+    version = "443a076fe5741dbd3a8f774c9b577bbf4c58f4e9";
     src = fetchgit {
       url = "https://github.com/lite-xl/lite-xl-lsp-servers";
-      rev = "99103fb68c8b9065000e7903935a03762118f205";
+      rev = "443a076fe5741dbd3a8f774c9b577bbf4c58f4e9";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-7OgZUUsVINwEfNM3M4jaq8sTOoSvpvzvEuT+xj4ybyE=";
+      sha256 = "sha256-BVzNbZaw0xbfzF+ULffurh9j3b/okx95Lcdq2r8IqLc=";
     };
-    date = "2025-07-01";
+    date = "2025-08-04";
   };
   lib-net = {
     pname = "lib-net";
@@ -101,17 +101,17 @@
   };
   lite-xl-plugins = {
     pname = "lite-xl-plugins";
-    version = "a6ddb5689486ff7af022587e1e2d1617d125e973";
+    version = "a9942e5e34acb717d01c5947b3ff29e228c0a95a";
     src = fetchgit {
       url = "https://github.com/lite-xl/lite-xl-plugins";
-      rev = "a6ddb5689486ff7af022587e1e2d1617d125e973";
+      rev = "a9942e5e34acb717d01c5947b3ff29e228c0a95a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-5Cd1FSrQwJwCK3kCGJQRB0Yy+2Ox6qdWcuppWX6Xqng=";
+      sha256 = "sha256-z0+p1ReZDPcwWMKJ7kjsdA4Ji55TrzGH32Y2G43uoCQ=";
     };
-    date = "2025-07-08";
+    date = "2025-08-04";
   };
   plg-container = {
     pname = "plg-container";

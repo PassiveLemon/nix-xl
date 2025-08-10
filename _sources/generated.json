@@ -63,7 +63,7 @@
     },
     "lib-lsp-servers": {
         "cargoLocks": null,
-        "date": "2025-07-01",
+        "date": "2025-08-04",
         "extract": null,
         "name": "lib-lsp-servers",
         "passthru": null,
@@ -73,13 +73,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "99103fb68c8b9065000e7903935a03762118f205",
-            "sha256": "sha256-7OgZUUsVINwEfNM3M4jaq8sTOoSvpvzvEuT+xj4ybyE=",
+            "rev": "443a076fe5741dbd3a8f774c9b577bbf4c58f4e9",
+            "sha256": "sha256-BVzNbZaw0xbfzF+ULffurh9j3b/okx95Lcdq2r8IqLc=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/lite-xl/lite-xl-lsp-servers"
         },
-        "version": "99103fb68c8b9065000e7903935a03762118f205"
+        "version": "443a076fe5741dbd3a8f774c9b577bbf4c58f4e9"
     },
     "lib-net": {
         "cargoLocks": null,
@@ -165,7 +165,7 @@
     },
     "lite-xl-plugins": {
         "cargoLocks": null,
-        "date": "2025-07-08",
+        "date": "2025-08-04",
         "extract": null,
         "name": "lite-xl-plugins",
         "passthru": null,
@@ -175,13 +175,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "a6ddb5689486ff7af022587e1e2d1617d125e973",
-            "sha256": "sha256-5Cd1FSrQwJwCK3kCGJQRB0Yy+2Ox6qdWcuppWX6Xqng=",
+            "rev": "a9942e5e34acb717d01c5947b3ff29e228c0a95a",
+            "sha256": "sha256-z0+p1ReZDPcwWMKJ7kjsdA4Ji55TrzGH32Y2G43uoCQ=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/lite-xl/lite-xl-plugins"
         },
-        "version": "a6ddb5689486ff7af022587e1e2d1617d125e973"
+        "version": "a9942e5e34acb717d01c5947b3ff29e228c0a95a"
     },
     "plg-container": {
         "cargoLocks": null,
