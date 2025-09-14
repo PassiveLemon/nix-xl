@@ -1,17 +1,17 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) packager packagerGit getPackage mergeAttrsList;
+  inherit (lib) packager mergeAttrsList;
   fonts = import ./fonts.nix { inherit lib pkgs; };
 in
 mergeAttrsList [
   fonts
   {
-    coro_diff = packager (getPackage "lib-coro_diff" pkgs) ./coro_diff.nix;
-    encoding = packager (getPackage "lib-encoding" pkgs) ./encoding.nix;
-    net = packager (getPackage "lib-net" pkgs) ./net.nix;
-    threads = packager (getPackage "lib-threads" pkgs) ./threads.nix;
-    tree_sitter = packager (getPackage "lib-tree_sitter" pkgs) ./tree_sitter.nix;
-    # www = packagerGit (getPackage "lib-www" pkgs) ./www.nix;
+    coro_diff = packager "lib-coro_diff" ./coro_diff.nix pkgs { };
+    encoding = packager "lib-encoding" ./encoding.nix pkgs { };
+    net = packager "lib-net" ./net.nix pkgs { };
+    threads = packager "lib-threads" ./threads.nix pkgs { };
+    tree_sitter = packager "lib-tree_sitter" ./tree_sitter.nix pkgs { };
+    # www = packagerGit "lib-www" ./www.nix pkgs { };
   }
 ]
 

@@ -1,15 +1,15 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) getPackage;
+  inherit (lib) getPackageSrc;
 in
 # Language structure
 # "<lang>" = "<source>";
 {
-  "containerfile" = "${(getPackage "plg-containerfile" pkgs).src}/init.lua";
-  "crystal" = "${(getPackage "plg-crystal" pkgs).src}/language_crystal.lua";
-  "ksy" = "${(getPackage "plg-ksy" pkgs).src}/plugins/language_ksy.lua";
-  "pony" = "${(getPackage "plg-pony" pkgs).src}/language_pony.lua";
-  "vale" = "${(getPackage "plg-vale" pkgs).src}/language_vale.lua";
-  "yuescript" = "${(getPackage "plg-yuescript" pkgs).src}/language_yuescript.lua";
+  "containerfile" = "${getPackageSrc "plg-containerfile" pkgs}/init.lua";
+  "crystal" = "${getPackageSrc "plg-crystal" pkgs}/language_crystal.lua";
+  "ksy" = "${getPackageSrc "plg-ksy" pkgs}/plugins/language_ksy.lua";
+  "pony" = "${getPackageSrc "plg-pony" pkgs}/language_pony.lua";
+  "vale" = "${getPackageSrc "plg-vale" pkgs}/language_vale.lua";
+  "yuescript" = "${getPackageSrc "plg-yuescript" pkgs}/language_yuescript.lua";
 }
 

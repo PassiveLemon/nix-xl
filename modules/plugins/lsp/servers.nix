@@ -1,8 +1,8 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) getPackage genAttrs mergeAttrsList;
+  inherit (lib) getPackageSrc genAttrs mergeAttrsList;
 
-  lsp = (getPackage "lib-lsp-servers" pkgs).src;
+  lsp = getPackageSrc "lib-lsp-servers" pkgs;
 
   lspLanguageStrings = [
     "clojure" "c" "d" "emmet" "go" "haxe" "java" "json" "lua" "python"

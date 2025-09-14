@@ -1,6 +1,6 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) getPackage mergeAttrsList;
+  inherit (lib) mergeAttrsList;
   inherit (pkgs) fetchgit;
 
   pluginPackages = import ./pkgs { inherit lib pkgs; };

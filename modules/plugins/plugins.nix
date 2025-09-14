@@ -1,8 +1,8 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) getPackage genAttrs mergeAttrsList;
+  inherit (lib) getPackageSrc genAttrs mergeAttrsList;
 
-  lxl = (getPackage "lite-xl-plugins" pkgs).src;
+  lxl = getPackageSrc "lite-xl-plugins" pkgs;
 
   # Plugins in lite-xl-plugins
   lxlPluginStrings = [

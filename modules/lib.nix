@@ -1,7 +1,6 @@
 { config, lib, pkgs, ... }:
 let
   inherit (lib) extend removePrefix;
-  inherit (pkgs) callPackage;
 in
 extend (final: _: {
   subImport = path: import path {
@@ -10,14 +9,34 @@ extend (final: _: {
   };
 
   getPackage = pname: pkgs: (pkgs.callPackage ../_sources/generated.nix { }).${pname};
+  getPackageSrc = pname: pkgs: (final.getPackage pname pkgs).src;
 
-  packager = package: path:
-    callPackage path {
-      inherit (package) src;
-      version = removePrefix "v" package.version;
-    };
+  versionRemovePrefix = version:
+    removePrefix "v" version;
 
-  packagerGit = package: path:
-    callPackage path { inherit (package) version src; };
+  versionGitDateToUnstable = date:
+    "0-unstable-${date}";
+
+  versionFromPackage = pkg: (
+    if pkg ? "date"
+    then final.versionGitDateToUnstable pkg.date
+    else final.versionRemovePrefix pkg.version
+  );
+
+  packager = pname: path: pkgs: overrideSet:
+    let
+      pkg = final.getPackage pname pkgs;
+      src = pkg.src;
+      version = final.versionFromPackage pkg;
+    in
+    (pkgs.callPackage path { inherit version src; }).overrideAttrs overrideSet;
+
+  overlayPackager = pname: overridePkg: pkgs: overrideSet:
+    let
+      pkg = final.getPackage pname pkgs;
+      src = pkg.src;
+      version = final.versionFromPackage pkg;
+    in
+    (pkgs.${overridePkg}.overrideAttrs { inherit version src; }).overrideAttrs overrideSet;
 })
 

@@ -1,27 +1,27 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) getPackage;
+  inherit (lib) getPackageSrc;
 in
 # TODO: We might be able to get these from lock.json
 
 # Language structure
 # "<lang>" = "<source>";
 {
-  "c" = (getPackage "plg-evg-c" pkgs).src;
-  "cpp" = (getPackage "plg-evg-cpp" pkgs).src;
-  "css" = (getPackage "plg-evg-css" pkgs).src;
-  "d" = (getPackage "plg-evg-d" pkgs).src;
+  "c" = getPackageSrc "plg-evg-c" pkgs;
+  "cpp" = getPackageSrc "plg-evg-cpp" pkgs;
+  "css" = getPackageSrc "plg-evg-css" pkgs;
+  "d" = getPackageSrc "plg-evg-d" pkgs;
   "ecma" = "";
-  "go" = (getPackage "plg-evg-go" pkgs).src;
-  "gomod" = (getPackage "plg-evg-gomod" pkgs).src;
-  "gosum" = (getPackage "plg-evg-gosum" pkgs).src;
-  "html" = (getPackage "plg-evg-html" pkgs).src;
+  "go" = getPackageSrc "plg-evg-go" pkgs;
+  "gomod" = getPackageSrc "plg-evg-gomod" pkgs;
+  "gosum" = getPackageSrc "plg-evg-gosum" pkgs;
+  "html" = getPackageSrc "plg-evg-html" pkgs;
   "html_tags" = "";
-  "javascript" = (getPackage "plg-evg-javascript" pkgs).src;
+  "javascript" = getPackageSrc "plg-evg-javascript" pkgs;
   "jsx" = "";
-  "julia" = (getPackage "plg-evg-julia" pkgs).src;
-  "lua" = (getPackage "plg-evg-lua" pkgs).src;
-  "rust" = (getPackage "plg-evg-rust" pkgs).src;
-  "zig" = (getPackage "plg-evg-zig" pkgs).src;
+  "julia" = getPackageSrc "plg-evg-julia" pkgs;
+  "lua" = getPackageSrc "plg-evg-lua" pkgs;
+  "rust" = getPackageSrc "plg-evg-rust" pkgs;
+  "zig" = getPackageSrc "plg-evg-zig" pkgs;
 }
 

@@ -1,8 +1,8 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) getPackage genAttrs mergeAttrsList;
+  inherit (lib) getPackageSrc genAttrs mergeAttrsList;
 
-  frm = (getPackage "plg-formatters" pkgs).src;
+  frm = getPackageSrc "plg-formatters" pkgs;
 
   formatterLanguageStrings = [
     "autoflake" "black" "clangformat" "cljfmt" "cmakeformat" "crystal" "csharpier"

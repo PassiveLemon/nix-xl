@@ -1,14 +1,14 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) packager packagerGit getPackage;
+  inherit (lib) packager;
 in
 {
-  devicons =  packagerGit (getPackage "plg-devicons" pkgs) ./devicons.nix;
-  discord-presence = packager (getPackage "plg-discord-presence" pkgs) ./discord-presence.nix;
-  fallbackfonts = packagerGit (getPackage "plg-fallbackfonts" pkgs) ./fallbackfonts.nix;
-  litepresence = packager (getPackage "plg-litepresence" pkgs) ./litepresence.nix;
+  devicons =  packager "plg-devicons" ./devicons.nix pkgs { };
+  discord-presence = packager "plg-discord-presence" ./discord-presence.nix pkgs { };
+  fallbackfonts = packager "plg-fallbackfonts" ./fallbackfonts.nix pkgs { };
+  litepresence = packager "plg-litepresence" ./litepresence.nix pkgs { };
   # plugin_manager # Kind of defeats the purpose of this repository but maybe it can be added?
-  quetta = packagerGit (getPackage "plg-quetta" pkgs) ./quetta.nix;
-  terminal = packagerGit (getPackage "plg-terminal" pkgs) ./terminal.nix;
+  quetta = packager "plg-quetta" ./quetta.nix pkgs { };
+  terminal = packager "plg-terminal" ./terminal.nix pkgs { };
 }
 

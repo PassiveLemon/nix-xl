@@ -132,12 +132,14 @@ Themes:
 
 Config:
 - [ ] Create an init.lua file that should load the fonts, themes and other config files.
+- [ ]? "User" specific configs
 
 General:
 - [ ] nvfetcher to update plugin versions. Check every couple days or so since plugins aren't updated too frequently
 - [ ] Handle undefined features (eg: no fonts specified)
 
-Later:
+Later (maybes):
+- Use nvfetcher for all git stuff (Current a lot of stuff is hardcoded or have manually specified revs)
 - Turn Evergreen patches into patchfiles
 - Complete refactoring
   - Move all packages to their own place (keep them out of modules) and rework their output structure

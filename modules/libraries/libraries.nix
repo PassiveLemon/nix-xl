@@ -1,8 +1,8 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) getPackage mergeAttrsList;
+  inherit (lib) getPackageSrc mergeAttrsList;
 
-  lsp = (getPackage "lib-lsp-servers" pkgs).src;
+  lsp = getPackageSrc "lib-lsp-servers" pkgs;
 
   libraryPackages = import ./pkgs { inherit lib pkgs; };
 in
@@ -16,8 +16,8 @@ in
 mergeAttrsList [
   libraryPackages
   {
-    "widget" = (getPackage "lib-widgets" pkgs).src;
-    "json" = "${(getPackage "lib-json" pkgs).src}/json.lua";
+    "widget" = getPackageSrc "lib-widgets" pkgs;
+    "json" = "${getPackageSrc "lib-json" pkgs}/json.lua";
     "golang" = "${lsp}/libraries/golang.lua";
     "haxe" = "${lsp}/libraries/haxe.lua";
     "jdk" = "${lsp}/libraries/jdk.lua";
