@@ -31,6 +31,11 @@ mergeAttrsList [
       rev = "86060cbd391712cbcf55c29359ae4112fb8d8f02";
       hash = "";
     }) + "/plugins/build";
+    "buffers" = (fetchgit {
+      url = "https://codeberg.org/Mandarancio/lite-buffers";
+      rev = "5f91642a337c35c9262726d363b1c6f15ba68f57";
+      hash = "";
+    }) + "/plugins/build";
     "code-plug" = (fetchgit {
       url = "https://github.com/chqs-git/code-plus";
       rev = "873dbc74d4ff5b858807686b8ee1c9c9182745e4";
