@@ -1,6 +1,6 @@
 {
     "lib-coro_diff": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "lib-coro_diff",
@@ -20,7 +20,7 @@
         "version": "0.1.2"
     },
     "lib-encoding": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "lib-encoding",
@@ -41,7 +41,7 @@
         "version": "v1.1"
     },
     "lib-json": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "lib-json",
@@ -62,7 +62,7 @@
         "version": "v0.1.2"
     },
     "lib-lsp-servers": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-08-04",
         "extract": null,
         "name": "lib-lsp-servers",
@@ -82,7 +82,7 @@
         "version": "443a076fe5741dbd3a8f774c9b577bbf4c58f4e9"
     },
     "lib-net": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "lib-net",
@@ -103,7 +103,7 @@
         "version": "v1.1"
     },
     "lib-threads": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "lib-threads",
@@ -124,7 +124,7 @@
         "version": "v1.3"
     },
     "lib-tree_sitter": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "lib-tree_sitter",
@@ -144,7 +144,7 @@
         "version": "v0.1.2"
     },
     "lib-widgets": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-01-27",
         "extract": null,
         "name": "lib-widgets",
@@ -164,7 +164,7 @@
         "version": "dcf1c8c7087638b879d5c9c835686ccd79f963ec"
     },
     "lite-xl-plugins": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-08-28",
         "extract": null,
         "name": "lite-xl-plugins",
@@ -184,7 +184,7 @@
         "version": "1c531032a5aa9c1efcc32aa239171083a036db07"
     },
     "plg-container": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-container",
@@ -204,7 +204,7 @@
         "version": "ae4eddc3f3fa1a0db56344b3b6db0ec0f2283880"
     },
     "plg-crystal": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-crystal",
@@ -224,7 +224,7 @@
         "version": "9514ec08d0bd3aa5d3bcbf8307c4bf5a46ef1a94"
     },
     "plg-devicons": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-05-24",
         "extract": null,
         "name": "plg-devicons",
@@ -244,7 +244,7 @@
         "version": "85355aa80546e78a841c3d9ce32bcdf77b0fa01a"
     },
     "plg-discord-presence": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-discord-presence",
@@ -265,7 +265,7 @@
         "version": "v0.2"
     },
     "plg-evg-c": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-evg-c",
@@ -285,7 +285,7 @@
         "version": "7fa1be1b694b6e763686793d97da01f36a0e5c12"
     },
     "plg-evg-cpp": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-evg-cpp",
@@ -305,7 +305,7 @@
         "version": "56455f4245baf4ea4e0881c5169de69d7edd5ae7"
     },
     "plg-evg-css": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-evg-css",
@@ -325,7 +325,7 @@
         "version": "6e327db434fec0ee90f006697782e43ec855adf5"
     },
     "plg-evg-d": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-evg-d",
@@ -345,7 +345,7 @@
         "version": "45e5f1e9d6de2c68591bc8e5ec662cf18e950b4a"
     },
     "plg-evg-go": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-evg-go",
@@ -365,7 +365,7 @@
         "version": "5e73f476efafe5c768eda19bbe877f188ded6144"
     },
     "plg-evg-gomod": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-evg-gomod",
@@ -385,7 +385,7 @@
         "version": "6efb59652d30e0e9cd5f3b3a669afd6f1a926d3c"
     },
     "plg-evg-gosum": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-evg-gosum",
@@ -405,7 +405,7 @@
         "version": "e2ac513b2240c7ff1069ae33b2df29ce90777c11"
     },
     "plg-evg-html": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-evg-html",
@@ -425,7 +425,7 @@
         "version": "cbb91a0ff3621245e890d1c50cc811bffb77a26b"
     },
     "plg-evg-javascript": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-evg-javascript",
@@ -445,7 +445,7 @@
         "version": "6fbef40512dcd9f0a61ce03a4c9ae7597b36ab5c"
     },
     "plg-evg-julia": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-evg-julia",
@@ -465,7 +465,7 @@
         "version": "18b739c1563c83fc816170a4241adfa4b69e5c47"
     },
     "plg-evg-lua": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-evg-lua",
@@ -485,7 +485,7 @@
         "version": "4fbec840c34149b7d5fe10097c93a320ee4af053"
     },
     "plg-evg-rust": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-evg-rust",
@@ -505,7 +505,7 @@
         "version": "3691201b01cacb2f96ffca4c632c4e938bfacd88"
     },
     "plg-evg-zig": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-evg-zig",
@@ -525,7 +525,7 @@
         "version": "a80a6e9be81b33b182ce6305ae4ea28e29211bd5"
     },
     "plg-fallbackfonts": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2021-02-17",
         "extract": null,
         "name": "plg-fallbackfonts",
@@ -545,7 +545,7 @@
         "version": "281cafc014f7931f041046f76496797695678bb4"
     },
     "plg-formatters": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-07-06",
         "extract": null,
         "name": "plg-formatters",
@@ -565,7 +565,7 @@
         "version": "3607237661cde34a983372f173dcc46c4f122fb6"
     },
     "plg-ksy": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-ksy",
@@ -585,7 +585,7 @@
         "version": "8ad4bf27354ad02b9179b4a5f26f768e2208ace2"
     },
     "plg-litepresence": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-litepresence",
@@ -606,7 +606,7 @@
         "version": "v0.3.0"
     },
     "plg-pony": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-pony",
@@ -626,7 +626,7 @@
         "version": "34d9ec673eaa6c409bcef0febaa0a36cc3acdf4e"
     },
     "plg-quetta": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2024-09-29",
         "extract": null,
         "name": "plg-quetta",
@@ -646,7 +646,7 @@
         "version": "adee96d383776bd97acea76d612bd959cfd10b86"
     },
     "plg-terminal": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": "2025-09-08",
         "extract": null,
         "name": "plg-terminal",
@@ -666,7 +666,7 @@
         "version": "68a15e7b7eb9ad0502ac6e9d97748cb7075a85fa"
     },
     "plg-vale": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-vale",
@@ -686,7 +686,7 @@
         "version": "faa75f67b093978ceebc31bb7db8aa297f3c3e52"
     },
     "plg-yuescript": {
-        "cargoLocks": null,
+        "cargoLock": null,
         "date": null,
         "extract": null,
         "name": "plg-yuescript",
