@@ -66,11 +66,9 @@ mergeAttrsList [
       rev = "b3d7576edfe87cf7fe4af923c9a591250744760e";
       hash = "";
     });
-    "eofnewline" = (fetchgit {
-      url = "https://github.com/bokunodev/lite_modules";
-      rev = "67c171fc31b6203bd054c061a4ad6274a3dcf07f";
-      hash = "sha256-mpddpYYjO0ymxN78pTjIKrfIw7RNUCNtWR8KQrzMz8Q=";
-    }) + "/plugins/eofnewline-xl.lua";
+    # The old repository in which this was hosted at, https://github.com/bokunodev/lite_modules
+    # has been removed so an archive was found on the Wayback Machine
+    "eofnewline" = ./eofnewline.lua;
     "equationgrapher" = (fetchgit {
       url = "https://github.com/thacuber2a03/equationgrapher";
       rev = "11eaf773ab2747947e81e6d404a6f497a77e3490";
