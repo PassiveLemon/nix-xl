@@ -419,17 +419,17 @@
   };
   plg-terminal = {
     pname = "plg-terminal";
-    version = "809454f5f7ca421842b2b2b4d3ebf80da2767c54";
+    version = "157f7aa496bf7edbd234d5b205396120b1948718";
     src = fetchgit {
       url = "https://github.com/adamharrison/lite-xl-terminal";
-      rev = "809454f5f7ca421842b2b2b4d3ebf80da2767c54";
+      rev = "157f7aa496bf7edbd234d5b205396120b1948718";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-iV7fICJRs1rgeOIK08wQqPzned/dGJ6aeOVDUpi+GII=";
+      sha256 = "sha256-/YXhNuQHN0HfiHM7uya2iqAz1rbaaS7SApuwaWS5nfg=";
     };
-    date = "2025-10-03";
+    date = "2025-11-10";
   };
   plg-vale = {
     pname = "plg-vale";
