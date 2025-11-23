@@ -354,17 +354,17 @@
   };
   plg-formatters = {
     pname = "plg-formatters";
-    version = "3607237661cde34a983372f173dcc46c4f122fb6";
+    version = "f200d29a067693e39775e699d31da4db269b9375";
     src = fetchgit {
       url = "https://github.com/vincens2005/lite-formatters";
-      rev = "3607237661cde34a983372f173dcc46c4f122fb6";
+      rev = "f200d29a067693e39775e699d31da4db269b9375";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-u7yrgkl3UgCN90iiKgQ811B9Ox6SU3mK51bxxEniUMw=";
+      sha256 = "sha256-HpQKO0N60S/0tjH1drweZLsfK8gWFjF43UWtm2Ep/BU=";
     };
-    date = "2025-07-06";
+    date = "2025-11-22";
   };
   plg-ksy = {
     pname = "plg-ksy";
