@@ -119,6 +119,11 @@ mergeAttrsList [
       rev = "eaff3321f569e89aca57e76dc1f684a37aecd254";
       hash = "sha256-T2wSWGqhagyEGEws7B2zIg1rv1DhcZvUjy54NZfRlqE=";
     });
+    "litemark" = (fetchgit {
+      url = "https://github.com/Quillwyrm/LiteMark";
+      rev = "a0eb7de1bb3b7c8f9e2e266054a170e0cbedf4f7";
+      hash = "sha256-8Ai3t8LClDDdr7xmxAmL5eBxEt9I68ij4YTB+tknawI=";
+    }) + "/litemark";
     "lite-xl-vibe" = (fetchgit {
       url = "https://github.com/eugenpt/lite-xl-vibe";
       rev = "5b5579ab5efe9388c495d5b8baa6cd10b2db53ac";
