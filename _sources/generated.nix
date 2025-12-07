@@ -106,17 +106,17 @@
   };
   lite-xl-plugins = {
     pname = "lite-xl-plugins";
-    version = "5a7501a54a99b743263a8bd24e87e7772ac7a13c";
+    version = "444c3153595701d7587e2b8a2db60649a4715e5e";
     src = fetchgit {
       url = "https://github.com/lite-xl/lite-xl-plugins";
-      rev = "5a7501a54a99b743263a8bd24e87e7772ac7a13c";
+      rev = "444c3153595701d7587e2b8a2db60649a4715e5e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Jk6r7t4BiijRrfbPsr+PLm5KwcOpsAd4BWvv4bkI1YQ=";
+      sha256 = "sha256-aMnRdezM7WPx8vX5N+qucfVltmgP0pKIF0SIAMgEnGE=";
     };
-    date = "2025-10-14";
+    date = "2025-12-04";
   };
   plg-container = {
     pname = "plg-container";
