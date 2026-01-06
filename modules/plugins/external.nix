@@ -92,7 +92,7 @@ mergeAttrsList [
     "formatter" = (fetchgit {
       url = "https://github.com/vincens2005/lite-formatters";
       rev = "9ec4ee7f650e7daf84ba5f733f4e9ec5899100ec";
-      hash = "";
+      hash = "sha256-/VBs3UWh298g15tku/hfsLGCXzfNMDKpATJ8I/frlw4=";
     }) + "/formatter.lua";
     "gitblame" = (fetchgit {
       url = "https://github.com/juliardi/lite-xl-gitblame";
