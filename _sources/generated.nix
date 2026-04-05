@@ -146,17 +146,17 @@
   };
   plg-devicons = {
     pname = "plg-devicons";
-    version = "85355aa80546e78a841c3d9ce32bcdf77b0fa01a";
+    version = "2dea8342d445c48ca38cd3e746226698f2de99b7";
     src = fetchgit {
       url = "https://github.com/PerilousBooklet/lite-xl-devicons";
-      rev = "85355aa80546e78a841c3d9ce32bcdf77b0fa01a";
+      rev = "2dea8342d445c48ca38cd3e746226698f2de99b7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-AS+vfcLxk+nfQ+yIbr39+rCpA9bmNYNQFddHXJvp+lE=";
+      sha256 = "sha256-tOojk04L7Ce7YOD5y84OhdQD8/CgPdaeubSfkpTP/8E=";
     };
-    date = "2025-05-24";
+    date = "2026-04-01";
   };
   plg-discord-presence = {
     pname = "plg-discord-presence";
