@@ -85,42 +85,10 @@ To enable plugins, use the plugin option:
 ```
 - All available libraries are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#libraries) exactly as they appear.
 
+## LSP Plugin
+When languages are specified, the appropriate language servers and linters (if you enabled liteplus) will be automatically added to your `home.packages` if you enable `lite-xl.plugins.lsp.addPackages`
+
 # Todo
-Core:
-- [x] Implement languages
-  - [x] Put them into their own `/plugins/languages` directory and create a lua file to require them
-  - [x] External repo languages
-  - [x] Custom languages
-
-- [x] Implement libraries
-  - [x] Most libraries require some package building so we need some derivations
-  - [x] External repo libraries
-  - [x] Custom libraries
-
-- [x] Implement plugins
-  - [x] External repo plugins
-  - [x] Custom plugins
-  - [x] Automatic library dependencies (Implemented, but not set up for everything)
-
-Plugins:
-- The core part of these are included in plugins but currently you have to manually add the languages
-- [x] Evergreen
-  - [x] Need to build the shared objects so we need some derivations
-  - [x] Put Evergreen highlights into their own `/plugins/evergreen_languages` directory and create a lua file to require them (Similar to languages)
-  - [x] Custom languages
-  - [ ] Enable plugin if languages are specified
-
-- [x] LSP
-  - [x] Library deps `golang haxe jdk nodejs`
-  - [x] Put lsp into their own `/plugins/lsp_servers` directory and create a lua file to require them (Similar to languages)
-  - [x] Custom servers
-  - [ ] Enable plugin if servers are specified
-
-- [x] Formatter
-  - [x] Put formats into their own `/plugins/formatter` directory and create a lua file to require them (Similar to languages)
-  - [x] Custom formats
-  - [ ] Enable plugin if formatters are specified
-
 Fonts:
 - [x] Defined fonts
 - [ ] Custom fonts
@@ -139,10 +107,11 @@ General:
 - [ ] Handle undefined features (eg: no fonts specified)
 
 Later (maybes):
-- Use nvfetcher for all git stuff (Current a lot of stuff is hardcoded or have manually specified revs)
+- Use nvfetcher for all git stuff (Current a lot of stuff have pinned versions)
 - Turn Evergreen patches into patchfiles
 - Complete refactoring
   - Move all packages to their own place (keep them out of modules) and rework their output structure
+  - Theres a level of jank around the whole project that should be addressed
 - Docs for main features, customs, evergreen, formatters, lsp servers
 - Overlay local packages to add lite-xl plugins repo so we dont have to keep defining it
 - Contributing guidelines/template
