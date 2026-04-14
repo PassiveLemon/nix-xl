@@ -121,9 +121,9 @@ fetch.git = "https://codeberg.org/pgmtx/lite-plugin-yuescript"
 # src.git = "https://github.com/placeholder/placeholder"
 # fetch.git = ""
 
-[lib-lsp-servers]
-src.git = "https://github.com/lite-xl/lite-xl-lsp-servers"
-fetch.git = "https://github.com/lite-xl/lite-xl-lsp-servers"
+[lib-lsp]
+src.git = "https://github.com/lite-xl/lite-xl-lsp"
+fetch.git = "https://github.com/lite-xl/lite-xl-lsp"
 
 [lib-widgets]
 src.git = "https://github.com/lite-xl/lite-xl-widgets"
