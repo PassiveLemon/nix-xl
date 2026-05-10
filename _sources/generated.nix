@@ -106,17 +106,17 @@
   };
   lite-xl-plugins = {
     pname = "lite-xl-plugins";
-    version = "1cd0a3f7934f0b132637804e4c558f1d3b87c847";
+    version = "ba6bff1de455a65bf4f5a60f04e07ff390911937";
     src = fetchgit {
       url = "https://github.com/lite-xl/lite-xl-plugins";
-      rev = "1cd0a3f7934f0b132637804e4c558f1d3b87c847";
+      rev = "ba6bff1de455a65bf4f5a60f04e07ff390911937";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-eOgSP0rzSIc+cH9KNgxQhofBXFhZ5q8LjdgQJPcVyJA=";
+      sha256 = "sha256-FknN+/aJZkHUcUiAH6iU13bthcrdkileXjF+TlAqL0o=";
     };
-    date = "2026-04-28";
+    date = "2026-05-06";
   };
   plg-container = {
     pname = "plg-container";
@@ -419,17 +419,17 @@
   };
   plg-terminal = {
     pname = "plg-terminal";
-    version = "db51af9b4e599242782589c531fe842323f6d7ee";
+    version = "5eb96544dcd864998a9b06d8e10259dcc704d868";
     src = fetchgit {
       url = "https://github.com/adamharrison/lite-xl-terminal";
-      rev = "db51af9b4e599242782589c531fe842323f6d7ee";
+      rev = "5eb96544dcd864998a9b06d8e10259dcc704d868";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Clhe6jUEHWqpJfCSh/c2M6IKO2EjNPMUyDG0VOrDKNo=";
+      sha256 = "sha256-Acuh9zA4iRm5a5HJ6rTMxBELTVNEfm6CVASEktklaU8=";
     };
-    date = "2025-12-15";
+    date = "2026-05-05";
   };
   plg-vale = {
     pname = "plg-vale";
