@@ -3,6 +3,7 @@ let
   inherit (lib) mkIf mkOption mkEnableOption types concatMapStrings mapAttrsToList optionalAttrs length flatten optional elem;
   cfg = config.programs.lite-xl;
 
+  # https://github.com/lite-xl/lite-xl-lsp/blob/master/config.lua
   serverStrings = [
     "bashls" "dockerls" "nillsp" "nimlsp" "pyright" "sumneko_lua" "yamlls"
   ];
@@ -49,7 +50,7 @@ in
         # Language servers
         "dockerls" = dockerfile-language-server;
         "sumneko_lua" = lua-language-server;
-        "nilmsp" = nimlsp;
+        "nimlsp" = nimlsp;
         "nillsp" = nil;
         "pyright" = pyright;
         "bashls" = bash-language-server;
