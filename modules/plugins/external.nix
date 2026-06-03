@@ -1,13 +1,7 @@
-{
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 let
   inherit (lib) mergeAttrsList;
   inherit (pkgs) fetchgit;
-
-  pluginPackages = import ./pkgs { inherit lib pkgs; };
 in
 # Plugins that are a single file should have the source set to the exact init.lua file
 # Plugins that are multiple files should have the source set to the root where init.lua is
@@ -16,7 +10,7 @@ in
 #   "<name>" = "<source>";
 # }
 mergeAttrsList [
-  pluginPackages
+  lib.NXLPkgs.plugins
   {
     "base16" =
       (fetchgit {
@@ -271,3 +265,4 @@ mergeAttrsList [
       + "/init.lua";
   }
 ]
+

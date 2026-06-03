@@ -1,11 +1,9 @@
-{ lib, pkgs, ... }:
+{ lib, ... }:
 let
-  inherit (lib) getPackageSrc genAttrs mergeAttrsList;
-
-  lxl = getPackageSrc "lite-xl-plugins" pkgs;
+  inherit (lib) genPluginPaths subImport;
 
   # Languages in lite-xl-plugins
-  lxlLanguageStrings = [
+  languageNames = [
     "angelscript" "assembly_riscv" "assembly_x86" "autohotkey_v1" "awk" "batch" "bazel"
     "bend" "bib" "blade" "blueprint" "brainfuck" "buzz" "c7" "caddyfile" "carbon"
     "clojure" "cmake" "csharp" "cue" "d" "dart" "diff" "edp" "ejs" "elixir" "elm" "env"
@@ -18,26 +16,6 @@ let
     "tcl" "teal" "tex" "toml" "ts" "tsx" "typst" "umka" "v" "wren" "yaml" "zig"
   ];
 
-  # Lite-XL languages prefix
-  lxlpl = "${lxl}/plugins/language_";
-
-  # Generate attrset of lang to source file
-  # -> {
-  #   lang1 = "<source1>.lua";
-  #   lang2 = "<source2>.lua";
-  #   lang3 = "<source3>.lua";
-  # }
-  lxlLanguages = genAttrs lxlLanguageStrings (lang: "${lxlpl}${lang}.lua");
-
-  # Languages in external repositories
-  externalLanguages = import ./external.nix { inherit lib pkgs; };
-in
-# Language structure
-# {
-#   "<name>" = "<source>";
-# }
-mergeAttrsList [
-  lxlLanguages
-  externalLanguages
-]
+  languagePaths = genPluginPaths "${lib.NXLPkgs.lxl}/plugins/language_" languageNames [ ] (subImport ./external.nix);
+in languagePaths
 

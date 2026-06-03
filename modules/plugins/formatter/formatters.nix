@@ -1,10 +1,8 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) getPackageSrc genAttrs mergeAttrsList;
+  inherit (lib) genPluginPaths getPackageSrc;
 
-  frm = getPackageSrc "plg-formatters" pkgs;
-
-  formatterLanguageStrings = [
+  formatterNames = [
     "autoflake" "black" "clangformat" "cljfmt" "cmakeformat" "crystal" "csharpier"
     "cssbeautify" "dartformat" "dfmt" "elixir" "elmformat" "esformatter" "gdformat"
     "golang" "googlejavaformat" "htmlbeautify" "isort" "jsbeautify" "juliaformatter"
@@ -12,22 +10,8 @@ let
     "ruff" "rustfmt" "shfmt" "sqlformatter" "vfmt" "zigfmt"
   ];
 
-  # Formatters plugin formatters prefix
-  frmpf = "${frm}/formatter_";
+  frm = getPackageSrc "plg-formatters" pkgs;
 
-  # Generate attrset of form to source file
-  # -> {
-  #   form1 = "<source1>.lua";
-  #   form2 = "<source2>.lua";
-  #   form3 = "<source3>.lua";
-  # }
-  frmLanguages = genAttrs formatterLanguageStrings (lang: "${frmpf}${lang}.lua");
-in
-# Formatter structure
-# {
-#   "<name>" = "<source>";
-# }
-mergeAttrsList [
-  frmLanguages
-]
+  formatterPaths = genPluginPaths "${frm}/formatter_" formatterNames [ ] { };
+in formatterPaths
 

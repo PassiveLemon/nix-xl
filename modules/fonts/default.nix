@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkOption types attrNames match mapAttrs' nameValuePair elem;
+  inherit (lib) mkIf mkEnableOption mkOption types attrNames match mapAttrs' nameValuePair elem;
   cfg = config.programs.lite-xl;
 
   enableFonts = import ./pack.nix { inherit config lib pkgs; };
@@ -26,6 +26,7 @@ in
 {
   options = {
     programs.lite-xl.fonts = {
+      enable = mkEnableOption "lite-xl font configuration";
       font = mkOption {
         type = types.oneOf [(types.enum fontStrings)];
         default = "";
@@ -61,7 +62,7 @@ in
     };
   };
 
-  config = mkIf cfg.enable {
+  config = mkIf cfg.fonts.enable {
     xdg.configFile = xdgEntries;
   };
 }

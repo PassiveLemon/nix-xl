@@ -4,7 +4,7 @@ let
 
   lsp = getPackageSrc "lib-lsp-servers" pkgs;
 
-  libraryPackages = import ./pkgs { inherit lib pkgs; };
+  libraryPackages = lib.NXLPkgs.libraries;
 in
 # Libraries that are a single file should have the source set to the exact init.lua file
 # Libraries that are multiple files should have the source set to the root where init.lua is

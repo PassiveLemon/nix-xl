@@ -1,10 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
-  inherit (lib) getAttrs attrNames elem foldl' flatten mergeAttrsList;
+  inherit (lib) subImport getAttrs attrNames elem foldl' flatten mergeAttrsList;
   cfg = config.programs.lite-xl;
 
-  supportedPlugins = import ./plugins.nix { inherit lib pkgs; };
-  depsList = import ../deps.nix { inherit lib pkgs; };
+  supportedPlugins = subImport ./plugins.nix;
+  depsList = subImport ../deps.nix;
 
   customEnableList = cfg.plugins.customEnableList;
 
