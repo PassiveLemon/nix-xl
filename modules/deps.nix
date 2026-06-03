@@ -9,18 +9,17 @@ let
   supportedLibraries = import ./libraries/libraries.nix { inherit lib pkgs; };
   supportedPlugins = import ./plugins/plugins.nix { inherit lib pkgs; };
 
-  templateLibraryDeps = mapAttrs (_name: _value: {
+  templateLibraryDeps = mapAttrs (_: _: {
     libraries = [ ];
     plugins = [ ];
   }) supportedLibraries;
-  templatePluginDeps = mapAttrs (_name: _value: {
+  templatePluginDeps = mapAttrs (_: _: {
     libraries = [ ];
     plugins = [ ];
   }) supportedPlugins;
-
 in
 {
-  # Currently no library depends on another
+  # Currently no supported library has dependencies
   libraries = templateLibraryDeps;
   plugins = recursiveUpdate templatePluginDeps {
     # Snippets

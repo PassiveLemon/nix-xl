@@ -1,10 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
-  inherit (lib) genNamedPaths mkIf mkOption types attrNames;
+  inherit (lib) subImport genNamedPaths mkIf mkOption types attrNames;
   cfg = config.programs.lite-xl;
 
-  enableLibraries = import ./pack.nix { inherit config lib pkgs; };
-  supportedLibraries = import ./libraries.nix { inherit lib pkgs; };
+  enableLibraries = subImport ./pack.nix;
+  supportedLibraries = subImport ./libraries.nix;
   libraryStrings = attrNames supportedLibraries;
 
   namedPaths = genNamedPaths "lite-xl/libraries/" enableLibraries;

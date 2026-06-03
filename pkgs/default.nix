@@ -3,6 +3,7 @@ let
   inherit (lib) packager getPackageSrc;
 in rec {
   lxl = getPackageSrc "lite-xl-plugins" pkgs;
+  lsp = getPackageSrc "lib-lsp-servers" pkgs;
 
   plugins = {
     discord-presence = packager "plg-discord-presence" ./discord-presence.nix pkgs;

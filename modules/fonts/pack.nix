@@ -1,9 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
-  inherit (lib) listToAttrs nameValuePair getAttr mergeAttrsList;
+  inherit (lib) subImport listToAttrs nameValuePair getAttr mergeAttrsList;
   cfg = config.programs.lite-xl;
 
-  supportedFonts = import ./fonts.nix { inherit lib pkgs; };
+  supportedFonts = subImport ./fonts.nix;
 
   enableFont = cfg.fonts.font;
   enableCodeFont = cfg.fonts.codeFont;

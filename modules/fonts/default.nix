@@ -1,10 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
-  inherit (lib) mkIf mkEnableOption mkOption types attrNames match mapAttrs' nameValuePair elem;
+  inherit (lib) subImport mkIf mkEnableOption mkOption types attrNames match mapAttrs' nameValuePair elemAt;
   cfg = config.programs.lite-xl;
 
-  enableFonts = import ./pack.nix { inherit config lib pkgs; };
-  supportedFonts = import ./fonts.nix { inherit pkgs; };
+  enableFonts = subImport ./pack.nix;
+  supportedFonts = subImport ./fonts.nix;
   fontStrings = attrNames supportedFonts;
 
   # Append the extension from the font source to the font name for xdgEntries
@@ -13,7 +13,7 @@ let
       ext = match ".*(\\.[^./]+)$" path;
     in
       if ext != null
-      then builtins.elemAt ext 0
+      then elemAt ext 0
       else "";
 
   xdgEntries = mapAttrs' (name: source:

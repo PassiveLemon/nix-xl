@@ -1,10 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
-  inherit (lib) genNamedPaths subImport mkIf mkOption types attrNames;
+  inherit (lib) subImport genNamedPaths mkIf mkOption types attrNames;
   cfg = config.programs.lite-xl;
 
-  enablePlugins = import ./pack.nix { inherit config lib pkgs; };
-  supportedPlugins = import ./plugins.nix { inherit lib pkgs; };
+  enablePlugins = subImport ./pack.nix;
+  supportedPlugins = subImport ./plugins.nix;
   pluginStrings = attrNames supportedPlugins;
 
   xdgEntries = genNamedPaths "lite-xl/plugins/" enablePlugins;

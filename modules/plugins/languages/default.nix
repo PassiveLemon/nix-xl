@@ -1,9 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
-  inherit (lib) genNamedFiles mkLuaScript mkIf mkOption types attrNames getAttrs mergeAttrsList optionalAttrs length;
+  inherit (lib) subImport genNamedFiles mkLuaScript mkIf mkOption types attrNames getAttrs mergeAttrsList optionalAttrs length;
   cfg = config.programs.lite-xl;
 
-  supportedLanguages = import ./languages.nix { inherit lib pkgs; };
+  supportedLanguages = subImport ./languages.nix;
   languageStrings = attrNames supportedLanguages;
 
   customEnableList = cfg.plugins.languages.customEnableList;

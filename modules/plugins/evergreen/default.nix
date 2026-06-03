@@ -1,9 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
-  inherit (lib) genNamedFiles mkLuaScript mkIf mkOption types attrNames getAttrs mergeAttrsList optionalAttrs length;
+  inherit (lib) subImport genNamedPaths mkLuaScript mkIf mkOption types attrNames getAttrs mergeAttrsList optionalAttrs length;
   cfg = config.programs.lite-xl;
 
-  supportedEvergreens = import ./languages.nix { inherit config lib pkgs; };
+  supportedEvergreens = subImport ./languages.nix;
   evergreenStrings = attrNames supportedEvergreens;
 
   customEnableList = cfg.plugins.evergreen.customEnableList;
@@ -12,7 +12,7 @@ let
   userEvergreens = getAttrs enableList supportedEvergreens;
   finalEvergreens = mergeAttrsList [ userEvergreens customEnableList ];
 
-  namedEvergreenPaths = genNamedFiles "lite-xl/plugins/evergreen_languages/evergreen_" finalEvergreens;
+  namedEvergreenPaths = genNamedPaths "lite-xl/plugins/evergreen_languages/evergreen_" finalEvergreens;
 
   finalEvergreenStrings = attrNames finalEvergreens;
   concatEvergreens = mkLuaScript finalEvergreenStrings;

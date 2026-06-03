@@ -2,19 +2,10 @@
 let
   inherit (lib) getPackageSrc mergeAttrsList;
 
-  lsp = getPackageSrc "lib-lsp-servers" pkgs;
-
-  libraryPackages = lib.NXLPkgs.libraries;
+  lsp = lib.NXL.lsp;
 in
-# Libraries that are a single file should have the source set to the exact init.lua file
-# Libraries that are multiple files should have the source set to the root where init.lua is
-
-# Library structure
-# {
-#   "<name>" = "<source>";
-# }
 mergeAttrsList [
-  libraryPackages
+  lib.NXLPkgs.libraries
   {
     "widget" = getPackageSrc "lib-widgets" pkgs;
     "json" = "${getPackageSrc "lib-json" pkgs}/json.lua";

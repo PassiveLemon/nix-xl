@@ -1,10 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
-  inherit (lib) getAttrs attrNames elem foldl' flatten mergeAttrsList;
+  inherit (lib) subImport mapGetDeps getAttrs attrNames flatten mergeAttrsList;
   cfg = config.programs.lite-xl;
 
-  supportedLibraries = import ./libraries.nix { inherit lib pkgs; };
-  depsList = import ../deps.nix { inherit lib pkgs; };
+  supportedLibraries = subImport ./libraries.nix;
+  depsList = subImport ../deps.nix;
 
   customEnableList = cfg.libraries.customEnableList;
 
@@ -12,28 +12,16 @@ let
   librariesWithDeps = getAttrs libraryEnableList depsList.libraries;
   librariesWithDepsStrings = attrNames librariesWithDeps;
 
+  # Get library deps
+  libraryDeps = mapGetDeps librariesWithDepsStrings (dep: depsList.libraries.${dep}.libraries);
+
   # Plugins can depend on libraries so we need to check those too
   pluginEnableList = cfg.plugins.enableList;
-  pluginsWithDeps = getAttrs pluginEnableList depsList.plugins;
-  pluginsWithDepsStrings = attrNames pluginsWithDeps;
+  pluginsWithDepsStrings = attrNames (getAttrs pluginEnableList depsList.plugins);
 
-  getDeps = (library: visited:
-    # If library is in visited then return the list to avoid infinite recursion.
-    # This indicates that the deps for said plugin were already resolved
-    if elem library visited then visited else
-      let
-        # Pass the next plugin and visited list to gitDeps recursively
-        direct = depsList.libraries.${library}.libraries;
-        nextVisited = visited ++ [ library ];
-      in
-        foldl' (acc: dep: getDeps dep acc) nextVisited direct);
-
-  # Check library deps
-  libraryDeps = map (library: getDeps library [ ]) librariesWithDepsStrings;
-
-  # Check plugin library deps
-  pluginLibraryDepsList = flatten (map (plugin: depsList.plugins.${plugin}.libraries) pluginsWithDepsStrings);
-  pluginLibraryDeps = map (library: getDeps library [ ]) pluginLibraryDepsList;
+  # Get plugin library deps
+  pluginLibraryDepsStrings = flatten (map (plugin: depsList.plugins.${plugin}.libraries) pluginsWithDepsStrings);
+  pluginLibraryDeps = mapGetDeps pluginLibraryDepsStrings (dep: depsList.libraries.${dep}.libraries);
 
   finalLibraries = getAttrs (flatten [ libraryDeps pluginLibraryDeps ]) supportedLibraries;
 in
