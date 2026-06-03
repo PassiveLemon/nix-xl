@@ -2,7 +2,7 @@
 let
   inherit (lib) genPluginPaths subImport;
 
-  # Languages in lite-xl-plugins
+  # lite-xl-plugins
   languageNames = [
     "angelscript" "assembly_riscv" "assembly_x86" "autohotkey_v1" "awk" "batch" "bazel"
     "bend" "bib" "blade" "blueprint" "brainfuck" "buzz" "c7" "caddyfile" "carbon"

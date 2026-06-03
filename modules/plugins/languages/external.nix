@@ -2,8 +2,6 @@
 let
   inherit (lib) getPackageSrc;
 in
-# Language structure
-# "<lang>" = "<source>";
 {
   "containerfile" = "${getPackageSrc "plg-containerfile" pkgs}/init.lua";
   "crystal" = "${getPackageSrc "plg-crystal" pkgs}/language_crystal.lua";

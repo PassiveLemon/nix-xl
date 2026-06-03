@@ -20,6 +20,7 @@ let
 
 in
 {
+  # Currently no library depends on another
   libraries = templateLibraryDeps;
   plugins = recursiveUpdate templatePluginDeps {
     # Snippets

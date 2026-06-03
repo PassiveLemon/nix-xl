@@ -5,10 +5,6 @@ let
 in
 # Plugins that are a single file should have the source set to the exact init.lua file
 # Plugins that are multiple files should have the source set to the root where init.lua is
-# Plugin structure
-# {
-#   "<name>" = "<source>";
-# }
 mergeAttrsList [
   lib.NXLPkgs.plugins
   {

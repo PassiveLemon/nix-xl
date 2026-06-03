@@ -2,6 +2,7 @@
 let
   inherit (lib) genPluginPaths getPackageSrc;
 
+  # plg-formatters
   formatterNames = [
     "autoflake" "black" "clangformat" "cljfmt" "cmakeformat" "crystal" "csharpier"
     "cssbeautify" "dartformat" "dfmt" "elixir" "elmformat" "esformatter" "gdformat"

@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) extend removePrefix genAttrs mergeAttrsList;
+  inherit (lib) extend removePrefix genAttrs mergeAttrsList mapAttrs' nameValuePair hasSuffix concatMapStrings elem getAttr foldl';
 in
 extend (final: _: {
   subImport = path: import path {
@@ -37,6 +37,11 @@ extend (final: _: {
     version = final.versionFromPackage pkg;
   in pkgs.${overridePkg}.overrideAttrs { inherit version src; };
 
+  # Generate attrset of paths to a source
+  # -> {
+  #   /path/to/path1.lua = "<source1>.lua";
+  #   /path/to/path2 = "<source2>/";
+  # }
   genPluginPaths = source: files: dirs: external: let
     pluginFiles = genAttrs files (plugin: "${source}${plugin}.lua");
     pluginDirs = genAttrs dirs (plugin: "${source}${plugin}");
@@ -45,5 +50,31 @@ extend (final: _: {
     pluginDirs
     external
   ];
+
+  # Map files attrset to a source
+  # -> {
+  #   "/path/to/file1.lua" = { source = "<source1>"; }
+  #   "/path/to/file2.lua" = { source = "<source2>"; }
+  # }
+  genNamedFiles = source: files:
+    mapAttrs' (name: source':
+      nameValuePair "${source}${name}.lua" { source = source'; }) files;
+
+  # Map a paths attrset to a source. Works with files and directories
+  # -> {
+  #   "/path/to/path1/" = { source = "<source1>/"; recursive = true; }
+  #   "/path/to/path2.lua" = { source = "<source2>"; }
+  # }
+  genNamedPaths = source: paths:
+    mapAttrs' (name: source': 
+      if (hasSuffix ".lua" source)
+      then (nameValuePair "${source}${name}.lua" { source = source'; })
+      else (nameValuePair "${source}${name}" { source = source'; recursive = true; })
+    ) paths;
+
+  # Concat item list for lua script
+  # -> ",item1,,item2,,item3,"
+  mkLuaScript = items: concatMapStrings (item: ",${item},") items;
+
 })
 

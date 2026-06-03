@@ -3,9 +3,6 @@ let
   inherit (lib) getPackageSrc;
 in
 # TODO: We might be able to get these from lock.json
-
-# Language structure
-# "<lang>" = "<source>";
 {
   "c" = getPackageSrc "plg-evg-c" pkgs;
   "cpp" = getPackageSrc "plg-evg-cpp" pkgs;

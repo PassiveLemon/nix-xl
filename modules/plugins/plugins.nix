@@ -2,7 +2,7 @@
 let
   inherit (lib) genPluginPaths subImport;
 
-  # Plugins in lite-xl-plugins
+  # lite-xl-plugins
   pluginFiles = [
     "align_carets"
     "autoinsert"
@@ -83,9 +83,4 @@ let
 
   pluginPaths = genPluginPaths "${lib.NXLPkgs.lxl}/plugins/" pluginFiles pluginDirs (subImport ./external.nix);
 in pluginPaths
-
-# Plugin structure
-# {
-#   "<name>" = "<source>";
-# }
 

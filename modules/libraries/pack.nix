@@ -8,7 +8,6 @@ let
 
   customEnableList = cfg.libraries.customEnableList;
 
-  # Filter libraries
   libraryEnableList = cfg.libraries.enableList;
   librariesWithDeps = getAttrs libraryEnableList depsList.libraries;
   librariesWithDepsStrings = attrNames librariesWithDeps;

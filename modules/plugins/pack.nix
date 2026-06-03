@@ -8,7 +8,6 @@ let
 
   customEnableList = cfg.plugins.customEnableList;
 
-  # Filter plugins
   enableList = cfg.plugins.enableList;
   pluginsWithDeps = getAttrs enableList depsList.plugins;
   pluginsWithDepsStrings = attrNames pluginsWithDeps;
