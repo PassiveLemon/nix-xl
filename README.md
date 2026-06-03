@@ -1,5 +1,8 @@
 # nix-xl
 
+> [!NOTE]
+> I am attempting to effectively redo this project. It is very fragile and hard to work on, I did not plan it very well
+
 Declaratively configure Lite-XL languages, plugins, and libraries.
 
 With automatic dependency resolution, nix-xl attempts to make Lite-XL configuration as simple as possible for Nix users without the need for [lpm](https://github.com/lite-xl/lite-xl-plugin-manager).
