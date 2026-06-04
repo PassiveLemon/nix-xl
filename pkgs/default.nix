@@ -1,8 +1,9 @@
-{ pkgs, lib, ... }:
+{ config, lib, pkgs, ... }:
 let
   inherit (lib) packager getPackageSrc;
 in rec {
-  lxl = getPackageSrc "lite-xl-plugins" pkgs;
+  lxl = config.programs.lite-xl.package.src;
+  lxp = getPackageSrc "lite-xl-plugins" pkgs;
   lsp = getPackageSrc "lib-lsp-servers" pkgs;
   nts = getPackageSrc "plg-evg-nvim-ts" pkgs;
 
