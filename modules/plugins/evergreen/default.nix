@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  inherit (lib) subImport genNamedPaths mkLuaScript mkIf mkOption types attrNames getAttrs mergeAttrsList optionalAttrs length;
+  inherit (lib) subImport genNamedPaths mkLuaScript mkIf mkOption mkEnableOption types attrNames mergeAttrsList optionalAttrs length;
   cfg = config.programs.lite-xl;
 
   enableLanguages = subImport ./pack.nix;
@@ -22,6 +22,13 @@ in
       customEnableList = mkOption {
         type = types.attrsOf types.path;
         default = { };
+      };
+      copyLanguages = {
+        enable = mkEnableOption "copying Lite-XL languages for Evergreen";
+        filter = mkOption {
+          type = types.listOf types.str;
+          default = [ ];
+        };
       };
     };
   };

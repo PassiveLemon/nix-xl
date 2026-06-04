@@ -16,7 +16,7 @@ let
     "tcl" "teal" "tex" "toml" "ts" "tsx" "typst" "umka" "v" "wren" "yaml" "zig"
   ];
 
-  languagePaths = genPluginPaths "${lib.NXLPkgs.lxl}/plugins/language_" languageNames [ ] (subImport ./external.nix);
+  languagePaths = genPluginPaths "${lib.NXLPkgs.lxp}/plugins/language_" languageNames [ ] (subImport ./external.nix);
 in
 languagePaths
 

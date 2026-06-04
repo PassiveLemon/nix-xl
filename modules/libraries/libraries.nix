@@ -2,7 +2,7 @@
 let
   inherit (lib) getPackageSrc mergeAttrsList;
 
-  lsp = lib.NXL.lsp;
+  lsp = lib.NXLPkgs.lsp;
 in
 mergeAttrsList [
   lib.NXLPkgs.libraries

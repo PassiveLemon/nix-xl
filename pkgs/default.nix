@@ -23,8 +23,8 @@ in rec {
     # www = packagerGit "lib-www" ./www.nix pkgs;
     # TODO: Build nonicons because it is not in Nixpkgs
     # https://github.com/ya2s/nonicons/
-    font_nonicons = pkgs.callPackage ./font_nonicons.nix { src = lxl; };
-    font_symbols_nerdfont_mono_regular = pkgs.callPackage ./font_symbols_nerdfont_mono_regular.nix { src = lxl; };
+    font_nonicons = pkgs.callPackage ./font_nonicons.nix { src = lxp; };
+    font_symbols_nerdfont_mono_regular = pkgs.callPackage ./font_symbols_nerdfont_mono_regular.nix { src = lxp; };
   };
 }
 

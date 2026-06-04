@@ -38,6 +38,13 @@ extend (final: _: {
   in
   pkgs.${overridePkg}.overrideAttrs { inherit version src; };
 
+  # Generate attrset of names to a source
+  # -> {
+  #   name1 = "<source1>.lua";
+  #   name2 = "<source2>/";
+  # }
+  genPaths = source: names: genAttrs names (plugin: "${source}${plugin}.lua");
+
   # Generate attrset of paths to a source
   # -> {
   #   /path/to/path1.lua = "<source1>.lua";
