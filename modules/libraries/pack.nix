@@ -8,6 +8,7 @@ let
 
   customEnableList = cfg.libraries.customEnableList;
 
+  # Filter enabled libraries
   libraryEnableList = cfg.libraries.enableList;
   librariesWithDeps = getAttrs libraryEnableList depsList.libraries;
   librariesWithDepsStrings = attrNames librariesWithDeps;
@@ -15,6 +16,7 @@ let
   # Get library deps
   libraryDeps = mapGetDeps librariesWithDepsStrings (dep: depsList.libraries.${dep}.libraries);
 
+  # Filter plugins languages
   # Plugins can depend on libraries so we need to check those too
   pluginEnableList = cfg.plugins.enableList;
   pluginsWithDepsStrings = attrNames (getAttrs pluginEnableList depsList.plugins);

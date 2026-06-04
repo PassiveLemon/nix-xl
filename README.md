@@ -1,14 +1,19 @@
 # nix-xl
-
 Declaratively configure Lite-XL languages, plugins, and libraries.
 
-Nix-XL features automatic dependency resolution which makes Lite-XL configuration as simple as possible for Nix users without the need for [lpm](https://github.com/lite-xl/lite-xl-plugin-manager).
+Nix-XL features automatic dependency resolution, which makes Lite-XL configuration as simple as possible for Nix users without the need for [lpm](https://github.com/lite-xl/lite-xl-plugin-manager).
 
-The only included features are currently from [lite-xl-plugins](https://github.com/lite-xl/lite-xl-plugins). Any additions must have their own repository.
-The only architecture currently supported is `x86_64-linux`. Others may be supported in the future.
+# Features
+Supports 100% of all included plugins and libraries in [lite-xl-plugins](https://github.com/lite-xl/lite-xl-plugins) and nearly all of the linked plugins and libraries.
+
+Nix-XL also supports the plugin sets like lsp, languages, and formatters from lite-xl-plugins and Evergreen highlighters.
+
+> [!NOTE]
+> Not all features currently have their hashes set or dependencies configured. If you discover one, open an issue
 
 # Usage
 Nix-XL is currently only supported as a home-manager module. It will not work in a NixOS configuration.
+The only architecture currently supported is `x86_64-linux`. Others may be supported in the future.
 
 Add the flake to your inputs:
 ```nix
@@ -53,6 +58,22 @@ To enable syntax highlighting for languages, use the language option:
 ```
 - All available languages are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#languages) with the following note
   - The language name is simply just everything after `language_`
+
+### Evergreen
+[Evergreen](https://github.com/Evergreen-lxl/Evergreen.lxl) adds support for syntax highlighting with Treesitter. This allows for finer and more intelligent highlighting, but the number available [languages](https://github.com/Evergreen-lxl/evergreen-languages) is far lesser than Lite-XL regex-style highlighting.
+
+To enable it, use the option:
+```nix
+# home.nix
+{
+  programs.lite-xl = {
+    enable = true;
+    plugins.evergreen = {
+      enableList = [ "html" "lua" ];
+    };
+  };
+}
+```
 
 ## Plugins
 To enable plugins, use the plugin option:
@@ -105,6 +126,7 @@ Documentation:
 - [ ] Contributing guidelines/template
 - [ ] Docs for main features, customs, plugin sets, etc
   - Ideally generated
+  - Customs override enableList if the names match
 
 Todo:
 - Turn Evergreen patches into patchfiles

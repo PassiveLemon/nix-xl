@@ -8,6 +8,7 @@ let
 
   customEnableList = cfg.plugins.languages.customEnableList;
 
+  # Filter enabled languages
   enableList = cfg.plugins.languages.enableList;
   userLanguages = getAttrs enableList supportedLanguages;
   finalLanguages = mergeAttrsList [ userLanguages customEnableList ];

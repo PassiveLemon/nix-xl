@@ -21,10 +21,21 @@ in
   # Currently no supported library has dependencies
   libraries = templateLibraryDeps;
   plugins = recursiveUpdate templatePluginDeps {
-    # Snippets
-    lsp_snippets = {
-      libraries = [ "json" ];
+    colorpicker = {
+      libraries = [ "widget" ];
+      plugins = [ ];
+    };
+    evergreen = {
+      libraries = [ "tree_sitter" ];
       plugins = [ "snippets" ];
+    };
+    lsp_snippets = {
+      libraries = [ "json" "widget" ];
+      plugins = [ "snippets" ];
+    };
+    nerdicons = {
+      libraries = [ "font_symbols_nerdfont_mono_regular" ];
+      plugins = [ ];
     };
 
     # LSP

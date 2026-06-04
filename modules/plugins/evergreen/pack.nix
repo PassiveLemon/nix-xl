@@ -8,6 +8,7 @@ let
 
   customEnableList = cfg.plugins.evergreen.customEnableList;
 
+  # Filter enabled languages
   enableList = cfg.plugins.evergreen.enableList;
   languagesWithDepsStrings = attrNames (getAttrs enableList depsList.plugins);
 

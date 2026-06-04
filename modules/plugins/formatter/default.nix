@@ -8,6 +8,7 @@ let
 
   customEnableList = cfg.plugins.formatter.customEnableList;
 
+  # Filter enabled formatters
   enableList = cfg.plugins.formatter.enableList;
   userFormatters = getAttrs enableList supportedFormatters;
   finalFormatters = mergeAttrsList [ userFormatters customEnableList ];
