@@ -17,11 +17,10 @@ extend (final: _: {
 
   versionGitDateToUnstable = date: "0-unstable-${date}";
 
-  versionFromPackage = pkg: (
+  versionFromPackage = pkg:
     if pkg ? "date"
     then final.versionGitDateToUnstable pkg.date
-    else final.versionRemovePrefix pkg.version
-  );
+    else final.versionRemovePrefix pkg.version;
 
   packager = pname: path: pkgs:
   let
@@ -61,7 +60,9 @@ extend (final: _: {
   #   "/path/to/file2.lua" = { source = "<source2>"; }
   # }
   genNamedFiles = source: files:
-    mapAttrs' (name: source': nameValuePair "${source}${name}.lua" { source = source'; }) files;
+    mapAttrs' (name: source':
+      nameValuePair "${source}${name}.lua" { source = source'; }
+    ) files;
 
   # Map a paths attrset to a source. Works with files and directories
   # -> {
@@ -79,16 +80,17 @@ extend (final: _: {
   # -> ",item1,,item2,,item3,"
   mkLuaScript = items: concatMapStrings (item: ",${item},") items;
 
-  # Recursively add each dependency to the accumulator if it's not already in there. Cb is a callback function that should return the next dependency list
+  # Recursively add each dependency to the accumulator list if it's not already. Cb is a callback function predicate that should return the next dependency list
   getDeps = item: acc: cb:
     if elem item acc
     then acc
     else let
       next = cb item;
       nextVisited = acc ++ [ item ];
-    in foldl' (acc: dep: final.getDeps dep acc cb) nextVisited next;
+    in
+    foldl' (acc: dep: final.getDeps dep acc cb) nextVisited next;
 
-  mapGetDeps = items: cb:
-    flatten (map (item: (final.getDeps item [ ] cb)) items);
+  # Maps each item in a list to getDeps with a callback function predicate
+  mapGetDeps = items: cb: flatten (map (item: (final.getDeps item [ ] cb)) items);
 })
 

@@ -17,5 +17,6 @@ let
   ];
 
   languagePaths = genPluginPaths "${lib.NXLPkgs.lxl}/plugins/language_" languageNames [ ] (subImport ./external.nix);
-in languagePaths
+in
+languagePaths
 

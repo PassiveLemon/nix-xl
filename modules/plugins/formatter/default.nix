@@ -3,7 +3,7 @@ let
   inherit (lib) subImport genNamedFiles mkLuaScript mkIf mkOption types attrNames getAttrs mergeAttrsList optionalAttrs length;
   cfg = config.programs.lite-xl;
 
-  supportedFormatters = subImport ./formatters.nix;
+  supportedFormatters = subImport ./pack.nix;
   formatterStrings = attrNames supportedFormatters;
 
   customEnableList = cfg.plugins.formatter.customEnableList;

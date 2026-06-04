@@ -264,6 +264,26 @@
         },
         "version": "v0.2"
     },
+    "plg-evg": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "4f22fd68344ca8e134963211695c1c45393888e7",
+            "sha256": "sha256-UIiaBcvWJLK2mV40T0+L00XRFCqXT0c2z6pSl1Rr9h4=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/Evergreen-lxl/evergreen-languages"
+        },
+        "version": "4f22fd68344ca8e134963211695c1c45393888e7"
+    },
     "plg-evg-c": {
         "cargoLock": null,
         "date": null,
@@ -484,6 +504,26 @@
         },
         "version": "4fbec840c34149b7d5fe10097c93a320ee4af053"
     },
+    "plg-evg-nvim-ts": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "plg-evg-nvim-ts",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "42fc28ba918343ebfd5565147a42a26580579482",
+            "sha256": "sha256-CVs9FTdg3oKtRjz2YqwkMr0W5qYLGfVyxyhE3qnGYbI=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/nvim-treesitter/nvim-treesitter"
+        },
+        "version": "42fc28ba918343ebfd5565147a42a26580579482"
+    },
     "plg-evg-rust": {
         "cargoLock": null,
         "date": null,
@@ -638,7 +678,7 @@
             "leaveDotGit": false,
             "name": null,
             "rev": "adee96d383776bd97acea76d612bd959cfd10b86",
-            "sha256": "sha256-+WDwnUlg+jHSdRByTOB+cULnzNgZIqFs5whgZGu3ze8=",
+            "sha256": "sha256-Tb4d1zSksBS6r2/TESKMk3d18tQv5lI7RA4hH+LNUgU=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/adamharrison/quetta"
@@ -647,7 +687,7 @@
     },
     "plg-terminal": {
         "cargoLock": null,
-        "date": "2026-05-05",
+        "date": "2026-05-24",
         "extract": null,
         "name": "plg-terminal",
         "passthru": null,
@@ -657,13 +697,13 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "5eb96544dcd864998a9b06d8e10259dcc704d868",
-            "sha256": "sha256-Acuh9zA4iRm5a5HJ6rTMxBELTVNEfm6CVASEktklaU8=",
+            "rev": "b04097d2ee5affb86198001a82410fb68c94d907",
+            "sha256": "sha256-TSLpuxzl4jxjKntsZT9uK9TplgL5OGPUskHiFHpmUBI=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/adamharrison/lite-xl-terminal"
         },
-        "version": "5eb96544dcd864998a9b06d8e10259dcc704d868"
+        "version": "b04097d2ee5affb86198001a82410fb68c94d907"
     },
     "plg-vale": {
         "cargoLock": null,

@@ -3,25 +3,20 @@ let
   inherit (lib) subImport genNamedPaths mkLuaScript mkIf mkOption types attrNames getAttrs mergeAttrsList optionalAttrs length;
   cfg = config.programs.lite-xl;
 
-  supportedEvergreens = subImport ./languages.nix;
-  evergreenStrings = attrNames supportedEvergreens;
+  enableLanguages = subImport ./pack.nix;
+  supportedLanguages = subImport ./languages.nix;
+  languageStrings = attrNames supportedLanguages;
 
-  customEnableList = cfg.plugins.evergreen.customEnableList;
+  namedEvergreenPaths = genNamedPaths "lite-xl/plugins/evergreen_languages/evergreen_" enableLanguages;
 
-  enableList = cfg.plugins.evergreen.enableList;
-  userEvergreens = getAttrs enableList supportedEvergreens;
-  finalEvergreens = mergeAttrsList [ userEvergreens customEnableList ];
-
-  namedEvergreenPaths = genNamedPaths "lite-xl/plugins/evergreen_languages/evergreen_" finalEvergreens;
-
-  finalEvergreenStrings = attrNames finalEvergreens;
+  finalEvergreenStrings = attrNames enableLanguages;
   concatEvergreens = mkLuaScript finalEvergreenStrings;
 in
 {
   options = {
     programs.lite-xl.plugins.evergreen = {
       enableList = mkOption {
-        type = types.listOf (types.enum evergreenStrings);
+        type = types.listOf (types.enum languageStrings);
         default = [ ];
       };
       customEnableList = mkOption {

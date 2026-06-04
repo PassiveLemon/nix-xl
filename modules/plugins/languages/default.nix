@@ -3,7 +3,7 @@ let
   inherit (lib) subImport genNamedFiles mkLuaScript mkIf mkOption types attrNames getAttrs mergeAttrsList optionalAttrs length;
   cfg = config.programs.lite-xl;
 
-  supportedLanguages = subImport ./languages.nix;
+  supportedLanguages = subImport ./pack.nix;
   languageStrings = attrNames supportedLanguages;
 
   customEnableList = cfg.plugins.languages.customEnableList;

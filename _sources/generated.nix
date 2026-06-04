@@ -169,6 +169,19 @@
       sha256 = "sha256-ZUu+8LVo+jtOrjuz1MUZ8kt3JpnWkz7fwX8dJLmHHVs=";
     };
   };
+  plg-evg = {
+    pname = "plg-evg";
+    version = "4f22fd68344ca8e134963211695c1c45393888e7";
+    src = fetchgit {
+      url = "https://github.com/Evergreen-lxl/evergreen-languages";
+      rev = "4f22fd68344ca8e134963211695c1c45393888e7";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-UIiaBcvWJLK2mV40T0+L00XRFCqXT0c2z6pSl1Rr9h4=";
+    };
+  };
   plg-evg-c = {
     pname = "plg-evg-c";
     version = "7fa1be1b694b6e763686793d97da01f36a0e5c12";
@@ -312,6 +325,19 @@
       sha256 = "sha256-fO8XqlauYiPR0KaFzlAzvkrYXgEsiSzlB3xYzUpcbrs=";
     };
   };
+  plg-evg-nvim-ts = {
+    pname = "plg-evg-nvim-ts";
+    version = "42fc28ba918343ebfd5565147a42a26580579482";
+    src = fetchgit {
+      url = "https://github.com/nvim-treesitter/nvim-treesitter";
+      rev = "42fc28ba918343ebfd5565147a42a26580579482";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-CVs9FTdg3oKtRjz2YqwkMr0W5qYLGfVyxyhE3qnGYbI=";
+    };
+  };
   plg-evg-rust = {
     pname = "plg-evg-rust";
     version = "3691201b01cacb2f96ffca4c632c4e938bfacd88";
@@ -413,23 +439,23 @@
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-+WDwnUlg+jHSdRByTOB+cULnzNgZIqFs5whgZGu3ze8=";
+      sha256 = "sha256-Tb4d1zSksBS6r2/TESKMk3d18tQv5lI7RA4hH+LNUgU=";
     };
     date = "2024-09-29";
   };
   plg-terminal = {
     pname = "plg-terminal";
-    version = "5eb96544dcd864998a9b06d8e10259dcc704d868";
+    version = "b04097d2ee5affb86198001a82410fb68c94d907";
     src = fetchgit {
       url = "https://github.com/adamharrison/lite-xl-terminal";
-      rev = "5eb96544dcd864998a9b06d8e10259dcc704d868";
+      rev = "b04097d2ee5affb86198001a82410fb68c94d907";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Acuh9zA4iRm5a5HJ6rTMxBELTVNEfm6CVASEktklaU8=";
+      sha256 = "sha256-TSLpuxzl4jxjKntsZT9uK9TplgL5OGPUskHiFHpmUBI=";
     };
-    date = "2026-05-05";
+    date = "2026-05-24";
   };
   plg-vale = {
     pname = "plg-vale";

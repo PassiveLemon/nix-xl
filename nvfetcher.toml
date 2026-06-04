@@ -39,6 +39,14 @@ fetch.git = "https://github.com/adamharrison/lite-xl-terminal"
 git.fetchSubmodules = true
 
 # External Evergreen languages
+[plg-evg]
+src.manual = "4f22fd68344ca8e134963211695c1c45393888e7"
+fetch.git = "https://github.com/Evergreen-lxl/evergreen-languages"
+
+[plg-evg-nvim-ts]
+src.manual = "42fc28ba918343ebfd5565147a42a26580579482"
+fetch.git = "https://github.com/nvim-treesitter/nvim-treesitter"
+
 [plg-evg-c]
 src.manual = "7fa1be1b694b6e763686793d97da01f36a0e5c12"
 fetch.git = "https://github.com/tree-sitter/tree-sitter-c"

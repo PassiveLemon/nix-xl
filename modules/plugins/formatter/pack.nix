@@ -14,5 +14,6 @@ let
   frm = getPackageSrc "plg-formatters" pkgs;
 
   formatterPaths = genPluginPaths "${frm}/formatter_" formatterNames [ ] { };
-in formatterPaths
+in
+formatterPaths
 
