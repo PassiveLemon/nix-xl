@@ -1,31 +1,20 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
-  inherit (lib) getAttrs attrNames elem foldl' flatten mergeAttrsList;
+  inherit (lib) subImport mapGetDeps getAttrs attrNames flatten mergeAttrsList;
   cfg = config.programs.lite-xl;
 
-  supportedPlugins = import ./plugins.nix { inherit lib pkgs; };
-  depsList = import ../deps.nix { inherit lib pkgs; };
+  supportedPlugins = subImport ./plugins.nix;
+  depsList = subImport ../deps.nix;
 
   customEnableList = cfg.plugins.customEnableList;
 
-  # Filter plugins
   enableList = cfg.plugins.enableList;
-  pluginsWithDeps = getAttrs enableList depsList.plugins;
-  pluginsWithDepsStrings = attrNames pluginsWithDeps;
+  pluginsWithDepsStrings = attrNames (getAttrs enableList depsList.plugins);
 
-  getDeps = (plugin: visited:
-    # If plugin is in visited then return the list to avoid infinite recursion.
-    # This indicates that the deps for said plugin were already resolved
-    if elem plugin visited then visited else
-      let
-        # Pass the next plugin and visited list to gitDeps recursively
-        direct = depsList.plugins.${plugin}.plugins;
-        nextVisited = visited ++ [ plugin ];
-      in
-        foldl' (acc: dep: getDeps dep acc) nextVisited direct);
+  # Get plugins deps
+  pluginDeps = mapGetDeps pluginsWithDepsStrings (dep: depsList.plugins.${dep}.plugins);
 
-  # Check plugins
-  pluginDeps = map (plugin: getDeps plugin [ ]) pluginsWithDepsStrings;
+  # Ignore checking if any supported library depends on a plugin because currently none do and will likely never
 
   finalPlugins = getAttrs (flatten pluginDeps) supportedPlugins;
 in

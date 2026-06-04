@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkOption mkEnableOption types concatMapStrings mapAttrsToList optionalAttrs length flatten optional elem;
+  inherit (lib) mkLuaScript mkIf mkOption mkEnableOption types mapAttrsToList optionalAttrs length flatten optional elem;
   cfg = config.programs.lite-xl;
 
   # https://github.com/lite-xl/lite-xl-lsp/blob/master/config.lua
@@ -10,9 +10,7 @@ let
 
   enableList = cfg.plugins.lsp.enableList;
 
-  # Concat userLsps list for lua script
-  # -> ",serv1,,serv2,,serv3,"
-  concatServers = concatMapStrings (serv: ",${serv},") enableList;
+  concatServers = mkLuaScript enableList;
 
   # Generate a list (nested: [["1"] ["2"] ["3"]]) of packages (language-servers and linters) based on what lsp languages the user specified
   genPackages = servers: (mapAttrsToList (name: value: optional (elem name enableList) value) servers);
@@ -30,7 +28,6 @@ in
 
   config = mkIf cfg.enable {
     xdg.configFile = optionalAttrs (length enableList > 0) {
-      # Script to load servers since they are not placed top-level
       "lite-xl/plugins/lsp_servers/init.lua" = {
         text = ''
           -- mod-version: 3
@@ -44,7 +41,7 @@ in
         '';
       };
     };
-    # Add language servers and linters dynamically.
+    # Add language servers and linters dynamically
     home.packages = flatten (optional cfg.plugins.lsp.addPackages [
       (genPackages (with pkgs; {
         # Language servers

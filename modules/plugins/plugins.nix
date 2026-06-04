@@ -1,11 +1,9 @@
-{ lib, pkgs, ... }:
+{ lib, ... }:
 let
-  inherit (lib) getPackageSrc genAttrs mergeAttrsList;
+  inherit (lib) genPluginPaths subImport;
 
-  lxl = getPackageSrc "lite-xl-plugins" pkgs;
-
-  # Plugins in lite-xl-plugins
-  lxlPluginStrings = [
+  # lite-xl-plugins
+  pluginFiles = [
     "align_carets"
     "autoinsert"
     "autosave"
@@ -81,28 +79,9 @@ let
     "wordcount"
   ];
 
-  # Generate attrset of plugin to source file
-  # -> {
-  #   plugin1 = "<source1>.lua";
-  #   plugin2 = "<source2>.lua";
-  #   plugin3 = "<source3>.lua";
-  # }
-  lxlPlugins = genAttrs lxlPluginStrings (plugin: "${lxl}/plugins/${plugin}.lua");
+  pluginDirs = [ "editorconfig" "profile" ];
 
-  # Plugins in external repositories
-  externalPlugins = import ./external.nix { inherit lib pkgs; };
+  pluginPaths = genPluginPaths "${lib.NXLPkgs.lxl}/plugins/" pluginFiles pluginDirs (subImport ./external.nix);
 in
-# Plugin structure
-# {
-#   "<name>" = "<source>";
-# }
-mergeAttrsList [
-  lxlPlugins
-  externalPlugins
-  # Plugins that are not just one file
-  {
-    "editorconfig" = "${lxl}/plugins/editorconfig";
-    "profile" = "${lxl}/plugins/profile";
-  }
-]
+pluginPaths
 

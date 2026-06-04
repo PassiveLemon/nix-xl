@@ -2,10 +2,7 @@
 
 Declaratively configure Lite-XL languages, plugins, and libraries.
 
-With automatic dependency resolution, nix-xl attempts to make Lite-XL configuration as simple as possible for Nix users without the need for [lpm](https://github.com/lite-xl/lite-xl-plugin-manager).
-
-> [!NOTE]
-> I have not tested every single language, plugin, and library combination so there may be incompatibilities, missing features, or other issues.
+Nix-XL features automatic dependency resolution which makes Lite-XL configuration as simple as possible for Nix users without the need for [lpm](https://github.com/lite-xl/lite-xl-plugin-manager).
 
 The only included features are currently from [lite-xl-plugins](https://github.com/lite-xl/lite-xl-plugins). Any additions must have their own repository.
 The only architecture currently supported is `x86_64-linux`. Others may be supported in the future.
@@ -95,28 +92,29 @@ Fonts:
 - [ ] Lua file to load fonts
 - [ ] Font size option
 
-Themes:
-- [ ] Custom themes
-
 Config:
-- [ ] Create an init.lua file that should load the fonts, themes and other config files.
-- [ ]? "User" specific configs
+- Create an init.lua file that should load the fonts, themes and other config files.
+  - ? "User" specific configs, like a specific module option for use across home-manager configs that share a common plugin config but need some host specific config
 
 General:
-- [ ] nvfetcher to update plugin versions. Check every couple days or so since plugins aren't updated too frequently
-- [ ] Handle undefined features (eg: no fonts specified)
+- Handle undefined features (eg: One font unspecified after being enabled)
+- Option to disable dep resolution
 
-Later (maybes):
-- Use nvfetcher for all git stuff (Current a lot of stuff have pinned versions)
+Documentation:
+- [ ] Descriptions on module options
+- [ ] Contributing guidelines/template
+- [ ] Docs for main features, customs, plugin sets, etc
+  - Ideally generated
+
+Todo:
 - Turn Evergreen patches into patchfiles
-- Complete refactoring
-  - Move all packages to their own place (keep them out of modules) and rework their output structure
-  - Theres a level of jank around the whole project that should be addressed
-- Docs for main features, customs, evergreen, formatters, lsp servers
-- Overlay local packages to add lite-xl plugins repo so we dont have to keep defining it
-- Contributing guidelines/template
-- Descriptions on module options
+- Build `nonicons`
+- Finish `www`
+
+Maybes:
+- Figure out a better way to source versions than packing everything into one nvfetcher.toml. It just needs to avoid getting rate-limited
 - Switch everything from fetchgit to fetchFromGitHub where applicable
-- `nonicons` (TODO: Build nonicons because it is not in Nixpkgs)
-- `www` (TODO: Finish the package. Currently can't be built)
+- Custom themes. I am not creating a theme designer
+- Evergreen language inheritance. If enabled, it will enable (if it exists) the Evergreen language for each syntax language enabled
+  - ? Exclusion
 

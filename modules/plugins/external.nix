@@ -1,22 +1,12 @@
-{
-  lib,
-  pkgs,
-  ...
-}:
+{ lib, pkgs, ... }:
 let
   inherit (lib) mergeAttrsList;
   inherit (pkgs) fetchgit;
-
-  pluginPackages = import ./pkgs { inherit lib pkgs; };
 in
 # Plugins that are a single file should have the source set to the exact init.lua file
 # Plugins that are multiple files should have the source set to the root where init.lua is
-# Plugin structure
-# {
-#   "<name>" = "<source>";
-# }
 mergeAttrsList [
-  pluginPackages
+  lib.NXLPkgs.plugins
   {
     "base16" =
       (fetchgit {
@@ -86,7 +76,7 @@ mergeAttrsList [
     };
     # The old repository in which this was hosted at, https://github.com/bokunodev/lite_modules
     # has been removed so an archive was found on the Wayback Machine
-    "eofnewline" = ./eofnewline.lua;
+    "eofnewline" = ../../pkgs/other/eofnewline.lua;
     "equationgrapher" =
       (fetchgit {
         url = "https://github.com/thacuber2a03/equationgrapher";
@@ -271,3 +261,4 @@ mergeAttrsList [
       + "/init.lua";
   }
 ]
+

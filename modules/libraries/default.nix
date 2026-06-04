@@ -1,24 +1,13 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
-  inherit (lib) mkIf mkOption types attrNames mapAttrs' hasSuffix nameValuePair;
+  inherit (lib) subImport genNamedPaths mkIf mkOption types attrNames;
   cfg = config.programs.lite-xl;
 
-  enableLibraries = import ./pack.nix { inherit config lib pkgs; };
-  supportedLibraries = import ./libraries.nix { inherit lib pkgs; };
+  enableLibraries = subImport ./pack.nix;
+  supportedLibraries = subImport ./libraries.nix;
   libraryStrings = attrNames supportedLibraries;
 
-  # Map supportedLibraries attrset to xdg.configFile entries
-  # -> {
-  #   "lite-xl/libraries/lib1/" = { source = "<source1>/"; recursive = true; }
-  #   "lite-xl/libraries/lib2/" = { source = "<source2>/"; recursive = true; }
-  #   "lite-xl/libraries/lib3.lua" = { source = "<source3>"; }
-  # }
-  namedPaths = mapAttrs' (name: source: (
-    # Append a ".lua" if the library is a single file
-    if (hasSuffix ".lua" source)
-    then (nameValuePair "lite-xl/libraries/${name}.lua" { source = source; })
-    else (nameValuePair "lite-xl/libraries/${name}" { source = source; recursive = true; })
-  )) enableLibraries;
+  namedPaths = genNamedPaths "lite-xl/libraries/" enableLibraries;
 in
 {
   options = {
