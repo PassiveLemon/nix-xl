@@ -17,16 +17,19 @@ in
     programs.lite-xl.plugins.evergreen = {
       enableList = mkOption {
         type = types.listOf (types.enum languageStrings);
+        description = "The list of languages to enable.";
         default = [ ];
       };
       customEnableList = mkOption {
         type = types.attrsOf types.path;
+        description = "Enable custom languages. A custom language will overwrite the same name language in enableList.";
         default = { };
       };
       copyLanguages = {
         enable = mkEnableOption "copying Lite-XL languages for Evergreen";
         filter = mkOption {
           type = types.listOf types.str;
+          description = "The list of languages to not copy.";
           default = [ ];
         };
       };

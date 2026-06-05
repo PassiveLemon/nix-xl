@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  inherit (lib) subImport mapGetDeps getAttrs attrNames flatten mergeAttrsList;
+  inherit (lib) subImport mapGetDeps getAttrs attrNames subtractLists flatten mergeAttrsList;
   cfg = config.programs.lite-xl;
 
   supportedLibraries = subImport ./libraries.nix;
@@ -10,11 +10,10 @@ let
 
   # Filter enabled libraries
   libraryEnableList = cfg.libraries.enableList;
-  librariesWithDeps = getAttrs libraryEnableList depsList.libraries;
-  librariesWithDepsStrings = attrNames librariesWithDeps;
+  librariesWithDepsStrings = attrNames (getAttrs libraryEnableList depsList.libraries);
 
   # Get library deps
-  libraryDeps = mapGetDeps librariesWithDepsStrings (dep: depsList.libraries.${dep}.libraries);
+  libraryDeps = mapGetDeps librariesWithDepsStrings (dep: _: depsList.libraries.${dep}.libraries);
 
   # Filter plugins languages
   # Plugins can depend on libraries so we need to check those too
@@ -22,8 +21,11 @@ let
   pluginsWithDepsStrings = attrNames (getAttrs pluginEnableList depsList.plugins);
 
   # Get plugin library deps
-  pluginLibraryDepsStrings = flatten (map (plugin: depsList.plugins.${plugin}.libraries) pluginsWithDepsStrings);
-  pluginLibraryDeps = mapGetDeps pluginLibraryDepsStrings (dep: depsList.libraries.${dep}.libraries);
+  pluginLibraryDeps = subtractLists pluginsWithDepsStrings (mapGetDeps pluginsWithDepsStrings (dep: acc:
+    if acc == [ ]
+    then depsList.plugins.${dep}.libraries
+    else depsList.libraries.${dep}.libraries
+  ));
 
   finalLibraries = getAttrs (flatten [ libraryDeps pluginLibraryDeps ]) supportedLibraries;
 in

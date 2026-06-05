@@ -20,6 +20,7 @@ in
     programs.lite-xl.plugins.lsp = {
       enableList = mkOption {
         type = types.listOf (types.enum serverStrings);
+        description = "The list of LSPs to enable.";
         default = [ ];
       };
       addPackages = mkEnableOption "adding language servers and linters";

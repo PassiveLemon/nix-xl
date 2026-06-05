@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 let
   inherit (lib) extend removePrefix genAttrs mergeAttrsList mapAttrs' nameValuePair hasSuffix concatMapStrings elem foldl' flatten map;
+  cfg = config.programs.lite-xl;
 in
 extend (final: _: {
   subImport = path: import path {
@@ -89,13 +90,16 @@ extend (final: _: {
 
   # Recursively add each dependency to the accumulator list if it's not already. Cb is a callback function predicate that should return the next dependency list
   getDeps = item: acc: cb:
-    if elem item acc
-    then acc
-    else let
-      next = cb item;
-      nextVisited = acc ++ [ item ];
-    in
-    foldl' (acc: dep: final.getDeps dep acc cb) nextVisited next;
+    if cfg.depRes
+    then
+      if elem item acc
+      then acc
+      else let
+        next = cb item acc;
+        nextVisited = acc ++ [ item ];
+      in
+      foldl' (acc: dep: final.getDeps dep acc cb) nextVisited next
+    else [ item ];
 
   # Maps each item in a list to getDeps with a callback function predicate
   mapGetDeps = items: cb: flatten (map (item: (final.getDeps item [ ] cb)) items);

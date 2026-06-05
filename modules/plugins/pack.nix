@@ -13,7 +13,7 @@ let
   pluginsWithDepsStrings = attrNames (getAttrs enableList depsList.plugins);
 
   # Get plugins deps
-  pluginDeps = mapGetDeps pluginsWithDepsStrings (dep: depsList.plugins.${dep}.plugins);
+  pluginDeps = mapGetDeps pluginsWithDepsStrings (dep: _: depsList.plugins.${dep}.plugins);
 
   # Ignore checking if any supported library depends on a plugin because currently none do and will likely never
 

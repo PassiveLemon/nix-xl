@@ -18,7 +18,7 @@ let
   languagesWithDepsStrings = attrNames (getAttrs enableList depsList.plugins);
 
   # Get language deps
-  languageDeps = mapGetDeps languagesWithDepsStrings (dep: depsList.${dep});
+  languageDeps = mapGetDeps languagesWithDepsStrings (dep: _: depsList.${dep});
 
   finalLanguages = getAttrs (flatten languageDeps) supportedLanguages;
 in

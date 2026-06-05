@@ -14,10 +14,12 @@ in
     programs.lite-xl.libraries = {
       enableList = mkOption {
         type = types.listOf (types.enum libraryStrings);
+        description = "The list of libraries to enable.";
         default = [ ];
       };
       customEnableList = mkOption {
         type = types.attrsOf types.path;
+        description = "Enable custom libraries. A custom library will overwrite the same name library in enableList.";
         default = { };
       };
     };
