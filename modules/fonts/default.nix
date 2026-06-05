@@ -29,36 +29,38 @@ in
       enable = mkEnableOption "lite-xl font configuration";
       font = mkOption {
         type = types.oneOf [(types.enum fontStrings)];
-        default = "";
+        default = "FiraCodeNerdFont-Retina";
       };
-      # customFont = mkOption {
-      #   type = types.submodule {
-      #     options = {
-      #       name = mkOption {
-      #         type = types.str;
-      #       };
-      #       value = mkOption {
-      #         type = types.path;
-      #       };
-      #     };
-      #   };
-      # };
+      customFont = mkOption {
+        type = types.submodule {
+          options = {
+            name = mkOption {
+              type = types.str;
+            };
+            value = mkOption {
+              type = types.path;
+            };
+          };
+        };
+        default = { name = ""; value = ""; };
+      };
       codeFont = mkOption {
         type = types.oneOf [(types.enum fontStrings)];
-        default = "";
+        default = "FiraCodeNerdFontMono-Retina";
       };
-      # customCodeFont = mkOption {
-      #   type = types.submodule {
-      #     options = {
-      #       name = mkOption {
-      #         type = types.str;
-      #       };
-      #       value = mkOption {
-      #         type = types.path;
-      #       };
-      #     };
-      #   };
-      # };
+      customCodeFont = mkOption {
+        type = types.submodule {
+          options = {
+            name = mkOption {
+              type = types.str;
+            };
+            value = mkOption {
+              type = types.path;
+            };
+          };
+        };
+        default = { name = ""; value = ""; };
+      };
     };
   };
 

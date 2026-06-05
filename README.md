@@ -99,7 +99,7 @@ When languages are specified, the appropriate language servers and linters (if `
 `lsp` still needs to be added to the plugins enableList to get loaded.
 
 ## Libraries
-To enable plugins, use the library option:
+To enable libraries, use the library option:
 ```nix
 # home.nix
 {
@@ -111,10 +111,27 @@ To enable plugins, use the library option:
 ```
 - All available libraries are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#libraries)
 
+## Fonts
+To enable fonts, use the font options:
+```nix
+# home.nix
+{
+  programs.lite-xl = {
+    enable = true;
+    fonts = {
+      enable = true;
+      font = "FiraCodeNerdFont-Retina";
+      codeFont = "FiraCodeNerdFontMono-Retina";
+    };
+  };
+}
+```
+- Supported fonts can be found [here](https://github.com/PassiveLemon/nix-xl/blob/master/modules/fonts/fonts.nix)
+
 # Todo
 Fonts:
 - [x] Defined fonts
-- [ ] Custom fonts
+- [x] Custom fonts
 - [ ] Lua file to load fonts
 - [ ] Font size option
 
