@@ -102,6 +102,6 @@ extend (final: _: {
     else [ item ];
 
   # Maps each item in a list to getDeps with a callback function predicate
-  mapGetDeps = items: cb: flatten (map (item: (final.getDeps item [ ] cb)) items);
+  mapGetDeps = items: cb: foldl' (acc: dep: final.getDeps dep acc cb) [ ] items;
 })
 
