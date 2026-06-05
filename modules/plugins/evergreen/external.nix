@@ -2,6 +2,8 @@
 let
   inherit (lib) getPackageSrc; # Custom
 in
+# We may be able to get everything we need from the Evergreen repo itself
+# It has a toml file with the sources and a lock.json with commits and hashes, though not sha-256
 {
   c = getPackageSrc "plg-evg-c" pkgs;
   cpp = getPackageSrc "plg-evg-cpp" pkgs;
