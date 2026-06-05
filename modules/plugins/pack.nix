@@ -9,7 +9,7 @@ let
 
   customEnableList = cfg.plugins.customEnableList;
 
-  # Filter enabled languages
+  # Filter enabled plugins
   enableList = cfg.plugins.enableList;
   pluginsWithDepsStrings = attrNames (getAttrs enableList depsList.plugins);
 

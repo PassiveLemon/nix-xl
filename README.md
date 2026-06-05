@@ -224,7 +224,6 @@ Maybes:
 - Figure out a better way to source versions than packing everything into one nvfetcher.toml. It just needs to avoid getting rate-limited
 - Switch everything from fetchgit to fetchFromGitHub where applicable
 - Custom themes. I am not creating a theme designer
-- Enable meta plugins when their enableLists have items. Ex: Enable Evergreen if the enableList has any value so the user doesn't also need to add `evergreen` to their plugin enableList
 - Inherit languages for LSP like with Evergreen. Would need a way to key language names to LSPs
 - External generated documentation
 - "User" specific configs, like a specific module option for use across home-manager configs that share a common plugin config but need some host specific config
