@@ -187,10 +187,11 @@ For modules that take an `enableList`, use the `customEnableList` option. Despit
   };
 }
 ```
+- LSP is the only exception to this as the module can't enable a custom LSP config
 
 Any custom will override the the same name item in the enableList
 
-Fonts specifically have custom prefixd options that override the standard config options:
+Fonts specifically have custom prefixd options that override the normal config options:
 ```nix
 # home.nix
 {
@@ -203,6 +204,7 @@ Fonts specifically have custom prefixd options that override the standard config
   };
 }
 ```
+- Any extension is supported, but it needs to be supported by Lite-XL to actually work
 
 # Todo
 Fonts:
@@ -215,7 +217,6 @@ Config:
 - Create an init.lua file that should load the fonts, themes and other config files
 
 Todo:
-- Turn Evergreen patches into patchfiles
 - Build `nonicons`
 - Finish `www`
 

@@ -22,7 +22,7 @@ let
   #   lang1 = "<deriv1>";
   #   lang2 = "<deriv2>";
   # }
-  evergreenLanguages = genAttrs evergreenLanguageStrings (name: (pkgs.callPackage ../../../pkgs/other/evergreen_lang.nix {
+  evergreenLanguages = genAttrs evergreenLanguageStrings (name: (pkgs.callPackage ../../../pkgs/evergreen/evergreen_lang.nix {
     inherit name languages lib;
     deps = langDeps name;
     version = versionFromPackage evergreen;

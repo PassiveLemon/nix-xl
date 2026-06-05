@@ -76,7 +76,7 @@ mergeAttrsList [
     };
     # The old repository in which this was hosted at, https://github.com/bokunodev/lite_modules
     # has been removed so an archive was found on the Wayback Machine
-    "eofnewline" = ../../pkgs/other/eofnewline.lua;
+    "eofnewline" = ../../pkgs/plugins/eofnewline.lua;
     "equationgrapher" =
       (fetchgit {
         url = "https://github.com/thacuber2a03/equationgrapher";
