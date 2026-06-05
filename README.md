@@ -56,11 +56,10 @@ To enable syntax highlighting for languages, use the language option:
   };
 }
 ```
-- All available languages are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#languages) with the following note
-  - The language name is simply just everything after `language_`
+- All available languages are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#languages)
 
 ### Evergreen
-[Evergreen](https://github.com/Evergreen-lxl/Evergreen.lxl) adds support for syntax highlighting with Treesitter. This allows for finer and more intelligent highlighting, but the number available [languages](https://github.com/Evergreen-lxl/evergreen-languages) is far lesser than Lite-XL regex-style highlighting.
+[Evergreen](https://github.com/Evergreen-lxl/Evergreen.lxl) adds support for syntax highlighting with Treesitter. This allows for more intelligent highlighting, but the number available [languages](https://github.com/Evergreen-lxl/evergreen-languages) is far lesser than Lite-XL regex-style highlighting.
 
 To enable it, use the option:
 ```nix
@@ -70,10 +69,15 @@ To enable it, use the option:
     enable = true;
     plugins.evergreen = {
       enableList = [ "html" "lua" ];
+      copyLanguages = false;
     };
   };
 }
 ```
+
+`evergreen` still needs to be added to the plugins enableList to get loaded.
+
+Enabling `copyLanguages` will attempt to enable each Evergreen language in your Lite-XL languages.
 
 ## Plugins
 To enable plugins, use the plugin option:
@@ -86,12 +90,16 @@ To enable plugins, use the plugin option:
   };
 }
 ```
-- All available plugins are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#plugins) with the following notes:
-  - Plugin names are exactly as they appear in the repository.
+- All available plugins are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#plugins)
   - `ide_*` plugins are not included since they are all links to the same `ide` plugin.
 
+### LSP
+When languages are specified, the appropriate language servers and linters (if `lintplus` is in the plugins enableList) will be automatically added to your `home.packages` if you enable `lite-xl.plugins.lsp.addPackages`.
+
+`lsp` still needs to be added to the plugins enableList to get loaded.
+
 ## Libraries
-To enable plugins, use the plugin option:
+To enable plugins, use the library option:
 ```nix
 # home.nix
 {
@@ -101,10 +109,7 @@ To enable plugins, use the plugin option:
   };
 }
 ```
-- All available libraries are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#libraries) exactly as they appear.
-
-## LSP Plugin
-When languages are specified, the appropriate language servers and linters (if you enabled liteplus) will be automatically added to your `home.packages` if you enable `lite-xl.plugins.lsp.addPackages`
+- All available libraries are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#libraries)
 
 # Todo
 Fonts:
@@ -137,6 +142,4 @@ Maybes:
 - Figure out a better way to source versions than packing everything into one nvfetcher.toml. It just needs to avoid getting rate-limited
 - Switch everything from fetchgit to fetchFromGitHub where applicable
 - Custom themes. I am not creating a theme designer
-- Evergreen language inheritance. If enabled, it will enable (if it exists) the Evergreen language for each syntax language enabled
-  - ? Exclusion
 

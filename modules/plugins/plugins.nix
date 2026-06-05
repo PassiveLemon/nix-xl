@@ -81,7 +81,7 @@ let
 
   pluginDirs = [ "editorconfig" "profile" ];
 
-  pluginPaths = genPluginPaths "${lib.NXLPkgs.lxl}/plugins/" pluginFiles pluginDirs (subImport ./external.nix);
+  pluginPaths = genPluginPaths "${lib.NXLPkgs.lxp}/plugins/" pluginFiles pluginDirs (subImport ./external.nix);
 in
 pluginPaths
 
