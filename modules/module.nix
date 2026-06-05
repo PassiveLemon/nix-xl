@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkIf mkEnableOption mkPackageOption mkOption types maintainers;
+  inherit (lib) mkIf mkEnableOption mkPackageOption maintainers;
   cfg = config.programs.lite-xl;
 
   NXL = import ../parts/lib.nix { inherit config lib pkgs; };
@@ -11,12 +11,8 @@ in
     programs.lite-xl = {
       enable = mkEnableOption "lite-xl";
       package = mkPackageOption pkgs "lite-xl" { };
+      depRes = mkEnableOption "automatic dependecy resolution" // { default = true; };
     };
-
-    # programs.lite-xl._debug = mkOption {
-    #   type = types.anything;
-    #   default = "";
-    # };
   };
 
   imports = [

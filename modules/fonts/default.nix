@@ -29,6 +29,7 @@ in
       enable = mkEnableOption "lite-xl font configuration";
       font = mkOption {
         type = types.oneOf [(types.enum fontStrings)];
+        description = "The UI font to enable.";
         default = "FiraCodeNerdFont-Retina";
       };
       customFont = mkOption {
@@ -36,16 +37,20 @@ in
           options = {
             name = mkOption {
               type = types.str;
+              description = "The name of the custom font.";
             };
             value = mkOption {
               type = types.path;
+              description = "The path to the custom font.";
             };
           };
         };
+        description = "Enable a custom UI font. Will overwrite the font.";
         default = { name = ""; value = ""; };
       };
       codeFont = mkOption {
         type = types.oneOf [(types.enum fontStrings)];
+        description = "The code font to enable.";
         default = "FiraCodeNerdFontMono-Retina";
       };
       customCodeFont = mkOption {
@@ -53,12 +58,15 @@ in
           options = {
             name = mkOption {
               type = types.str;
+              description = "The name of the custom font.";
             };
             value = mkOption {
               type = types.path;
+              description = "The path to the custom font.";
             };
           };
         };
+        description = "Enable a custom code font. Will overwrite the code font.";
         default = { name = ""; value = ""; };
       };
     };

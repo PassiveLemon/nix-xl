@@ -23,10 +23,12 @@ in
     programs.lite-xl.plugins.formatter = {
       enableList = mkOption {
         type = types.listOf (types.enum formatterStrings);
+        description = "The list of formatters to enable.";
         default = [ ];
       };
       customEnableList = mkOption {
         type = types.attrsOf types.path;
+        description = "Enable custom formatters. A custom formatter will overwrite the same name formatter in enableList.";
         default = { };
       };
     };

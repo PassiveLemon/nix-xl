@@ -14,7 +14,7 @@ let
 
   evergreen = getPackage "plg-evg" pkgs;
 
-  langDeps = name: getDeps name [ ] (dep: getAttr dep deps);
+  langDeps = name: getDeps name [ ] (dep: _: getAttr dep deps);
 
   # Generate attrset of evergreen language to source derivation
   # -> {

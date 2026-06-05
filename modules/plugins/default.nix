@@ -14,10 +14,12 @@ in
     programs.lite-xl.plugins = {
       enableList = mkOption {
         type = types.listOf (types.enum pluginStrings);
+        description = "The list of plugins to enable.";
         default = [ ];
       };
       customEnableList = mkOption {
         type = types.attrsOf types.path;
+        description = "Enable custom plugins. A custom plugin will overwrite the same name plugin in enableList.";
         default = { };
       };
     };

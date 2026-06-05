@@ -41,9 +41,12 @@ Import the module and enable it:
   
   programs.lite-xl = {
     enable = true;
+    depRes = true;
   };
 }
 ```
+
+Disabling `depRes` will disable automatic dependency resolution for the whole configuration.
 
 ## Languages
 To enable syntax highlighting for languages, use the language option:
@@ -59,7 +62,7 @@ To enable syntax highlighting for languages, use the language option:
 - All available languages are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#languages)
 
 ### Evergreen
-[Evergreen](https://github.com/Evergreen-lxl/Evergreen.lxl) adds support for syntax highlighting with Treesitter. This allows for more intelligent highlighting, but the number available [languages](https://github.com/Evergreen-lxl/evergreen-languages) is far lesser than Lite-XL regex-style highlighting.
+[Evergreen](https://github.com/Evergreen-lxl/Evergreen.lxl) adds support for syntax highlighting with Treesitter. This allows for more intelligent highlighting, but the number of available [languages](https://github.com/Evergreen-lxl/evergreen-languages) is far lesser than Lite-XL regex-style highlighting.
 
 To enable it, use the option:
 ```nix
@@ -74,10 +77,11 @@ To enable it, use the option:
   };
 }
 ```
-
-`evergreen` still needs to be added to the plugins enableList to get loaded.
+- Supported languages can be found [here](https://github.com/Evergreen-lxl/evergreen-languages)
 
 Enabling `copyLanguages` will attempt to enable each Evergreen language in your Lite-XL languages.
+
+`evergreen` still needs to be added to the plugins enableList to get loaded.
 
 ## Plugins
 To enable plugins, use the plugin option:
@@ -94,7 +98,24 @@ To enable plugins, use the plugin option:
   - `ide_*` plugins are not included since they are all links to the same `ide` plugin.
 
 ### LSP
-When languages are specified, the appropriate language servers and linters (if `lintplus` is in the plugins enableList) will be automatically added to your `home.packages` if you enable `lite-xl.plugins.lsp.addPackages`.
+LSP provides language server and linter support in the editor, providing support for autocompletions, type checking, etc.
+
+To enable it, use the option:
+```nix
+# home.nix
+{
+  programs.lite-xl = {
+    enable = true;
+    plugins.lsp = {
+      enableList = [ "bashls" "sumneko_lua" ];
+      addPackages = true;
+    };
+  };
+}
+```
+- Supported LSPs can be found [here](https://github.com/lite-xl/lite-xl-lsp/blob/master/config.lua)
+
+Enabling `addPackages` will add the appropriate language servers and linters (if `lintplus` is in the plugins enableList) to your `home.packages`.
 
 `lsp` still needs to be added to the plugins enableList to get loaded.
 
@@ -139,16 +160,12 @@ Config:
 - Create an init.lua file that should load the fonts, themes and other config files.
   - ? "User" specific configs, like a specific module option for use across home-manager configs that share a common plugin config but need some host specific config
 
-General:
-- Handle undefined features (eg: One font unspecified after being enabled)
-- Option to disable dep resolution
-
 Documentation:
-- [ ] Descriptions on module options
+- [x] Descriptions on module options
 - [ ] Contributing guidelines/template
 - [ ] Docs for main features, customs, plugin sets, etc
   - Ideally generated
-  - Customs override enableList if the names match
+  - Include how Customs overwrite
 
 Todo:
 - Turn Evergreen patches into patchfiles
@@ -159,4 +176,5 @@ Maybes:
 - Figure out a better way to source versions than packing everything into one nvfetcher.toml. It just needs to avoid getting rate-limited
 - Switch everything from fetchgit to fetchFromGitHub where applicable
 - Custom themes. I am not creating a theme designer
+- Inherit languages for LSP like with Evergreen. Would need a way to key language names to LSPs
 
