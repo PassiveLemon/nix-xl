@@ -48,7 +48,21 @@ Import the module and enable it:
 
 Disabling `depRes` will disable automatic dependency resolution for the whole configuration.
 
-## Languages
+## Plugins
+To enable plugins, use the plugin option:
+```nix
+# home.nix
+{
+  programs.lite-xl = {
+    enable = true;
+    plugins.enableList = [ "bracketmatch" "editorconfig" "gitdiff_highlight" "treeview-extender" ];
+  };
+}
+```
+- All available plugins are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#plugins)
+  - `ide_*` plugins are not included since they are all links to the same `ide` plugin.
+
+### Languages
 To enable syntax highlighting for languages, use the language option:
 ```nix
 # home.nix
@@ -60,6 +74,47 @@ To enable syntax highlighting for languages, use the language option:
 }
 ```
 - All available languages are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#languages)
+
+### LSP
+LSP provides language server and linter support in the editor, enabling autocompletions, hover information, type checking, etc.
+
+To enable it, use the option:
+```nix
+# home.nix
+{
+  programs.lite-xl = {
+    enable = true;
+    plugins.lsp = {
+      enableList = [ "bashls" "sumneko_lua" ];
+      addPackages = true;
+    };
+  };
+}
+```
+- Supported LSPs can be found [here](https://github.com/lite-xl/lite-xl-lsp/blob/master/config.lua)
+
+Enabling `addPackages` will add the appropriate language servers and linters (if `lintplus` is in the plugins enableList) to your `home.packages`.
+
+`lsp` still needs to be added to the plugins enableList to get loaded.
+
+### Formatter
+Formatter provides formatting key bindings in the editor.
+
+To enable it, use the option:
+```nix
+# home.nix
+{
+  programs.lite-xl = {
+    enable = true;
+    plugins.formatter = {
+      enableList = [ "black" "luaformatter" ];
+    };
+  };
+}
+```
+- Supported formatters can be found [here](https://github.com/vincens2005/lite-formatters/tree/master/modules)
+
+`formatter` still needs to be added to the plugins enableList to get loaded.
 
 ### Evergreen
 [Evergreen](https://github.com/Evergreen-lxl/Evergreen.lxl) adds support for syntax highlighting with Treesitter. This allows for more intelligent highlighting, but the number of available [languages](https://github.com/Evergreen-lxl/evergreen-languages) is far lesser than Lite-XL regex-style highlighting.
@@ -82,42 +137,6 @@ To enable it, use the option:
 Enabling `copyLanguages` will attempt to enable each Evergreen language in your Lite-XL languages.
 
 `evergreen` still needs to be added to the plugins enableList to get loaded.
-
-## Plugins
-To enable plugins, use the plugin option:
-```nix
-# home.nix
-{
-  programs.lite-xl = {
-    enable = true;
-    plugins.enableList = [ "bracketmatch" "editorconfig" "gitdiff_highlight" "treeview-extender" ];
-  };
-}
-```
-- All available plugins are on the [official plugin repository](https://github.com/lite-xl/lite-xl-plugins?tab=readme-ov-file#plugins)
-  - `ide_*` plugins are not included since they are all links to the same `ide` plugin.
-
-### LSP
-LSP provides language server and linter support in the editor, providing support for autocompletions, type checking, etc.
-
-To enable it, use the option:
-```nix
-# home.nix
-{
-  programs.lite-xl = {
-    enable = true;
-    plugins.lsp = {
-      enableList = [ "bashls" "sumneko_lua" ];
-      addPackages = true;
-    };
-  };
-}
-```
-- Supported LSPs can be found [here](https://github.com/lite-xl/lite-xl-lsp/blob/master/config.lua)
-
-Enabling `addPackages` will add the appropriate language servers and linters (if `lintplus` is in the plugins enableList) to your `home.packages`.
-
-`lsp` still needs to be added to the plugins enableList to get loaded.
 
 ## Libraries
 To enable libraries, use the library option:
@@ -154,18 +173,18 @@ Fonts:
 - [x] Defined fonts
 - [x] Custom fonts
 - [ ] Lua file to load fonts
-- [ ] Font size option
+  - Font size config option
 
 Config:
-- Create an init.lua file that should load the fonts, themes and other config files.
+- Create an init.lua file that should load the fonts, themes and other config files
   - ? "User" specific configs, like a specific module option for use across home-manager configs that share a common plugin config but need some host specific config
 
 Documentation:
 - [x] Descriptions on module options
-- [ ] Contributing guidelines/template
-- [ ] Docs for main features, customs, plugin sets, etc
-  - Ideally generated
-  - Include how Customs overwrite
+- [x] Main features
+- [x] Plugin sets
+- [ ] Customs
+  - Include overwriting
 
 Todo:
 - Turn Evergreen patches into patchfiles
@@ -176,5 +195,7 @@ Maybes:
 - Figure out a better way to source versions than packing everything into one nvfetcher.toml. It just needs to avoid getting rate-limited
 - Switch everything from fetchgit to fetchFromGitHub where applicable
 - Custom themes. I am not creating a theme designer
+- Enable meta plugins when their enableLists have items. Ex: Enable Evergreen if the enableList has any value so the user doesn't also need to add `evergreen` to their plugin enableList
 - Inherit languages for LSP like with Evergreen. Would need a way to key language names to LSPs
+- External generated documentation
 
