@@ -1,6 +1,6 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) getPackageSrc;
+  inherit (lib) getPackageSrc; # Custom
 in
 {
   c = getPackageSrc "plg-evg-c" pkgs;

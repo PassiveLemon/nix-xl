@@ -1,6 +1,7 @@
 { config, lib, ... }:
 let
-  inherit (lib) subImport genNamedFiles mkLuaScript mkIf mkOption types attrNames getAttrs mergeAttrsList optionalAttrs length;
+  inherit (lib) mkIf mkOption types attrNames getAttrs mergeAttrsList optionalAttrs length;
+  inherit (lib) subImport genNamedFiles mkLuaScript; # Custom
   cfg = config.programs.lite-xl;
 
   supportedLanguages = subImport ./pack.nix;

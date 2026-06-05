@@ -1,6 +1,7 @@
 { config, lib, ... }:
 let
-  inherit (lib) subImport mkIf mkEnableOption mkOption types attrNames match mapAttrs' nameValuePair elemAt;
+  inherit (lib) mkIf mkEnableOption mkOption types attrNames match mapAttrs' nameValuePair elemAt;
+  inherit (lib) subImport; # Custom
   cfg = config.programs.lite-xl;
 
   enableFonts = subImport ./pack.nix;

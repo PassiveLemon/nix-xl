@@ -1,6 +1,7 @@
 { config, lib, ... }:
 let
-  inherit (lib) subImport listToAttrs nameValuePair getAttr;
+  inherit (lib) listToAttrs nameValuePair getAttr;
+  inherit (lib) subImport; # Custom
   cfg = config.programs.lite-xl;
 
   supportedFonts = subImport ./fonts.nix;

@@ -1,6 +1,7 @@
 { config, lib, ... }:
 let
-  inherit (lib) subImport genNamedPaths mkIf mkOption types attrNames;
+  inherit (lib) mkIf mkOption types attrNames;
+  inherit (lib) subImport genNamedPaths; # Custom
   cfg = config.programs.lite-xl;
 
   enablePlugins = subImport ./pack.nix;

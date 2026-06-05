@@ -1,43 +1,49 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) extend removePrefix genAttrs mergeAttrsList mapAttrs' nameValuePair hasSuffix concatMapStrings elem foldl' flatten map;
+  inherit (lib) extend removePrefix genAttrs mergeAttrsList mapAttrs' nameValuePair hasSuffix concatMapStrings elem foldl';
   cfg = config.programs.lite-xl;
 in
 extend (final: _: {
+  # Shortcut to import modules with the custom lib
   subImport = path: import path {
     inherit config pkgs;
     lib = final;
   };
 
+  # Add our custom packages to the lib for easy access
   NXLPkgs = final.subImport ../pkgs;
 
+  # Get packages from nvfetcher
   getPackage = pname: pkgs: (pkgs.callPackage ../_sources/generated.nix { }).${pname};
   getPackageSrc = pname: pkgs: (final.getPackage pname pkgs).src;
 
+  # Version formatting
   versionRemovePrefix = version: removePrefix "v" version;
-
   versionGitDateToUnstable = date: "0-unstable-${date}";
 
+  # Get the appropriately formatted version from an nvfetcher source
   versionFromPackage = pkg:
     if pkg ? "date"
     then final.versionGitDateToUnstable pkg.date
     else final.versionRemovePrefix pkg.version;
 
+  # Call a package with a source from nvfetcher
   packager = pname: path: pkgs:
-  let
-    pkg = final.getPackage pname pkgs;
-    src = pkg.src;
-    version = final.versionFromPackage pkg;
-  in
-  pkgs.callPackage path { inherit version src; };
+    let
+      pkg = final.getPackage pname pkgs;
+      src = pkg.src;
+      version = final.versionFromPackage pkg;
+    in
+    pkgs.callPackage path { inherit version src; };
 
+  # Override a package with a source from nvfetcher
   overlayPackager = pname: overridePkg: pkgs:
-  let
-    pkg = final.getPackage pname pkgs;
-    src = pkg.src;
-    version = final.versionFromPackage pkg;
-  in
-  pkgs.${overridePkg}.overrideAttrs { inherit version src; };
+    let
+      pkg = final.getPackage pname pkgs;
+      src = pkg.src;
+      version = final.versionFromPackage pkg;
+    in
+    pkgs.${overridePkg}.overrideAttrs { inherit version src; };
 
   # Generate attrset of names to a source
   # -> {
@@ -52,15 +58,15 @@ extend (final: _: {
   #   /path/to/path2 = "<source2>/";
   # }
   genPluginPaths = source: files: dirs: external:
-  let
-    pluginFiles = genAttrs files (plugin: "${source}${plugin}.lua");
-    pluginDirs = genAttrs dirs (plugin: "${source}${plugin}");
-  in 
-  mergeAttrsList [
-    pluginFiles
-    pluginDirs
-    external
-  ];
+    let
+      pluginFiles = genAttrs files (plugin: "${source}${plugin}.lua");
+      pluginDirs = genAttrs dirs (plugin: "${source}${plugin}");
+    in 
+    mergeAttrsList [
+      pluginFiles
+      pluginDirs
+      external
+    ];
 
   # Map files attrset to a source
   # -> {

@@ -1,6 +1,7 @@
 { lib, ... }:
 let
-  inherit (lib) subImport mapAttrs recursiveUpdate;
+  inherit (lib) mapAttrs recursiveUpdate;
+  inherit (lib) subImport; # Custom
 
   supportedLanguages = subImport ./external.nix;
 

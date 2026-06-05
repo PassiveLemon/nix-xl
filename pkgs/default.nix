@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) packager getPackageSrc;
+  inherit (lib) packager getPackageSrc; # Custom
 in rec {
   lxl = config.programs.lite-xl.package.src;
   lxp = getPackageSrc "lite-xl-plugins" pkgs;

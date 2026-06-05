@@ -1,6 +1,6 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) genPluginPaths getPackageSrc;
+  inherit (lib) genPluginPaths getPackageSrc; # Custom
 
   # plg-formatters
   formatterNames = [

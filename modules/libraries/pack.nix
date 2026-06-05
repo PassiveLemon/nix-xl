@@ -1,6 +1,7 @@
 { config, lib, ... }:
 let
-  inherit (lib) subImport mapGetDeps getAttrs attrNames subtractLists flatten elem mergeAttrsList;
+  inherit (lib) getAttrs attrNames subtractLists flatten elem mergeAttrsList;
+  inherit (lib) subImport mapGetDeps; # Custom
   cfg = config.programs.lite-xl;
 
   supportedLibraries = subImport ./libraries.nix;

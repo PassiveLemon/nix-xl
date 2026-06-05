@@ -1,6 +1,6 @@
 { lib, ... }:
 let
-  inherit (lib) genPluginPaths subImport;
+  inherit (lib) subImport genPluginPaths; # Custom
 
   # lite-xl-plugins
   pluginFiles = [

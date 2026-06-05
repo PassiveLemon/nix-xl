@@ -1,6 +1,7 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) getPackageSrc mergeAttrsList;
+  inherit (lib) mergeAttrsList;
+  inherit (lib) getPackageSrc; # Custom
 
   lsp = lib.NXLPkgs.lsp;
 in

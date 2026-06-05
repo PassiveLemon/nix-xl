@@ -1,6 +1,7 @@
 { lib, pkgs, ... }:
 let
-  inherit (lib) genPaths getPackageSrc mergeAttrsList;
+  inherit (lib) mergeAttrsList;
+  inherit (lib) genPaths getPackageSrc; # Custom
 
   builtinLangs = genPaths "${lib.NXLPkgs.lxl}/data/plugins/language_" [
     "c" "cpp" "css" "html" "js" "lua" "md" "python" "xml"

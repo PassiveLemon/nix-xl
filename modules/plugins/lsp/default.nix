@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkLuaScript mkIf mkOption mkEnableOption types mapAttrsToList optionalAttrs length flatten optional elem;
+  inherit (lib) mkIf mkOption mkEnableOption types mapAttrsToList optionalAttrs length flatten optional elem;
+  inherit (lib) mkLuaScript; # Custom
   cfg = config.programs.lite-xl;
 
   # https://github.com/lite-xl/lite-xl-lsp/blob/master/config.lua

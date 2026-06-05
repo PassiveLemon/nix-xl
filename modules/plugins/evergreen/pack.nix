@@ -1,6 +1,7 @@
 { config, lib, ... }:
 let
-  inherit (lib) subImport mapGetDeps intersectLists subtractLists optional getAttrs attrNames flatten mergeAttrsList;
+  inherit (lib) intersectLists subtractLists optional getAttrs attrNames flatten mergeAttrsList;
+  inherit (lib) subImport mapGetDeps; # Custom
   cfg = config.programs.lite-xl;
   cl = cfg.plugins.evergreen.copyLanguages;
 
