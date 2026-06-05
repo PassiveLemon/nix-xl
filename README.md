@@ -168,6 +168,42 @@ To enable fonts, use the font options:
 ```
 - Supported fonts can be found [here](https://github.com/PassiveLemon/nix-xl/blob/master/modules/fonts/fonts.nix)
 
+## Customs
+Each module provides a way to configure custom plugins, libraries, languages, fonts, etc.
+
+For modules that take an `enableList`, use the `customEnableList` option. Despite the name, it's should not be a list, rather it should be an attr set in the following format:
+```nix
+# home.nix
+{
+  programs.lite-xl = {
+    enable = true;
+    plugins = {
+      enableList = [ /* ... */ ];
+      customEnableList = {
+        "exterm" = <path/to/exterm.lua>;
+        "nerdicons" = <path/to/nerdicons.lua>;
+      };
+    };
+  };
+}
+```
+
+Any custom will override the the same name item in the enableList
+
+Fonts specifically have custom prefixd options that override the standard config options:
+```nix
+# home.nix
+{
+  programs.lite-xl = {
+    enable = true;
+    fonts = {
+      enable = true;
+      customFont = <path/to/font.ttf>;
+    };
+  };
+}
+```
+
 # Todo
 Fonts:
 - [x] Defined fonts
@@ -177,14 +213,6 @@ Fonts:
 
 Config:
 - Create an init.lua file that should load the fonts, themes and other config files
-  - ? "User" specific configs, like a specific module option for use across home-manager configs that share a common plugin config but need some host specific config
-
-Documentation:
-- [x] Descriptions on module options
-- [x] Main features
-- [x] Plugin sets
-- [ ] Customs
-  - Include overwriting
 
 Todo:
 - Turn Evergreen patches into patchfiles
@@ -198,4 +226,5 @@ Maybes:
 - Enable meta plugins when their enableLists have items. Ex: Enable Evergreen if the enableList has any value so the user doesn't also need to add `evergreen` to their plugin enableList
 - Inherit languages for LSP like with Evergreen. Would need a way to key language names to LSPs
 - External generated documentation
+- "User" specific configs, like a specific module option for use across home-manager configs that share a common plugin config but need some host specific config
 
