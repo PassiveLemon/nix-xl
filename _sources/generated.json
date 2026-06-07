@@ -678,7 +678,7 @@
             "leaveDotGit": false,
             "name": null,
             "rev": "adee96d383776bd97acea76d612bd959cfd10b86",
-            "sha256": "sha256-Tb4d1zSksBS6r2/TESKMk3d18tQv5lI7RA4hH+LNUgU=",
+            "sha256": "sha256-+WDwnUlg+jHSdRByTOB+cULnzNgZIqFs5whgZGu3ze8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/adamharrison/quetta"
