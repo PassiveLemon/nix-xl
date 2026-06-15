@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  inherit (lib) getAttrs attrNames subtractLists flatten elem mergeAttrsList;
+  inherit (lib) getAttrs attrNames subtractLists flatten mergeAttrsList;
   inherit (lib) subImport mapGetDeps; # Custom
   cfg = config.programs.lite-xl;
 
@@ -23,7 +23,7 @@ let
 
   # Get plugin library deps
   pluginLibraryDeps = subtractLists pluginsWithDepsStrings (mapGetDeps pluginsWithDepsStrings (dep: acc:
-    if elem dep pluginsWithDepsStrings
+    if acc == [ ]
     then depsList.plugins.${dep}.libraries
     else depsList.libraries.${dep}.libraries
   ));
