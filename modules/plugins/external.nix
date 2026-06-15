@@ -2,6 +2,12 @@
 let
   inherit (lib) mergeAttrsList;
   inherit (pkgs) fetchgit;
+
+  snippetsSrc = fetchgit {
+    url = "https://github.com/vqns/lite-xl-snippets";
+    rev = "87248a23c8ceb2507f46b3ca3689b32d35c9c709";
+    hash = "sha256-FSZTm5bpQKUfPsjwmat9NVrQg9HWil9kFWiBFFnEWJA=";
+  };
 in
 # Plugins that are a single file should have the source set to the exact init.lua file
 # Plugins that are multiple files should have the source set to the root where init.lua is
@@ -202,20 +208,8 @@ mergeAttrsList [
       rev = "1bb4cfce305ea17769c95672e0a441e7b6e66c6f";
       hash = "sha256-acIa7NY/LdFyiVF8sh5Fj+tKquJhexUM+n26opCoURo=";
     };
-    "snippets" =
-      (fetchgit {
-        url = "https://github.com/vqns/lite-xl-snippets";
-        rev = "87248a23c8ceb2507f46b3ca3689b32d35c9c709";
-        hash = "sha256-FSZTm5bpQKUfPsjwmat9NVrQg9HWil9kFWiBFFnEWJA=";
-      })
-      + "/snippets.lua";
-    "lsp_snippets" =
-      (fetchgit {
-        url = "https://github.com/vqns/lite-xl-snippets";
-        rev = "87248a23c8ceb2507f46b3ca3689b32d35c9c709";
-        hash = "sha256-FSZTm5bpQKUfPsjwmat9NVrQg9HWil9kFWiBFFnEWJA=";
-      })
-      + "/lsp_snippets.lua";
+    "snippets" = snippetsSrc + "/snippets.lua";
+    "lsp_snippets" = snippetsSrc + "/lsp_snippets.lua";
     "sortcss" =
       (fetchgit {
         url = "https://github.com/felixsanz/lite-xl-sortcss";

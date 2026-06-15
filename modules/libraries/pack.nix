@@ -23,6 +23,8 @@ let
 
   # Get plugin library deps
   pluginLibraryDeps = subtractLists pluginsWithDepsStrings (mapGetDeps pluginsWithDepsStrings (dep: acc:
+    ### This actually does not catch libraries from exclusively resolved plugins (plugins not in enableList). This will be addressed in the future
+    # Get the libraries from the plugin first, then from those libraries' libraries going forward
     if acc == [ ]
     then depsList.plugins.${dep}.libraries
     else depsList.libraries.${dep}.libraries

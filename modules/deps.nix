@@ -23,11 +23,13 @@ in
   plugins = recursiveUpdate templatePluginDeps {
     colorpicker = {
       libraries = [ "widget" ];
-      plugins = [ ];
     };
     evergreen = {
       libraries = [ "tree_sitter" ];
-      plugins = [ "snippets" ];
+    };
+    lsp = {
+      libraries = [ "widget" ];
+      plugins = [ "lintplus" "snippets" "lsp_snippets" ];
     };
     lsp_snippets = {
       libraries = [ "json" "widget" ];
@@ -35,41 +37,9 @@ in
     };
     nerdicons = {
       libraries = [ "font_symbols_nerdfont_mono_regular" ];
-      plugins = [ ];
     };
-
-    # LSP
-    emmet = {
-      libraries = [ "nodejs" ];
-      plugins = [ "lsp" ];
-    };
-    go = {
-      libraries = [ "golang" ];
-      plugins = [ "lsp" ];
-    };
-    haxe = {
-      libraries = [ "haxe" "nodejs" ];
-      plugins = [ "lsp" ];
-    };
-    java = {
-      libraries = [ "jdk" ];
-      plugins = [ "lsp" ];
-    };
-    json = {
-      libraries = [ "nodejs" ];
-      plugins = [ "lsp" ];
-    };
-    python = {
-      libraries = [ "nodejs" ];
-      plugins = [ "lsp" ];
-    };
-    typescript = {
-      libraries = [ "nodejs" ];
-      plugins = [ "lsp" ];
-    };
-    yaml = {
-      libraries = [ "nodejs" ];
-      plugins = [ "lsp" ];
+    snippets = {
+      libraries = [ "json" ];
     };
   };
 }
