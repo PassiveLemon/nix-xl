@@ -103,7 +103,7 @@ To enable it, use the option:
 
 Enabling `addPackages` will add the appropriate language servers and linters (if `lintplus` is in the plugins enableList) to your `home.packages`.
 
-`lsp` still needs to be added to the plugins enableList to get loaded. Currently there is no way to configure the LSPs.
+When any item is added to enableList, the LSP plugin is automatically enabled. Currently there is no way to configure the LSPs.
 
 The init.lua file to load the LSP configs is placed in `~/.config/lite-xl/plugins/lsp_servers`
 
@@ -124,7 +124,7 @@ To enable it, use the option:
 ```
 - Supported formatters can be found [here](https://github.com/vincens2005/lite-formatters/tree/master/modules)
 
-`formatter` still needs to be added to the plugins enableList to get loaded.
+When any item is added to enableList, the formatters plugin is automatically enabled.
 
 The formatters are placed in `~/.config/lite-xl/plugins/formatters/` and a subsequent init.lua file is also placed there to load the formatters.
 
@@ -148,7 +148,7 @@ To enable it, use the option:
 
 Enabling `copyLanguages` will attempt to enable each Evergreen language in your Lite-XL languages.
 
-`evergreen` still needs to be added to the plugins enableList to get loaded.
+When any item is added to enableList, the Evergreen plugin is automatically enabled. 
 
 The languages are placed in `~/.config/lite-xl/plugins/evergreen_languages/` and a subsequent init.lua file is also placed there to enable the language configs.
 

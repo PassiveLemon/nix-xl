@@ -16,7 +16,7 @@ let
   # Get library deps
   libraryDeps = mapGetDeps librariesWithDepsStrings (dep: _: depsList.libraries.${dep}.libraries);
 
-  # Filter plugins languages
+  # Filter enabled plugins
   # Plugins can depend on libraries so we need to check those too
   pluginEnableList = cfg.plugins.enableList;
   pluginsWithDepsStrings = attrNames (getAttrs pluginEnableList depsList.plugins);
