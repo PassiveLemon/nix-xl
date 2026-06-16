@@ -240,9 +240,6 @@ Main:
       - Make this configurable?
 - LSP
   - Inherit lite-xl languages for LSP like with Evergreen. Would need a way to key language names to LSPs
-- Libraries
-  - Dep res does not catch libraries from exclusively resolved plugins (plugins not in enableList). I think a better approach would be to go over every enabled plugin/library, and for each resolved dep, resolve both plugin and library deps at the same time. Need to keep the resolved library and plugin lists separate somehow
-    - This would also natively allow library with plugin dependencies, even though that is not implemented
 - Fonts
   - [x] Defined fonts
   - [x] Custom fonts

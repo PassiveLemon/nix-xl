@@ -1,12 +1,13 @@
-{ lib, pkgs, ... }:
+{ lib, ... }:
 let
   inherit (lib) mapAttrs recursiveUpdate;
+  inherit (lib) subImport; # Custom
 
   # Plugins/libraries and their dependencies should be put here.
 
   # We need to fill in the attrset with dummy values for libraries and plugins that don't have deps due to how getDeps works
-  supportedLibraries = import ./libraries/libraries.nix { inherit lib pkgs; };
-  supportedPlugins = import ./plugins/plugins.nix { inherit lib pkgs; };
+  supportedLibraries = subImport ./libraries/libraries.nix;
+  supportedPlugins = subImport ./plugins/plugins.nix;
 
   templateLibraryDeps = mapAttrs (_: _: {
     libraries = [ ];
