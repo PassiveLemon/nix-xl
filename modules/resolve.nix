@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  inherit (lib) foldl' flatten;
+  inherit (lib) foldl' isList foldAttrs head flatten;
   inherit (lib) subImport; # Custom
   cfg = config.programs.lite-xl;
 
@@ -10,7 +10,7 @@ let
   libraryEnableList = cfg.libraries.enableList;
 
   collapseTree = tree:
-    if lib.isList tree.plugins
+    if isList tree.plugins
     then tree
     else let
       next = tree.plugins;
@@ -29,7 +29,7 @@ let
       then let
         # Accumulate dependencies from each recursion iteration
         accPlugins = (
-          if lib.isList p-acc
+          if isList p-acc
           then p-acc ++ [ item ]
           else (collapseTree p-acc).plugins ++ [ item ]
         );
@@ -44,10 +44,11 @@ let
       in
       foldl' (acc: dep: getDeps dep "libraries" p-acc accLibraries) accLibraries nextLibraries;
 
-  resolveDeps = plugin: type: collapseTree (lib.head (flatten (getDeps plugin type [ ] [ ])));
+  resolveDeps = plugin: type:
+    collapseTree (head (flatten (getDeps plugin type [ ] [ ])));
 
   mergeDeps = list:
-    lib.foldAttrs (item: acc: item ++ acc) [ ] list;
+    foldAttrs (item: acc: item ++ acc) [ ] list;
 
   mapResolveDeps = items: type:
     mergeDeps (map (item: (resolveDeps item type)) items);
