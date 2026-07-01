@@ -1,26 +1,11 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
   inherit (lib) mkIf mkOption mkEnableOption types attrNames intersectLists subtractLists optionals mapAttrsToList optionalAttrs length flatten optional elem;
-  inherit (lib) mkLuaScript; # Custom
+  inherit (lib) subImport mkLuaScript; # Custom
   cfg = config.programs.lite-xl;
   cl = cfg.plugins.lintplus.copyLanguages;
 
-  # https://github.com/liquidev/lintplus/tree/master/linters
-  linterAttrs = with pkgs; {
-    "cppcheck" = cppcheck;
-    "luacheck" = lua54Packages.luacheck;
-    "moonscript" = lua54Packages.moonscript;
-    "nelua" = nelua;
-    "nim" = nim;
-    "php" = php;
-    "python" = python312Packages.flake8;
-    "rust" = cargo;
-    "shellcheck" = shellcheck;
-    "teal" = lua54Packages.tl;
-    "typescript" = eslint;
-    "v" = vlang;
-    "zig" = zig;
-  };
+  linterAttrs = subImport ./pack.nix;
   linterStrings = attrNames linterAttrs;
 
   enableList = cfg.plugins.lintplus.enableList;

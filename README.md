@@ -261,11 +261,6 @@ Main:
   - [ ] Main init file
   - [ ] Load fonts and theme color file
   - [ ] Load extra config file for user specified lua configuration.
-- Lintplus
-  - [x] Inherit lite-xl languages
-  - Custom linters? Maybe instead of trying to import from LSP and lintplus itself, we can just define our own
-- LSP
-  - Inherit lite-xl languages for LSP like with Evergreen. Would need a way to key language names to servers
 - Fonts
   - [x] Defined fonts
   - [x] Custom fonts
@@ -280,5 +275,7 @@ Other maybes:
 - Switch everything from fetchgit to fetchFromGitHub where applicable
 - External generated documentation
 - Specific plugin configuration, like for snippets
-- Specific LSP configuration
+- Warnings for languages copied, but not used (because a linter name doesn't match)
+- Custom linters and LSP server configuration
+- LSP copyLanguages option. Some languages have multiple supported servers
 
