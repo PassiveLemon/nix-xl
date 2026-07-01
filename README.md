@@ -107,6 +107,33 @@ When any item is added to enableList, the LSP plugin is automatically enabled. C
 
 The init.lua file to load the LSP configs is placed in `~/.config/lite-xl/plugins/lsp_servers`
 
+### Lintplus
+Lintplus provides linter support in the editor.
+
+To enable it, use the option:
+```nix
+# home.nix
+{
+  programs.lite-xl = {
+    enable = true;
+    plugins.lintplus = {
+      enableList = [ "luacheck" "python" ];
+      addPackages = true;
+      copyLanguages.enable = true;
+    };
+  };
+}
+```
+- Supported linters can be found [here](https://github.com/liquidev/lintplus/tree/master/linters)
+
+Enabling `addPackages` will add the appropriate linters to your `home.packages`.
+
+Enabling `copyLanguages` will attempt to enable each linter in your Lite-XL languages. Not all linters are named after their language (cppcheck, luacheck, shellcheck) so those have to be manually enabled.
+
+When any item is added to enableList, the Lintplus plugin is automatically enabled. Currently there is no way to configure linters.
+
+The init.lua file to load the linter configs is placed in `~/.config/lite-xl/plugins/lintplus_linters`
+
 ### Formatter
 Formatter provides formatting key bindings in the editor.
 
@@ -139,7 +166,7 @@ To enable it, use the option:
     enable = true;
     plugins.evergreen = {
       enableList = [ "html" "lua" ];
-      copyLanguages = false;
+      copyLanguages.enable = true;
     };
   };
 }
@@ -209,7 +236,7 @@ For modules that take an `enableList`, use the `customEnableList` option. Despit
   };
 }
 ```
-- LSP is the only exception to this as the module can't enable a custom LSP config
+- LSP and Linters are the only exception to this as those modules can't enable custom configs
 
 Fonts specifically have custom prefixed options that override the normal config options:
 ```nix
@@ -234,12 +261,11 @@ Main:
   - [ ] Main init file
   - [ ] Load fonts and theme color file
   - [ ] Load extra config file for user specified lua configuration.
-- Plugins
-  - Lintplus module. In case the user only wants linting and not an entire language server from LSP. Supported linters [here](https://github.com/liquidev/lintplus/tree/master/linters)
-    - If lintplus and LSP are enabled, LSP does automatically enables linters, though currently unsure if globally or by language
-      - Make this configurable?
+- Lintplus
+  - [x] Inherit lite-xl languages
+  - Custom linters? Maybe instead of trying to import from LSP and lintplus itself, we can just define our own
 - LSP
-  - Inherit lite-xl languages for LSP like with Evergreen. Would need a way to key language names to LSPs
+  - Inherit lite-xl languages for LSP like with Evergreen. Would need a way to key language names to servers
 - Fonts
   - [x] Defined fonts
   - [x] Custom fonts

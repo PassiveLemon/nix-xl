@@ -12,11 +12,13 @@ let
 
   evergreenEnable = ((length cfg.plugins.evergreen.enableList) > 0) || cfg.plugins.evergreen.copyLanguages.enable;
   formatterEnable = (length cfg.plugins.formatter.enableList) > 0;
+  lintplusEnable = (length cfg.plugins.lintplus.enableList) > 0;
   lspEnable = (length cfg.plugins.lsp.enableList) > 0;
   
   metaEnableList = flatten (optional cfg.depRes [
     (optional evergreenEnable "evergreen")
     (optional formatterEnable "formatter")
+    (optional lintplusEnable "lintplus")
     (optional lspEnable "lsp")
   ]);
 in
@@ -41,6 +43,7 @@ in
     (subImport ./evergreen)
     (subImport ./formatter)
     (subImport ./languages)
+    (subImport ./lintplus)
     (subImport ./lsp)
   ];
 
