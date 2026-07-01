@@ -1,6 +1,7 @@
 { lib, pkgs, ... }:
 let
   inherit (lib) mergeAttrsList;
+  inherit (lib) getPackageSrc; # Custom
   inherit (pkgs) fetchgit;
 
   snippetsSrc = fetchgit {
@@ -164,11 +165,7 @@ mergeAttrsList [
         hash = "sha256-oX0trNEsN+5+4QU4L8rVJszt3/50zZOChMAMJO9IXm8=";
       })
       + "/lorem.lua";
-    "lsp" = fetchgit {
-      url = "https://github.com/lite-xl/lite-xl-lsp";
-      rev = "61b51893c4b97cdb1950b333a98a0f9020bb530f";
-      hash = "sha256-7RAHTPBHDNEH/gAUfiFnjwfjo799A6ykcDOyCiQvI0w=";
-    };
+    "lsp" = getPackageSrc "lib-lsp" pkgs;
     "lspkind" = fetchgit {
       url = "https://github.com/sammy-ette/lite-xl-lspkind";
       rev = "8fb5bb0947c96f04ab0430fc02bf081946bfb92e";
