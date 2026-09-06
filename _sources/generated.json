@@ -165,7 +165,7 @@
     },
     "lite-xl-plugins": {
         "cargoLock": null,
-        "date": "2026-05-06",
+        "date": "2026-09-02",
         "extract": null,
         "name": "lite-xl-plugins",
         "passthru": null,
@@ -175,13 +175,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "ba6bff1de455a65bf4f5a60f04e07ff390911937",
-            "sha256": "sha256-FknN+/aJZkHUcUiAH6iU13bthcrdkileXjF+TlAqL0o=",
+            "rev": "31eef299637de2a8ec2864ee0f7d854959fafbc8",
+            "sha256": "sha256-uVvNOeXwLesDb30s7ya4W8i0vn6J3qWBpuq9BQh2veU=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/lite-xl/lite-xl-plugins"
         },
-        "version": "ba6bff1de455a65bf4f5a60f04e07ff390911937"
+        "version": "31eef299637de2a8ec2864ee0f7d854959fafbc8"
     },
     "plg-container": {
         "cargoLock": null,
