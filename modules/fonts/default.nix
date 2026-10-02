@@ -73,7 +73,7 @@ in
     };
   };
 
-  config = mkIf cfg.fonts.enable {
+  config = mkIf (cfg.enable && cfg.fonts.enable) {
     xdg.configFile = xdgEntries;
   };
 }
