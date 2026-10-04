@@ -687,7 +687,7 @@
     },
     "plg-terminal": {
         "cargoLock": null,
-        "date": "2026-05-24",
+        "date": "2026-10-01",
         "extract": null,
         "name": "plg-terminal",
         "passthru": null,
@@ -697,13 +697,13 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b04097d2ee5affb86198001a82410fb68c94d907",
-            "sha256": "sha256-TSLpuxzl4jxjKntsZT9uK9TplgL5OGPUskHiFHpmUBI=",
+            "rev": "f079e7d85ee5d802d2073a281c17af52e290dddf",
+            "sha256": "sha256-jzDFhVa+6eSC/+rHdHuJRSgxqjSIEoMR8ZyGdtgZv2c=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/adamharrison/lite-xl-terminal"
         },
-        "version": "b04097d2ee5affb86198001a82410fb68c94d907"
+        "version": "f079e7d85ee5d802d2073a281c17af52e290dddf"
     },
     "plg-vale": {
         "cargoLock": null,
