@@ -165,7 +165,7 @@
     },
     "lite-xl-plugins": {
         "cargoLock": null,
-        "date": "2026-09-02",
+        "date": "2026-10-08",
         "extract": null,
         "name": "lite-xl-plugins",
         "passthru": null,
@@ -175,13 +175,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "31eef299637de2a8ec2864ee0f7d854959fafbc8",
-            "sha256": "sha256-uVvNOeXwLesDb30s7ya4W8i0vn6J3qWBpuq9BQh2veU=",
+            "rev": "5f10fab404ddf28adaddd7c0e09613b11a332219",
+            "sha256": "sha256-j3Brayp9E4erglXYYgf1yIRnRFUrRpWIxM0+yAKBHNY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/lite-xl/lite-xl-plugins"
         },
-        "version": "31eef299637de2a8ec2864ee0f7d854959fafbc8"
+        "version": "5f10fab404ddf28adaddd7c0e09613b11a332219"
     },
     "plg-container": {
         "cargoLock": null,
@@ -667,7 +667,7 @@
     },
     "plg-quetta": {
         "cargoLock": null,
-        "date": "2024-09-29",
+        "date": "2026-10-07",
         "extract": null,
         "name": "plg-quetta",
         "passthru": null,
@@ -677,17 +677,17 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "adee96d383776bd97acea76d612bd959cfd10b86",
-            "sha256": "sha256-+WDwnUlg+jHSdRByTOB+cULnzNgZIqFs5whgZGu3ze8=",
+            "rev": "8c04e32187bd75ccaa31954c796eabdcb4b2f0ed",
+            "sha256": "sha256-V/h1I+eAUmO3RZaSjRg1S5BRpm52hOPAYT6hblVxqZk=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/adamharrison/quetta"
         },
-        "version": "adee96d383776bd97acea76d612bd959cfd10b86"
+        "version": "8c04e32187bd75ccaa31954c796eabdcb4b2f0ed"
     },
     "plg-terminal": {
         "cargoLock": null,
-        "date": "2026-10-01",
+        "date": "2026-10-04",
         "extract": null,
         "name": "plg-terminal",
         "passthru": null,
@@ -697,13 +697,13 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "f079e7d85ee5d802d2073a281c17af52e290dddf",
-            "sha256": "sha256-jzDFhVa+6eSC/+rHdHuJRSgxqjSIEoMR8ZyGdtgZv2c=",
+            "rev": "913aa5c7804882ff4cc0d5379821e467c43273af",
+            "sha256": "sha256-lTDn0/32675GwEmFGjCh1lftR4d2K2i+9pOWTkKEvIE=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/adamharrison/lite-xl-terminal"
         },
-        "version": "f079e7d85ee5d802d2073a281c17af52e290dddf"
+        "version": "913aa5c7804882ff4cc0d5379821e467c43273af"
     },
     "plg-vale": {
         "cargoLock": null,

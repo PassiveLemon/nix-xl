@@ -106,17 +106,17 @@
   };
   lite-xl-plugins = {
     pname = "lite-xl-plugins";
-    version = "31eef299637de2a8ec2864ee0f7d854959fafbc8";
+    version = "5f10fab404ddf28adaddd7c0e09613b11a332219";
     src = fetchgit {
       url = "https://github.com/lite-xl/lite-xl-plugins";
-      rev = "31eef299637de2a8ec2864ee0f7d854959fafbc8";
+      rev = "5f10fab404ddf28adaddd7c0e09613b11a332219";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-uVvNOeXwLesDb30s7ya4W8i0vn6J3qWBpuq9BQh2veU=";
+      sha256 = "sha256-j3Brayp9E4erglXYYgf1yIRnRFUrRpWIxM0+yAKBHNY=";
     };
-    date = "2026-09-02";
+    date = "2026-10-08";
   };
   plg-container = {
     pname = "plg-container";
@@ -431,31 +431,31 @@
   };
   plg-quetta = {
     pname = "plg-quetta";
-    version = "adee96d383776bd97acea76d612bd959cfd10b86";
+    version = "8c04e32187bd75ccaa31954c796eabdcb4b2f0ed";
     src = fetchgit {
       url = "https://github.com/adamharrison/quetta";
-      rev = "adee96d383776bd97acea76d612bd959cfd10b86";
+      rev = "8c04e32187bd75ccaa31954c796eabdcb4b2f0ed";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-+WDwnUlg+jHSdRByTOB+cULnzNgZIqFs5whgZGu3ze8=";
+      sha256 = "sha256-V/h1I+eAUmO3RZaSjRg1S5BRpm52hOPAYT6hblVxqZk=";
     };
-    date = "2024-09-29";
+    date = "2026-10-07";
   };
   plg-terminal = {
     pname = "plg-terminal";
-    version = "f079e7d85ee5d802d2073a281c17af52e290dddf";
+    version = "913aa5c7804882ff4cc0d5379821e467c43273af";
     src = fetchgit {
       url = "https://github.com/adamharrison/lite-xl-terminal";
-      rev = "f079e7d85ee5d802d2073a281c17af52e290dddf";
+      rev = "913aa5c7804882ff4cc0d5379821e467c43273af";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-jzDFhVa+6eSC/+rHdHuJRSgxqjSIEoMR8ZyGdtgZv2c=";
+      sha256 = "sha256-lTDn0/32675GwEmFGjCh1lftR4d2K2i+9pOWTkKEvIE=";
     };
-    date = "2026-10-01";
+    date = "2026-10-04";
   };
   plg-vale = {
     pname = "plg-vale";
