@@ -165,7 +165,7 @@
     },
     "lite-xl-plugins": {
         "cargoLock": null,
-        "date": "2026-10-08",
+        "date": "2026-10-12",
         "extract": null,
         "name": "lite-xl-plugins",
         "passthru": null,
@@ -175,13 +175,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "5f10fab404ddf28adaddd7c0e09613b11a332219",
-            "sha256": "sha256-j3Brayp9E4erglXYYgf1yIRnRFUrRpWIxM0+yAKBHNY=",
+            "rev": "6e4aa640d679decd67d2c0b677ede52ef70a7bf9",
+            "sha256": "sha256-Z8N1ZnCraWk87apOCO1INLduA9sN8LOQXh8M30xTyXQ=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/lite-xl/lite-xl-plugins"
         },
-        "version": "5f10fab404ddf28adaddd7c0e09613b11a332219"
+        "version": "6e4aa640d679decd67d2c0b677ede52ef70a7bf9"
     },
     "plg-container": {
         "cargoLock": null,
@@ -687,7 +687,7 @@
     },
     "plg-terminal": {
         "cargoLock": null,
-        "date": "2026-10-04",
+        "date": "2026-10-12",
         "extract": null,
         "name": "plg-terminal",
         "passthru": null,
@@ -697,13 +697,13 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "913aa5c7804882ff4cc0d5379821e467c43273af",
-            "sha256": "sha256-lTDn0/32675GwEmFGjCh1lftR4d2K2i+9pOWTkKEvIE=",
+            "rev": "e1cd371a42963c1af0241652f62dc6892e9e18d7",
+            "sha256": "sha256-ryWl4YRc6IL9tpvZlIdeXSKpTR+lQu9ACQrz6QugzWI=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/adamharrison/lite-xl-terminal"
         },
-        "version": "913aa5c7804882ff4cc0d5379821e467c43273af"
+        "version": "e1cd371a42963c1af0241652f62dc6892e9e18d7"
     },
     "plg-vale": {
         "cargoLock": null,
