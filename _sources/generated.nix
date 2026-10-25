@@ -431,17 +431,17 @@
   };
   plg-quetta = {
     pname = "plg-quetta";
-    version = "8c04e32187bd75ccaa31954c796eabdcb4b2f0ed";
+    version = "1c2ac9b12bae9b71bf414ebd4aae7576cadf729c";
     src = fetchgit {
       url = "https://github.com/adamharrison/quetta";
-      rev = "8c04e32187bd75ccaa31954c796eabdcb4b2f0ed";
+      rev = "1c2ac9b12bae9b71bf414ebd4aae7576cadf729c";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-V/h1I+eAUmO3RZaSjRg1S5BRpm52hOPAYT6hblVxqZk=";
+      sha256 = "sha256-1xOUeU/O0tIVHnSpyigQXS4g/lhSqmlRgWQr7rjnd/8=";
     };
-    date = "2026-10-07";
+    date = "2026-10-24";
   };
   plg-terminal = {
     pname = "plg-terminal";

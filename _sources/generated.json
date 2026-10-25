@@ -667,7 +667,7 @@
     },
     "plg-quetta": {
         "cargoLock": null,
-        "date": "2026-10-07",
+        "date": "2026-10-24",
         "extract": null,
         "name": "plg-quetta",
         "passthru": null,
@@ -677,13 +677,13 @@
             "fetchSubmodules": true,
             "leaveDotGit": false,
             "name": null,
-            "rev": "8c04e32187bd75ccaa31954c796eabdcb4b2f0ed",
-            "sha256": "sha256-V/h1I+eAUmO3RZaSjRg1S5BRpm52hOPAYT6hblVxqZk=",
+            "rev": "1c2ac9b12bae9b71bf414ebd4aae7576cadf729c",
+            "sha256": "sha256-1xOUeU/O0tIVHnSpyigQXS4g/lhSqmlRgWQr7rjnd/8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/adamharrison/quetta"
         },
-        "version": "8c04e32187bd75ccaa31954c796eabdcb4b2f0ed"
+        "version": "1c2ac9b12bae9b71bf414ebd4aae7576cadf729c"
     },
     "plg-terminal": {
         "cargoLock": null,
