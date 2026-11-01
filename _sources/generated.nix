@@ -431,31 +431,31 @@
   };
   plg-quetta = {
     pname = "plg-quetta";
-    version = "1c2ac9b12bae9b71bf414ebd4aae7576cadf729c";
+    version = "c86cb24fcd585ad0e87405a2b9c4daf07a309431";
     src = fetchgit {
       url = "https://github.com/adamharrison/quetta";
-      rev = "1c2ac9b12bae9b71bf414ebd4aae7576cadf729c";
+      rev = "c86cb24fcd585ad0e87405a2b9c4daf07a309431";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-1xOUeU/O0tIVHnSpyigQXS4g/lhSqmlRgWQr7rjnd/8=";
+      sha256 = "sha256-qXwtjWF1lQUtP6rJTpZ7rPmq0BMvI6RAxEbpa7qqV0Y=";
     };
-    date = "2026-10-24";
+    date = "2026-10-28";
   };
   plg-terminal = {
     pname = "plg-terminal";
-    version = "e1cd371a42963c1af0241652f62dc6892e9e18d7";
+    version = "079c619a90ca3e8556f9ce4f7548f33b41e3b356";
     src = fetchgit {
       url = "https://github.com/adamharrison/lite-xl-terminal";
-      rev = "e1cd371a42963c1af0241652f62dc6892e9e18d7";
+      rev = "079c619a90ca3e8556f9ce4f7548f33b41e3b356";
       fetchSubmodules = true;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ryWl4YRc6IL9tpvZlIdeXSKpTR+lQu9ACQrz6QugzWI=";
+      sha256 = "sha256-8OA4cxa9CR53Y2pAfT2vQFcvFcjZU4iMtzYxA32pNsE=";
     };
-    date = "2026-10-12";
+    date = "2026-10-27";
   };
   plg-vale = {
     pname = "plg-vale";
