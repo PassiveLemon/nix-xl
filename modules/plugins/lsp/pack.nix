@@ -3,7 +3,7 @@
   "basedpyright" = basedpyright;
   "bash_ls" = bash-language-server;
   "ccls" = ccls;
-  "clangd" = clang;
+  "clangd" = clang-tools;
   "closure_lsp" = closure-lsp;
   "crystalline" = crystalline;
   "dartls" = dart;
